@@ -1,0 +1,301 @@
+﻿body {margin:0px;-webkit-text-size-adjust:none;}
+.headline {font-family:'Helvetica Neue', Arial, Verdana;font-size:20px;line-height:24px;font-style:normal;color:#111111 }
+.headline a:link {color:#111111;text-decoration:none;}
+.headline a:visited {color:#111111;text-decoration:none;}
+.headline a:hover {color:#003366;text-decoration:underline;}
+.headline-home {font-family:'Helvetica Neue', Arial, Verdana;font-size:12pt;font-style:normal;color:#FFFFFF }
+.headline-home a:link {color:#FFFFFF;text-decoration:none;}
+.headline-home a:visited {color:#FFFFFF;text-decoration:none;}
+.headline-home a:hover {color:#CC9900;text-decoration:none;}
+
+.main_white {font-family:Geneva, Lucida Grande, Arial;font-size:8pt;font-style:normal;color:#999999 }
+.main_white a:link {color:#003366;text-decoration:underline;}
+.main_white a:visited {color:#003366;text-decoration:underline;}
+.main_white a:hover {color:#CC9900;text-decoration:underline;}
+.mainBG {font-family:'Helvetica Neue',Arial, Verdana;line-height:17px;font-size:12px;font-style:normal;color:#222222 }
+.mainBG a:link {color:#003366;text-decoration:underline;}
+.mainBG a:visited {color:#003366;text-decoration:underline;}
+.mainBG a:hover {color:#CC9900;text-decoration:underline;}
+
+
+#tabs.event .event {
+}
+
+#tabs.event
+{
+    width: 500px;
+    border-width: 1px;
+    border-spacing: 0px 1px;  
+}
+
+#tabs td.first {
+    border-left: medium none;
+}
+#tabs td {
+    background-color: #368305;
+    color: #EEEEEE;
+    font-size: 1em;
+    font-weight: 800;
+    padding: 0 0 5px;
+    text-align: center;
+    text-shadow: 0 1px 0 #000000;
+    vertical-align: middle;
+}
+
+#tabs td span {
+    background-position: center 9px;
+    background-repeat: no-repeat;
+    background-size: auto 50%;
+    display: inline-block;
+    padding-top: 5px;
+}
+
+#tabs td a {
+    text-decoration:none;
+    background-repeat: no-repeat;
+    background-size: auto 50%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #EEEEEE;
+}
+
+.divBox
+{
+    width: 300px;
+    height: 100px;
+}
+.divBox a
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.leaderboard-table {
+    width: 500px;
+    border-width: 1px;
+    border-spacing: 0px;
+    
+}
+
+.leaderboard-table td.leaderboard-td
+{
+    background-color:#3B3E3B;
+    color:#fff; 
+    clear:both; 
+    padding: 6px 6px; 
+    font-weight:700; 
+    line-height:18px; 
+    width:500px
+}
+
+.leaderboard-table {border:0px none; margin-bottom:0;}
+
+.leaderboard-table th, .leaderboard-table .colhead td, #hole-stats th {
+    background: url("http://a.espncdn.com/prod/assets/module_subheader_gradient.gif") repeat-x scroll 0 0 #E8E8E8;
+    border-bottom: 1px solid #C2C2C2;
+    color: #444444;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+
+.leaderboard-table  th, .leaderboard-table td {padding: 4px 4px}
+
+.leaderboard-table td.textcenter, .leaderboard-table th.textcenter {
+    text-align: center !important;
+    width: 50px;
+}
+
+.leaderboard-table td p {
+    line-height:normal;
+    }
+    
+.leaderboard-table td.score {
+    font-weight:700;
+    background-color:#dddddd !important;
+}
+
+.leaderboard-table td span.under{
+    color: #BF0000;
+}
+
+.leaderboard-table td span.over{
+    color: #000;
+}
+
+
+.leaderboard tr.playercard td {
+border-bottom: 2px double #bbbbbb;
+background-color:#fbfbfb;
+border-top-color: #fbfbfb;
+}
+
+
+.leaderboard tr.expanded td {
+border-top: 2px double #bbbbbb;
+background-color:#fbfbfb;
+border-right-color: #fbfbfb !important;
+border-left-color: #fbfbfb !important;
+border-bottom-color: #fbfbfb;
+}
+
+/*
+.leaderboard tr.expanded td {
+border-bottom-color: #fbfbfb;
+}
+*/
+
+.leaderboard-table tr td.player {
+width:300px;
+}
+
+.leaderboard-table tr.evenrow {
+    background-color: #F1F1F1;
+}
+
+
+.leaderboard-table tr.expanded td.player {
+font-weight:700;
+background-image: url(http://a.espncdn.com/i/golf/leaderboard11/arrow-bottom.png); background-position: 95% 42%; background-repeat:no-repeat;
+}
+
+.leaderboard-table tr.sl:hover td {
+background: #d2d2d2 none !important;
+cursor:pointer;
+}
+
+.leaderboard-table tr.sl:hover td.player {background-image: url(http://a.espncdn.com/i/golf/leaderboard11/arrow-right.png) !important; background-position: 95% 50% !important; background-repeat:no-repeat !important;}
+
+.leaderboard-tr.expanded:hover td.player {
+font-weight:700;
+background-image: url(http://a.espncdn.com/i/golf/leaderboard11/arrow-bottom.png) !important; background-position: 95% 42% !important; background-repeat:no-repeat !important;
+}
+
+
+.leaderboard tr.expanded:hover td {
+background-color: #fbfbfb !important;
+}
+
+.leaderboard tr.expanded td.score {
+background-color:#fbfbfb !important;
+}
+
+.leaderboard tr.my-fave td {
+    background: url("http://a.espncdn.com/prod/assets/memberservices/ms-bg-fave.gif") repeat-x scroll 0 100% #ECE1B0;
+    font-weight: 700;
+}
+
+/* sorting styles */
+#regular-leaderboard .leaderboard.after thead th.sortable, #regular-leaderboard .leaderboard.spade thead th {
+    cursor:pointer;
+    text-decoration:underline;
+}
+
+#regular-leaderboard .leaderboard.after thead th.sortable:hover, #regular-leaderboard .leaderboard.spade thead th:hover {
+    color:#777777 !important;
+    text-decoration:none;
+}
+
+/* for raw text */
+#regular-leaderboard pre table.tablehead.widetable tbody tr.oddrow td, #regular-leaderboard pre table.tablehead.widetable tbody tr.evenrow td{
+	font-size: 10px;
+	padding: 2px 0;
+}
+
+#regular-leaderboard tr.oddrow {
+    background-color: #FFFFFF;
+}
+
+#regular-leaderboard tr.evenrow {
+    background-color: #F1F1F1;
+}
+
+#regular-leaderboard pre table.tablehead.widetable tbody tr.stathead .subhead{
+	padding-left: 35px;
+	padding-top: 4px;
+}
+
+#regular-leaderboard pre table.tablehead.widetable tbody tr.stathead b{
+	padding-left: 36px;
+	padding-bottom: 5px;
+	display: block;
+	clear: both;
+}
+
+/*#regular-leaderboard .leaderboard.after thead th.headerSortUp{
+    background-image: url("http://a.espncdn.com/i/travel/passport/09/desc.gif");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+#regular-leaderboard .leaderboard.after thead th.headerSortDown{
+    background-image: url("http://a.espncdn.com/i/travel/passport/09/asc.gif");
+    background-position: right center;
+    background-repeat: no-repeat;
+}*/
+
+
+
+/* Playercard Nav */
+
+.pc-container {padding:3px 0 6px 6px; overflow:hidden; height:125px;}
+.pc-content {float:left; padding: 0 0 0 10px; font: normal 11px Helvetica, Arial, sans-serif; width:516px; overflow:hidden; position:relative;}
+
+.pc-nav {overflow:hidden;}
+.pc-nav a.pc-nav-btn {display:block; float:left; padding:0 8px; border:1px solid #b2b2b2; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; line-height:16px; color:#515151 !important; margin-right:6px; background-color:#fff;}
+.pc-nav a.pc-nav-btn.favs {font-weight:700; margin-right:20px;}
+.pc-nav a.pc-nav-btn.favs.favorite, .pc-nav a.pc-nav-btn.favs:hover {background: url("http://a.espncdn.com/prod/assets/memberservices/ms-bg-fave.gif") repeat-x scroll left top transparent; color: #000000 !important;}
+.pc-nav a.pc-nav-btn.favs.favorite {text-decoration:none;}
+.pc-nav a.pc-nav-btn.favs.favorite:hover {text-decoration:underline;}
+.pc-nav a.pc-nav-btn.selected {font-weight:700; color:#fff !important; background-color:#515151;}
+.pc-nav a.pc-nav-btn.selected:visited {color:#fff !important;}
+
+.pc-close {display:block; position:absolute; right:0; top:0; background: transparent url(http://a.espncdn.com/i/golf/leaderboard11/pc-close.png) 0 0 no-repeat; width: 18px; height:17px}
+
+/*  Round Nav Nav */
+.round-nav {padding: 0 0 5px; font-size:1.1em; overflow:hidden; float:left; width:200px}
+.round-nav p, .round-nav a{float:left; margin-right:6px}
+.round-nav p {margin:0 6px 0 0 !important; line-height:16px;}
+.round-nav a {display:block; padding:0 3px; border:1px solid #b2b2b2; line-height:14px; color:#515151 !important; background-color:#fff;}
+.round-nav a:visited {color:#515151 !important;}
+.round-nav a.selected {font-weight:700; color:#fff !important; background-color:#515151;}
+.round-nav a.selected:visited {color:#fff !important;}
+
+.legend {float:right; margin:5px 0 0 0; width:280px}
+.legend p {float:left; margin:0 6px 0 2px !important; line-height:11px !important; color:#5e5e5e;}
+.key {width:10px; height:10px; background-color:#ccc; float:left}
+.key.double {background-color:#CAADC5;}
+.key.bogey {background-color:#FF8F8F;}
+.key.birdie {background-color:#95EF86;}
+.key.eagle {background-color:#FCEB9E;}
+
+.player-bio, .player-stats, .player-scorecard {overflow:hidden; padding:14px 0 0;}
+
+/* Inline Scorecard */
+.scorecard-table, .player-stat-table {width:516px; font: normal 11px Helvetica, Arial, sans-serif !important; border:0 none; border: 1px solid #dcdcdc; clear:both;}
+.player-stat-table {}
+.scorecard-table td,  .player-stat-table td {font: normal 11px Helvetica, Arial, sans-serif !important; border-right: 1px solid #dcdcdc; border-left:0px none; text-align:center; border-bottom: 0px none !important; border-top: 0px none; background-color:#fff !important;}
+ .player-stat-table td {width:15%}
+.scorecard-table tr td:last-child,  .player-stat-table tr td:last-child {border-right: 0px none;}
+.scorecard-table tr.hole td,  .player-stat-table tr.category td {background-color: #515151 !important; color:#fff;}
+.scorecard-table tr.par td,  .player-stat-table tr.stat td {border-bottom: 1px solid #dcdcdc !important}
+/*.player-stats tr.stat td {font-size:1.2em !important; font-weight:700 !important}*/
+.scorecard-table tr.score td {font-weight:700 !important; font-size:12px !important;}
+.scorecard-table tr.score td.heading {font-weight:400 !important; font-size:11px !important;}
+.scorecard-table td {width:5% !important;}
+.scorecard-table td.heading,  .player-stat-table tr td.heading  {width:50px !important; text-align:right; font-weight: 400 !important; font-size:1em !important}
+
+.mod-data-table .featured-stat .stat {text-align:right; line-height:normal;}
+.mod-data-table .featured-stat .stat span {font-size:11px;}
+
+ul.bio {float:left; padding:0 16px 0 0; border-right:1px solid #ccc; margin: 0 16px 0 0;}
+ul.bio li {line-height:16px;}
+ul.bio li span {font-weight:700;}
+p.rank-item {float:left; font-size:1.1em; font-weight:700; margin:0 20px 6px 0 !important; width:150px;}
+p.rank-item span {font-size:.9em; color:#515151}
+
+.playoff {margin-bottom:10px;}

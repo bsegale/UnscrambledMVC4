@@ -1,0 +1,22 @@
+﻿@model Unscrambled.Domain.Round
+
+@{
+    ViewBag.Title = "Change Holes";
+}
+
+
+
+@{
+    if (Model.HolesInRound == 18)
+    {
+        Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_ChangeTo9HolesConfirmation.cshtml");
+    }
+    else if (Model.HolesInRound == 9)
+    {
+        Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_ChangeTo18HolesConfirmation.cshtml");
+    }
+    else
+    {
+        Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_RoundError.cshtml");
+    }
+}

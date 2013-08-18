@@ -1,0 +1,155 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.SetRoundHandicapsPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">Set Round Handicaps Manually</td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"><a href="/Coordinator/Game/MyGames/144">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+   
+   
+<div id="contentLayer">
+
+<form class="edit-players-handicaps-form" action="/Coordinator/Game/SetHandicaps" method="post" name="set_player_handicaps" id="set_player_handicaps">
+
+
+ <input type="hidden" name="NumberOfPlayersOrTeams" value="@Model.setRoundHandicapsVM.Game.NumberOfPlayersOrTeams" />
+ <input type="hidden" name="GameID" value="@Model.setRoundHandicapsVM.Game.ID" />
+ <input type="hidden" name="RoundID" value="@Model.setRoundHandicapsVM.RoundID" />
+
+
+</table>
+
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">You have chosen to enter each player's handicap rather than calculate the handicap 
+                                based on course slope and player index.  Please enter a valid handicap for each player.</span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                                
+                                  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+
+    <table class="formTable" width="100%">
+        <col style="width:5%">
+        <col style="width:0%">
+        <col style="width:0%">
+        <col style="width:45%">
+        <col style="width:10%">
+        <col style="width:40%">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Player</th>
+                <th>Handicap</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @{
+        int playerNumber = 1;
+    }
+
+    @foreach (var roundPlayer in Model.setRoundHandicapsVM.RoundPlayersViewModels)
+    {
+        @:<tr>
+            <td>@playerNumber.ToString()</td>
+            <td>@Html.Hidden("RoundPlayerID" + playerNumber, roundPlayer.ID)</td>
+            <td>@Html.Hidden("RoundPlayerPlayerID" + playerNumber, roundPlayer.PlayerID)</td>
+            <td>@roundPlayer.PlayerName</td>
+            <td><input type="text" class="textBoxPlayerIndex" value="@roundPlayer.Handicap" id="@genRoundPlayerHandicapID(playerNumber)" name="@genRoundPlayerHandicapName(playerNumber)" /></td>
+            if (roundPlayer.HandicapErrorMessage == "")
+            {
+                <td class="tdError" style="visibility:hidden" ></td>
+            }
+            else
+            {
+                <td class="tdError" style="visibility:hidden" >Invalid Handicap</td>
+            }  
+        @:</tr>
+        
+        playerNumber = playerNumber + 1;
+    }
+   </tbody>
+
+
+</table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><button id="SetPlayerHandicapsCancel" name="SubmitForm" class="submit" type="submit" value="Cancel">Cancel</button></div>
+        <div class="ansR"><button id="SetPlayerHandicapsSubmit" name="SubmitForm" class="submit" type="submit" value="Save">Save</button></div>
+    </div>
+
+
+
+</div>
+
+
+    
+</form>
+    
+
+
+
+
+
+
+@helper genRoundPlayerHandicapID(int playerNumber)
+{
+    string roundPlayerIDStr = "RoundPlayerHandicap" + playerNumber.ToString();
+    @(roundPlayerIDStr);
+    
+}
+
+@helper genRoundPlayerHandicapName(int playerNumber)
+{
+    string roundPlayerIDStr = "RoundPlayerHandicap" + playerNumber.ToString();
+    @(roundPlayerIDStr);
+    
+}
+
+
+
+
+
+

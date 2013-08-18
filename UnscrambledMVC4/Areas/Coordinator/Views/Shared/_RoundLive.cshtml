@@ -1,0 +1,104 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.RoundLivePageView
+
+
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">Round Live</td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"><a href="@Url.Action("MyGames","Game")">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+<div id="contentLayer">
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr> 
+                                <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Your round setup is complete.</span></span></td>
+                                        
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+
+        <table class="formTable" width="100%">
+            <col style="width:0%">
+            <col style="width:0%">
+            <col style="width:80%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Warning</th>
+                    <th>Link</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Game Started</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+       </tbody>
+    </table>
+
+
+
+
+
+ 
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><a href="@Url.Action("SetFoursomes", "Game", new { id = @Model.roundLiveViewModel.Round.ID})" class="linkButton"><span class="textInLinkButton">Cancel</span></a></div>
+        <div class="ansR"><button id="StartRoundSubmitAndDoneButton" name="SubmitForm" class="submit" type="submit" value="SaveAndDone">Yes Do It</button></div>
+    </div>
+
+</div>
+
+
+
+
+
+
+                  
+
+   
+
+    
+</form>
+    

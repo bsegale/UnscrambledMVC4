@@ -1,0 +1,180 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.SetFoursomesPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+@using Unscrambled.Domain
+ 
+
+@{
+    var fromDeleteFoursome = TempData["FromDeleteFoursome"];
+    int playerCounter = 1;
+}         
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">Set Round Foursomes</td>
+                            <td class="sectionLinks"><a href="@Url.Action("DeleteFoursomes", "Game", new { id = @Model.setFoursomesVM.RoundID })"</a>Delete Foursomes</td>
+                            <td class="sectionLinks"><a href="@Url.Action("AddFoursomeConfirmation", "Game", new { id = @Model.setFoursomesVM.RoundID })"</a>Add Foursome</td>
+                            <td class="sectionLinks"><a href="/Coordinator/Game/MyGames/144">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+
+<div id="contentLayer">
+
+
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">The players and their indexs are listed below. </span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                       
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                        @if (fromDeleteFoursome == "Y")
+                        {
+                            <tr>
+                                <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">You cannot delete a foursome with players in it.  If you want to delete a foursome, move all players out of that foursome our delete the players in that foursome.</span></span></td>
+                            </tr>
+                        }
+                        @if (Model.setFoursomesVM.emptyFoursomes.Count() > 0 )
+                        {
+                            <tr>
+                                <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Warning - You currently have some foursomes without players in them.  You can delete unused foursomes by clicking the Delete Foursomes link above.  Empty foursomes will be automatically removed when you start the round.</span></span></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+@if (Model.setFoursomesVM.emptyFoursomes.Count() > 0)
+{
+    
+        @:<table class="formTable" width="100%">
+         @:       <col style="width:20%">
+          @:      <col style="width:40%">
+           @:     <col style="width:40%">
+            @:    <thead>
+             @:       <tr>
+              @:          <th>Empty Foursomes</th>
+               @:         <th></th>
+                @:        <th></th>
+                @:    </tr>
+               @: </thead>
+                @:<tbody>
+                foreach (var foursome in Model.setFoursomesVM.emptyFoursomes)
+                {
+                                @:<tr>
+                                    @:<td>
+                                        @foursome.Name
+                                    @:</td>
+                                    @:<td>
+                                    @:</td>
+                                    @:<td>
+                                    @:</td>
+                                @:</tr>
+                }
+                @:<tr><td></td></tr>
+
+}
+    </table>
+          
+<form class="edit-players-form" action="/Coordinator/Game/SetFoursomes" method="post" name="edit_foursomes">
+ 
+
+ <input type="hidden" name="NumberOfPlayersOrTeams" value="@Model.setFoursomesVM.NumberOfPlayersOrTeams" />
+ <input type="hidden" name="RoundID" value="@Model.setFoursomesVM.RoundID" />
+ <input type="hidden" name="GameID" value="@Model.setFoursomesVM.GameID" />
+
+
+<table class="formTable" width="100%">
+        <col style="width:20%">
+        <col style="width:40%">
+        <col style="width:40%">
+        <thead>
+            <tr>
+                <th>Player #</th>
+                <th>Name</th>
+                <th>Foursome</th>
+            </tr>
+        </thead>
+        <tbody>
+
+@foreach (var foursome in Model.setFoursomesVM.Foursomes)
+{
+    foreach (var foursomePlayer in foursome.FoursomePlayers)
+    {
+        <tr>
+            <td>
+                @playerCounter
+            </td>
+            <td>
+                @PlayerName(foursomePlayer.Player.Name)
+            </td>
+            <td>
+                @Html.Hidden("FoursomePlayerID" + playerCounter, @foursomePlayer.ID)
+                @Html.DropDownList("RoundFoursomeID" + playerCounter, new SelectList(@Model.setFoursomesVM.FoursomeNumberSelectListItems, "Value", "Text", Model == null ? 0 : foursome.ID))
+            </td>
+        </tr>
+        playerCounter++;
+    }
+      
+
+       
+
+
+}
+
+    </tbody>  
+
+</table>
+
+    
+     <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><a href="@Url.Action("GameDetails", "Game", new { id = @Model.setFoursomesVM.RoundID})" class="linkButton"><span class="textInLinkButton">To Game Details</span></a></div>
+        <div class="ansR"><button id="SetFoursomesSubmit" name="SubmitForm" class="submit" type="submit" value="Submit">Submit</button></div>
+    </div>
+
+
+</form>
+
+</div>
+
+
+@helper PlayerName(String playerName) {
+    if (playerName == "")
+    {
+        "TBD".ToString();
+    }
+    else
+    {
+        <span>
+            @Html.Raw(playerName.ToString())
+        </span>
+    }
+    playerName = "TBD";
+}

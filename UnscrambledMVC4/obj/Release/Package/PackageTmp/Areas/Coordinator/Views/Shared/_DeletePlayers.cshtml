@@ -1,0 +1,75 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PartialViewDeletePlayers
+           
+
+@{
+    int holeCounter = 1;
+}
+
+<table>
+    <tr>
+    <th></th>
+        <th>
+            Player
+        </th>
+        <th>
+            Index
+        </th>
+         @foreach(var round in Model.Game.Rounds) {
+         <th>Round #@round.RoundNumberInGame</th>
+         }
+        <th>Action</th>
+    </tr>
+
+@foreach (var player in Model.Players) {
+    <tr>
+        <td>
+            @holeCounter
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => player.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => player.PlayerIndex)
+        </td>
+        @foreach(var round in Model.Game.Rounds) {
+            if (round.RoundNumberInGame == 1)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => player.Round1Handicap)
+                </td>
+            }
+            else if (round.RoundNumberInGame == 2)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => player.Round2Handicap)
+                </td>
+            }
+            else if (round.RoundNumberInGame == 3)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => player.Round3Handicap)
+                </td>
+            }
+            else if (round.RoundNumberInGame == 4)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => player.Round4Handicap)
+                </td>
+            }
+            
+
+        }
+
+        <td>
+                @Html.ActionLink("Delete", "DeletePlayerConfirmation", new { id = player.ID })
+        </td>
+           
+    </tr>
+    
+
+    holeCounter = holeCounter + 1;
+
+
+}
+
+</table>

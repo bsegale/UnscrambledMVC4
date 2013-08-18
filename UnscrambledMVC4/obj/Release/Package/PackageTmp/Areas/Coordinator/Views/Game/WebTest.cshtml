@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "HTML5 Contact Form";
+}
+
+
+<SCRIPT TYPE="text/javascript">
+
+    
+
+</SCRIPT>
+
+
+
+<form class="game-details-form" action="" method="post" name="contact_form">
+<ul>
+    <li>
+         <h2>Game Details</h2>
+         <span class="required_notification">* Denotes Required Field</span>
+    </li>
+    <li>
+        <label for="name">Game Name:</label>
+        <input type="text" name="Name" placeholder="Enter Game Name" required />
+    </li>
+    <li>
+        <label for="email">Number Of Players/Teams:</label>
+        <input type="text" name="NumberOfPlayersOrTeams" placeholder="Enter Number" onChange="
+            if (parseInt(this.value) <= 5) {
+                alert('Please enter a number greater than 5.'); }" />
+        <span class="form_hint">Must between 1 - 120"</span>
+    </li>
+    <li>
+        <label for="GameType">Game Type:</label>
+        <div class="game-details-select">
+        <select name="GameType" required >
+            <option value="" selected=selected disabled=disabled>Choose Game Type</option>
+            <option value="1">Scramble</option>
+            <option value="2">Stroke</option>
+            <option value="3">Skins</option>
+            <option value="4">Match</option>
+        </select>
+        </div>
+        <span class="form_hint">Choose your game type</span>
+    </li>
+    <li>
+        <label for="IsHandicapped">Is Game Handicapped:</label>
+        <div class="game-details-select">
+        <select name="IsHandicapped">
+            <option value="" selected=selected disabled=disabled>Choose Yes or No</option>
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </select>
+        </div>
+    </li>
+    <li>
+        <label for="NumberOfRounds">Number of Rounds:</label>
+        <div class="game-details-select">
+        <select name="NumberOfRounds">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        </div>
+        <span class="form_hint">How many rounds in your game?</span>
+    </li>
+    <li>
+        <button class="submit" type="submit">Submit Form</button>
+    </li>
+</ul>
+
+
+
+
+
+
+
+
+
+</form>
+
+

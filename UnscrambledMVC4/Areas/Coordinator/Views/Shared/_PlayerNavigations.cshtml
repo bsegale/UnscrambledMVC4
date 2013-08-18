@@ -1,0 +1,12 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PartialViewPlayersNav
+           
+<table class="game_navigations">
+    <tr>
+        <td><label>Player Menu</label></td>
+        <td>@Html.ActionLink("View Players", "ViewPlayers", new { id = Model.Game.ID }) | </td>
+        <td>@Html.ActionLink("Set Players", "SetPlayers", new { id = Model.Game.ID }) | </td>
+        <td>@Html.ActionLink("Add Players", "AddPlayers", new { id = Model.Game.ID }) | </td>
+        <td>@Html.ActionLink("Delete Players", "DeletePlayers", new { id = Model.Game.ID }) </td>   
+    </tr>
+</table>
+

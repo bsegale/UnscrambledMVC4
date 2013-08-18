@@ -1,0 +1,58 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.AddFoursomeConfirmationPageView
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">Add Foursome Confirmation</td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"><a href="@Url.Action("MyGames", "Game", new { id = @Model.addFoursomeConfirmationViewModel.Game.ID})">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+<div id="contentLayer">
+<form class="add-foursome-confirmation-form" action="/Coordinator/Game/AddFoursomeConfirmed" method="post" name="add_foursome_confirmation" id="add_foursome_confirmation">
+<input type="hidden" name="RoundID" value="@Model.addFoursomeConfirmationViewModel.RoundID" />
+<input type="hidden" name="GameID" value="@Model.addFoursomeConfirmationViewModel.Game.ID" />
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Are you sure you want to add a foursome to the round?  You will go from @Model.addFoursomeConfirmationViewModel.currentNumberOfFoursomes to @Model.addFoursomeConfirmationViewModel.newNumberOfFoursomes foursomes.</span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><a href="@Url.Action("SetFoursomes", "Game", new { id = @Model.addFoursomeConfirmationViewModel.RoundID})" class="linkButton"><span class="textInLinkButton">Cancel</span></a></div>
+        <div class="ansR"><button id="PlayerSubmitAndDoneButton" name="SubmitForm" class="submit" type="submit" value="SaveAndDone">Confirm</button></div>
+    </div>
+
+</form>
+
+</div>
+

@@ -1,0 +1,19 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.Player
+
+
+    <li>
+        <label>@Model.playerCounter</label>
+        @Html.HiddenFor(model => model.Player.ID)
+        @Html.HiddenFor(model => model.Player.GameID)
+        @Html.TextBoxFor(model => model.Player.Name)
+        @Html.TextBoxFor(model => model.Player.PlayerIndex, new { onchange = "CheckDecimal(this)" })
+        @Html.ValidationMessageFor(model => model.Player.PlayerIndex)
+        <span class="form_hint">Enter value between -10.0 to 50.0"</span>
+    </li>
+
+@{
+    Model.playerCounter = Model.playerCounter + 1;
+}
+
+
+

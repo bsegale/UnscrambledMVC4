@@ -1,0 +1,125 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.MyGamesPageView
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">@ViewBag.SectionTitle</td>
+                            <td class="sectionLinks"><a href="@Url.Action("EditGameDetails", "Game")">Edit Game</a></td>
+                            <td class="sectionLinks"><a href="@Url.Action("MyGames", "Game")" >Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+            </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+                <div id="contentLayer">
+
+    
+                    <table class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                                    <tbody>
+                                        <tr>
+                                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Your current game list is below.</span></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+       
+                    </tbody>
+
+                </table>
+
+                    <table class="formTable" width="100%">
+                        <col style="width:12%">
+                        <col style="width:28%">
+                        <col style="width:15%">
+                        <col style="width:15%">
+                        <col style="width:15%">
+                        <col style="width:15%">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Join Code
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                            <th>
+                                Game Type
+                            </th>
+                            <th>
+                                Handicapped
+                            </th>
+                            <th>
+                                Rounds
+                            </th>
+                            <th>State</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                   @foreach (var item in Model.myGamesVM.games) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.JoinCode)
+                        </td>
+                        <td>
+                            @Html.ActionLink(item.Name, "GameDetails", new { id = item.ID })
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GameType.Name)
+                        </td>
+                        <td>
+                            @if (item.IsHandicapped == "Y")
+                            {
+                                @:Yes 
+                            }          
+                            @if (item.IsHandicapped == "N")
+                            {
+                                @:No
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NumberOfRounds)
+                        </td>
+                        <td>@item.GameState.State</td>
+                    </tr>
+                }
+
+                </table>
+
+</div>
+                    
+          
+        
+
+
+
+
+
+    
+
+
+
+
+

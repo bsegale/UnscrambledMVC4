@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>@ViewBag.Title</title>
+	<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Main.css")" media="screen, projection">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Form.css")" media="screen, projection">
+	<script type="text/javascript" src="/js/global.js"></script>
+</head>
+<body class="lab" id="www-456bereastreet-com">
+<div id="wrap">
+	<div id="header">
+        <div id="loginblock">
+            <ul>
+		        <li><a href="#main">Login</a></li>
+                <li><a href="#main">Get Help</a></li>
+            </ul>
+        </div>
+	</div>
+	<div id="nav">
+		<nav role="navigation">
+			<h2 class="structural">Main navigation</h2>
+			<ul>
+				<li><a href="/Home">Home</a></li>
+				<li><a href="/Coordinator/Game/Create">Create Game</a></li>
+				<li><a href="/Coordinator/Game/MyGames">My Games</a></li>
+				<li><a href="#">Join Game</a></li>
+				<li><a href="#">How It Works</a></li>
+				<li><a href="#">Gamezone</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="content" class="clearfix">
+		<div id="main" role="main">
+            @RenderBody()
+		</div>
+	</div>
+	<div id="footer">
+		<footer role="contentinfo">
+			<h2 class="structural">Copyright and technical information</h2>
+			<ul>
+				<li id="copyright">Copyright &#xA9; 2003-2012 <a href="/contact/">Roger Johansson</a></li>
+				<li><a href="/accessibility/">Accessibility statement</a></li>
+				<li><a href="http://www.456bereastreet.com/feed.xml">RSS Text</a></li>
+				<li><a href="http://app.readspeaker.com/cgi-bin/npodcaster/npodcaster/1076/feedurl=http~3a~2f~2fwww.456bereastreet.com~2ffeed_full_content_only.xml">RSS Audio</a></li>
+			</ul>
+		</footer>
+	</div>
+</div>
+</body>
+</html>

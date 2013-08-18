@@ -1,0 +1,119 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.DeletePlayersPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">View Game Details</td>
+                            <td class="sectionLinks"><a href="@Url.Action("AddPlayers","Game", new { id = @Model.deletePlayersViewModel.Game.ID })"</a>Set Players</td>
+                            <td class="sectionLinks"><a href="/Coordinator/Game/DeletePlayers">Delete Players</a></td>
+                            <td class="sectionLinks"><a href="@Url.Action("MyGames","Game")">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+<div id="contentLayer">
+
+<form class="delete-players-form" action="/Coordinator/Game/DeletePlayersConfirmation" method="post" name="delete_players" id="delete_players">
+
+ <input type="hidden" name="GameID" value="@Model.deletePlayersViewModel.Game.ID" />
+
+
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Select the checkbox next to each player that you would like to delete.</span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+
+    <table class="formTable" width="100%">
+        <col style="width:5%">
+        <col style="width:0%">
+        <col style="width:40%">
+        <col style="width:15%">
+        <col style="width:40%">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Player</th>
+                <th>Index</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @{
+        int playerNumber = 1;
+        string playerIDStr = "PlayerIDToDelete";
+    }
+
+    @foreach (var player in Model.deletePlayersViewModel.Players)
+    {
+        playerIDStr = "PlayerIDToDelete";
+        playerIDStr = playerIDStr + playerNumber.ToString();
+        @:<tr>
+            <td>@playerNumber.ToString()</td>
+            <td>@Html.Hidden("PlayerID" + playerNumber, player.ID)</td>
+            <td>@player.Name</td>
+            <td>@player.PlayerIndex</td>
+            <td><input id="@playerIDStr" name="@playerIDStr" type="checkbox" value="@player.ID" /></td>
+        @:</tr>
+        
+        playerNumber = playerNumber + 1;
+       
+    }
+   </tbody>
+
+
+</table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><button id="PlayerSubmitAndStayButton" name="SubmitForm" class="submit" type="submit" value="SaveAndStay">Save Players</button></div>
+        <div class="ansR"><button id="PlayerSubmitAndDoneButton" name="SubmitForm" class="submit" type="submit" value="SaveAndDone">Delete Players</button></div>
+    </div>
+
+</form>
+
+</div>
+
+
+
+
+
+
+                  
+
+   
+
+    
+</form>
+    

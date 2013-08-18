@@ -1,0 +1,52 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.CoordinatorLeftNavViewModel
+@using UnscrambledMVC4.Areas.Coordinator.Models.ViewModels
+@{
+    int leftNavItemCounter = 0;
+    string leftNavIDString = "cat0";
+}
+
+</div>
+          
+        </div>
+
+    </div>
+</div>
+    
+    <div id="app_bottom"></div>
+    <div id="leftNavLayer" class="sku_16">        
+            <div id="bannerRegion" role="banner">
+            <div id="ttoLogoLayer"><img alt="" border="0" src=""></div>
+            <div id="accessRegion">
+                    <a id="skipId" href="#mainBody">Skip to Main Content</a>
+            </div>
+                </div>
+        
+        
+            <div id="tabRegion" role="navigation">
+            <div id="tabBarLayer" style="visibility: inherit;">
+                <ul>
+                    @foreach (var item in Model.leftNavItems) {
+                        <li @OnOrOff(item)>
+                            <a class="lnk" href="@Url.Action(item.actionName, new { id=item.ID })" >
+                                <div class="navLnk">@item.itemText</div>
+                            </a>
+                        </li>
+                        
+                        leftNavItemCounter = leftNavItemCounter + 1;
+                        leftNavIDString = "cat" + leftNavItemCounter.ToString();
+                    }
+                </ul>
+                  </div>
+        </div>
+
+
+@helper OnOrOff(LeftNavItem leftNavItem) {
+    if (leftNavItem.isCurrentView == true)
+    {
+        @Html.Raw("class=\"on\"");
+    }
+    else
+    {
+        @Html.Raw("class=\"\"");
+    }
+}

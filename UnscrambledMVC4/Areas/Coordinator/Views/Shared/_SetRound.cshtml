@@ -1,0 +1,140 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.SetRoundPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+@{
+    ViewBag.Title = "Course Details";
+}
+
+
+
+<div id="contentLayer">
+
+<form class="set-round-form" action="/Coordinator/Game/SetRound" method="post" name="set_round" onsubmit="return ValidateRound()">
+@Html.Hidden("GameID", Model.setRoundVM.Round.GameID)
+@Html.Hidden("RoundID", Model.setRoundVM.Round.ID)
+@Html.Hidden("RoundNumberInGame", Model.setRoundVM.Round.RoundNumberInGame)
+@Html.Hidden("HolesInRound", Model.setRoundVM.Round.HolesInRound)
+
+
+        <table class="tableQuestionArea">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">How many holes are you playing? </span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                                
+                                @MyRadioHelper.CreateNumberOfHolesRadioHTML(Model.setRoundVM.Round.HolesInRound)          
+                                  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+      
+    </tbody>
+
+</table>
+
+    <table class="tableRoundSlope" width="100%">
+        <col style="width:15%">
+        <col style="width:10%">
+        <col style="width:75%">
+        <tbody>
+            <tr>
+                <td><label for="Slope">Course Slope:</label></td>
+                <td><input type="text" class="textBoxSlope" id="Slope2" name="Slope" value="@Model.setRoundVM.Round.Slope" ></td>
+                <td><span class="main">* Enter the course slope for handicap calculation. </span></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+        <table class="tableFront9" cellspacing="0">
+        <tbody>
+            <tr class="tourPlayerScorecardRoundSubHeader">
+                <td class="tourPlayerScorecardRoundColMeta">HOLE</td>
+                @for (var i = 0; i <= 8; i++)
+                {
+                    @Html.Hidden("HoleID" + Model.setRoundVM.Round.Holes.ElementAt(i).HoleNumber, Model.setRoundVM.Round.Holes.ElementAt(i).ID)
+                    <td>@Model.setRoundVM.Round.Holes.ElementAt(i).HoleNumber</td>
+                }
+                    <td class="tourPlayerScorecardHoleOut">OUT</td>
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">PAR</td>
+                @for (var i = 0; i <= 8; i++)
+                {
+                    <td>@Html.DropDownList("ParForHole" + Model.setRoundVM.Round.Holes.ElementAt(i).HoleNumber, new SelectList(Model.setRoundVM.ParList, "Value", "Text", Model.setRoundVM.Round.Holes.ElementAt(i).Par), new { @class = "HandicapDropDown" })</td>
+                }
+                <td class="tourPlayerScorecardHoleOut">@Model.setRoundVM.Round.Front9Total</td>
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">HDCP</td>
+                @for (var i = 0; i <= 8; i++)
+                {
+                    <td>@Html.DropDownList("HandicapForHole" + Model.setRoundVM.Round.Holes.ElementAt(i).HoleNumber, new SelectList(Model.setRoundVM.HoleHandicapList, "Value", "Text", Model.setRoundVM.Round.Holes.ElementAt(i).Handicap), new { @class = "HandicapDropDown" }) </td>
+                }
+                <td class="tourPlayerScorecardHoleOut"></td>
+            </tr>
+                
+             
+        </tbody>
+    </table>
+
+    <table class="tableBack9" cellspacing="0">
+        <tbody>
+            <tr class="tourPlayerScorecardRoundSubHeader">
+                <td class="tourPlayerScorecardRoundColMeta">HOLE</td>
+                @for (var i = 9; i <= 17; i++)
+                {
+                    @Html.Hidden("HoleID" + Model.setRoundVM.Round.Holes.ElementAt(i).HoleNumber, Model.setRoundVM.Round.Holes.ElementAt(i).ID)
+                    <td>@Model.setRoundVM.Round.Holes.ElementAt(i).HoleNumber</td>
+                }
+                    <td class="tourPlayerScorecardHoleOut">OUT</td>
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">PAR</td>
+                @for (var i = 9; i <= 17; i++)
+                {
+                    <td>@Html.DropDownList("ParForHole" + Model.setRoundVM.Round.Holes.ElementAt(i).HoleNumber, new SelectList(Model.setRoundVM.ParList, "Value", "Text", Model.setRoundVM.Round.Holes.ElementAt(i).Par), new { @class = "HandicapDropDown" })</td>
+                }
+                <td class="tourPlayerScorecardHoleOut">@Model.setRoundVM.Round.Front9Total</td>
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">HDCP</td>
+                @for (var i = 9; i <= 17; i++)
+                {
+                    <td>@Html.DropDownList("HandicapForHole" + Model.setRoundVM.Round.Holes.ElementAt(i).HoleNumber, new SelectList(Model.setRoundVM.HoleHandicapList, "Value", "Text", Model.setRoundVM.Round.Holes.ElementAt(i).Handicap), new { @class = "HandicapDropDown" }) </td>
+                }
+                <td class="tourPlayerScorecardHoleOut"></td>
+            </tr>
+             
+        </tbody>
+    </table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><button id="PlayerSubmitAndStayButton" name="SubmitForm" class="submit" type="submit" value="Cancel">Cancel</button></div>
+        <div class="ansR"><button id="PlayerSubmitAndDoneButton" name="SubmitForm" class="submit" type="submit" value="SetRound">Set Round</button></div>
+    </div>
+
+
+
+</div>
+    
+                
+</form>
+
+                

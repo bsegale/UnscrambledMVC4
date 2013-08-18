@@ -1,0 +1,23 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.SetRoundPageView
+
+@{
+    ViewBag.Title = "Set Round";
+}
+
+@{
+    if (Model.setRoundVM.RoundViewModel.HolesInRound == 18)
+    {
+        Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_SetRound18HolesWithCaps.cshtml");
+    }
+    else if (Model.setRoundVM.RoundViewModel.HolesInRound == 9)
+    {
+        Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_SetRound9HolesWithCaps.cshtml");
+    }
+    else
+    {
+        Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_SetRound18HolesWithCaps.cshtml");
+    }       
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/PageLeftNavAndBottom.cshtml", Model.leftNavVM);
+
+}
+

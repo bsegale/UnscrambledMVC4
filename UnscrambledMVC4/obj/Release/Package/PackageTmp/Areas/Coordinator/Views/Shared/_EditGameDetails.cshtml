@@ -1,0 +1,34 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PartialViewEditGame
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+
+          
+<form class="game-details-form" action="/Coordinator/Game/EditGame" method="post" name="edit_game" onsubmit="return ValidateGameDetails()" >
+
+@Html.Hidden("CoordinatorID", Model.Game.CoordinatorID)
+@Html.Hidden("GameID", Model.Game.ID)
+
+<ul>
+    <li>
+         <h2>Set Game Details</h2>
+         <span class="required_notification">* Denotes Required Field</span>
+    </li>
+    <li>
+        @Html.LabelFor(model => model.Game.Name, "Game Name")
+        <input type="text" id="Name" name="Name" placeholder="Enter Game Name" value="@Model.Game.Name" onchange="CheckGameName(this)" />
+         <span id="nameDivStr" class="input_hint_hidden" >Characters and numbers only please.</span>
+    </li>
+    <li>
+        <label for="email">Number Of Players/Teams:</label>
+        <input type="text" id=NumberOfPlayers name="NumberOfPlayersOrTeams" placeholder="Enter Number" value="@Model.Game.NumberOfPlayersOrTeams" onchange="CheckNumberOfPlayers(this)" />
+        <span id="numberOfPlayersDivStr" class="input_hint_hidden">Must between 1 - 120"</span>
+    </li>
+    
+    <li>
+        <button id="GameSubmitButton" name="FormSubmit" class="submit" type="submit">Edit Game</button>
+    </li>
+</ul>
+
+
+</form>
+

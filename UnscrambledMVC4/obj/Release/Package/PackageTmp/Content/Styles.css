@@ -1,0 +1,341 @@
+﻿/* Clear browser defaults */
+
+*:focus {outline: none;}
+
+input[type="radio"] {
+    margin: 0px 0px 0px 0px;
+}
+
+
+/* Coordinator Form Styles
+    includes game-details and edit-players forms */
+
+/* Set the h2 and label font for coordinator forms. */
+.game-details-form h2, .game-details-form label, .edit-players-form h2, .edit-players-form label
+{
+    font-family:Georgia, Times, "Times New Roman", serif;
+}
+
+
+.form_hint, .required_notification 
+{
+    font-size: 11px;
+    /*visibility:hidden; */
+}
+
+.form_instructions
+{
+    font-size: 11px;
+}
+
+:-moz-placeholder 
+{
+    color: green;
+}
+ 
+::-webkit-input-placeholder 
+{
+    color: green;
+}
+
+.game-details-form ul, .edit-players-form ul, .set-round-form ul {
+    width:800px;
+    list-style-type:none;
+    list-style-position:outside;
+    margin:0px;
+    padding:0px;
+}
+
+.game-details-form li, .edit-players-form li, .set-round-form li {
+    padding:12px; 
+    border-bottom:1px solid #eee;
+    position:relative;
+}
+
+
+
+.game-details-form li:first-child, .game-details-form li:last-child, .edit-players-form li:first-child, .edit-players-form li:last-child .set-round-form li:first-child, .set-round-form li:last-child{
+    border-bottom:1px solid #777;
+}
+
+.game-details-form h2, .edit-players-form h2, .set-round-form h2
+{
+    margin:0;
+    display: inline;
+}
+.form_instructions
+{
+    color:#d45252; 
+    margin:5px 0 0 0; 
+    display:inline;
+    float:right;
+}
+
+.player_hint_hidden
+{
+    color:#d45252; 
+    margin:5px 0 0 0; 
+    display:inline;
+    float:right;
+    visibility:hidden;
+}
+
+.player_hint_visible
+{
+    color:#d45252; 
+    margin:5px 0 0 0; 
+    display:inline;
+    float:right;
+}
+
+.input_hint_hidden
+{
+    color:#d45252; 
+    margin:5px 0 0 0; 
+    display:inline;
+    float:right;
+    visibility:hidden;
+}
+
+.input_hint_visible
+{
+    color:#d45252; 
+    margin:5px 0 0 0; 
+    display:inline;
+    float:right;
+}
+
+.game-details-form label
+{
+    width:250px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+
+
+.RoundsQuestion
+{
+    width:300px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+
+.HolesInRoundRadioLabel
+{
+    width:15px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+
+.HoleInRoundRadioButton
+{
+    width:15px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+
+
+
+.HoleNumber
+{
+    width:75px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+
+.ParLabelRadioButton
+{
+    width:6px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding: 0px;
+}
+
+.edit-players-form label
+{
+    width:50px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+
+
+.game-details-form input {
+    height:20px; 
+    width:220px; 
+    padding:5px 8px;
+    border:1px solid #aaa;
+}
+
+.edit-players-form input {
+    height:20px; 
+    width:220px; 
+    padding:5px 8px;
+    margin-right: 10px;
+    border:1px solid #aaa;
+}
+
+.HandicapDropDown {
+    height:20px; 
+    width:35px; 
+    padding:0px 0px;
+    margin-right: 0px;
+    vertical-align: baseline
+}
+
+.game-details-select
+{
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+    width: 235px;
+    display:inline-block;
+    overflow: hidden;
+    vertical-align:middle
+}
+
+.game-details-form select 
+{
+    height:30px; 
+    width:235px; 
+    padding:5px 8px;
+    /* background: transparent;
+    border: 0 */
+}
+    
+.game-details-form textarea {padding:8px; width:300px;}
+.game-details-form button {margin-left:156px;}
+
+/*
+.game-details-form input, .game-details-form textarea
+{ 
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+}
+*/
+
+.game-details-select select
+{
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+}
+
+.game-details-form input:focus, .game-details-form textarea:focus, .game-details-form select:focus {
+    background: #fff; 
+    border:1px solid #555; 
+    box-shadow: 0 0 3px #aaa;
+}
+
+input:required, textarea:required {
+    background: #fff url(images/red_asterisk.png) no-repeat 98% center;
+}
+
+.edit_players_column_heading {
+    height:20px; 
+    width:220px; 
+    padding:5px 8px;
+    margin-right: 10px;
+    font-family:Georgia, Times, "Times New Roman", serif;
+    display:inline-block;
+    font-size:22px;
+    font-weight:bold
+}
+
+.set_round_column_heading {
+    height:20px; 
+    width:220px; 
+    padding:5px 8px;
+    margin-right: 10px;
+    font-family:Georgia, Times, "Times New Roman", serif;
+    display:inline-block;
+    font-size:22px;
+    font-weight:bold
+}
+
+.ParRadioButton {
+    height:20px; 
+    width:17px; 
+    padding:5px 2px;
+    margin-right: 10px;
+    font-family:Georgia, Times, "Times New Roman", serif;
+    display:inline-block;
+    font-size:22px;
+    font-weight:bold
+}
+
+.ParRadioButtonLabel
+{
+    width:10px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+    
+/* Button Style */
+button.submit {
+    background-color: #68b12f;
+    background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
+    background: -webkit-linear-gradient(top, #68b12f, #50911e);
+    background: -moz-linear-gradient(top, #68b12f, #50911e);
+    background: -ms-linear-gradient(top, #68b12f, #50911e);
+    background: -o-linear-gradient(top, #68b12f, #50911e);
+    background: linear-gradient(top, #68b12f, #50911e);
+    border: 1px solid #509111;
+    border-bottom: 1px solid #5b992b;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    box-shadow: inset 0 1px 0 0 #9fd574;
+    -webkit-box-shadow: 0 1px 0 0 #9fd574 inset ;
+    -moz-box-shadow: 0 1px 0 0 #9fd574 inset;
+    -ms-box-shadow: 0 1px 0 0 #9fd574 inset;
+    -o-box-shadow: 0 1px 0 0 #9fd574 inset;
+    color: white;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-align: center;
+    text-shadow: 0 -1px 0 #396715;
+}
+button.submit:hover {
+    opacity:.85;
+    cursor: pointer; 
+}
+button.submit:active {
+    border: 1px solid #20911e;
+    box-shadow: 0 0 10px 5px #356b0b inset; 
+    -webkit-box-shadow:0 0 10px 5px #356b0b inset ;
+    -moz-box-shadow: 0 0 10px 5px #356b0b inset;
+    -ms-box-shadow: 0 0 10px 5px #356b0b inset;
+    -o-box-shadow: 0 0 10px 5px #356b0b inset;
+     
+}
+
+.game-details-form input:focus:invalid, .game-details-form textarea:focus:invalid, .edit-players-form input:focus:invalid { /* when a field is considered invalid by the browser */
+    background: #fff url(images/invalid.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535
+}
+
+#RoundsQuestionContainer
+{
+    width:inherit;
+    vertical-align : middle
+}
+    

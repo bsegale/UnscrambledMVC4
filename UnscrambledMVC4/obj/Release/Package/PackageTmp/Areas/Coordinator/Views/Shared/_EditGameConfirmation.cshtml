@@ -1,0 +1,60 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PartialViewEditGameConfirmation
+
+<form class="game-details-form" action="/Coordinator/Game/EditGameConfirmed" method="post" name="edit_game_confirmed"  >
+    @Html.Hidden("NumberOfPlayersToStart", Model.numberOfPlayersToStart);
+    @Html.Hidden("NumberOfPlayersToStart", Model.numberOfRoundsToStart);
+    @Html.Hidden("NumberOfPlayersToDelete", Model.numberOfPlayersToDelete);
+    @Html.Hidden("NumberOfRoundsToDelete", Model.numberOfRoundsToDelete);
+    @Html.Hidden("NumberOfPlayersAfterDelete", Model.numberOfPlayersAfterDelete);
+    @Html.Hidden("NumberOfRoundsAfterDelete", Model.numberOfRoundsAfterDelete);
+    @Html.Hidden("GameID", Model.GameID);
+
+
+@{
+    int playerCount = Model.numberOfPlayersToStart;
+    int roundCount = Model.numberOfRoundsToStart;
+    
+    if (@Model.numberOfPlayersToDelete > 0 && Model.numberOfRoundsToDelete < 1)
+    {
+        <p>You have reached the confirmation screen because you have decided to reducee the number of players in your game.</p>
+        <p>This will reduce the number of players in your game from <strong>@Model.numberOfPlayersToStart</strong> to <strong> @Model.numberOfPlayersAfterDelete</strong>.  The following players will
+            be deleted from your game:
+        </p>
+        <ul>
+        @foreach (var player in Model.PlayersToDelete)
+        {   
+            
+            if (player.Name.Equals(""))
+            {
+                <li>Player @playerCount</li>
+            }
+            else
+            {
+                <li>@player.Name</li>
+            }
+            @Html.Hidden("Player" + @playerCount, player.ID)
+        playerCount -= 1;
+        }
+
+        </ul>
+    }
+    
+     if (@Model.numberOfPlayersToDelete < 1 && Model.numberOfRoundsToDelete > 0)
+    {
+        <p>You have reached the confirmation screen because you have decided to reduce the number of rounds in your game.</p>
+        <p>This will reduce the number of players in your game from <strong>@Model.numberOfRoundsToStart</strong> to <strong> @Model.numberOfRoundsAfterDelete</strong>.  The following players will
+            be deleted from your game:
+        </p>
+        <ul>
+        @foreach (var round in Model.RoundsToDelete)
+        {   
+            <li>Round # @round.RoundNumberInGame</li>
+            @Html.Hidden("Round" + @roundCount, round.ID)
+            roundCount -= 1;
+        }
+
+        </ul>
+    }
+}
+    <button id="EditGameButton" name="FormSubmit" class="submit" type="submit">Edit Game</button>
+</form>

@@ -1,0 +1,106 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PartialViewSetRound
+
+@{
+    int holeCounter = 1;
+}
+
+<link rel="stylesheet" type="text/css" href="/Content/players.css">
+<link rel="stylesheet" type="text/css" href="/Content/global.css">
+
+<form class="set-round-form" action="/Coordinator/Game/SetRound" method="post" name="set_round" onsubmit="return ValidateRound()">
+@Html.Hidden("GameID", Model.Round.GameID)
+@Html.Hidden("RoundID", Model.Round.ID)
+@Html.Hidden("RoundNumberInGame", Model.Round.RoundNumberInGame)
+@Html.Hidden("HolesInRound", Model.Round.HolesInRound)
+
+<table>
+    <tbody>
+        <tr>
+            <td><label for="Slope">Course Slope:</label></td>
+            <td><input type="text" id="Slope" name="Slope" value="@Model.Round.Slope" ></td>
+        </tr>
+    </tbody>
+</table>
+        <table cellspacing="0">
+        <tbody>
+            <tr>
+                <td class="tourPlayerScorecardRoundHeader" colspan="22">Round #@Model.Round.RoundNumberInGame</td>
+            </tr>
+            <tr class="tourPlayerScorecardRoundSubHeader">
+                <td class="tourPlayerScorecardRoundColMeta">HOLE</td>
+                @foreach (var hole in Model.Round.Holes)
+                {
+                    @Html.Hidden("HoleID" + hole.HoleNumber, hole.ID)
+                    <td>@hole.HoleNumber</td>
+                    if (Model.Round.HolesInRound == 18 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">OUT</td>
+                    }
+                    if (Model.Round.HolesInRound == 9 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">OUT</td>
+                        <td class="tourPlayerScorecardHoleTotal">TOTAL</td>
+                    }
+                    if (Model.Round.HolesInRound == 18 && hole.HoleNumber == 18)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">IN</td>
+                        <td class="tourPlayerScorecardHoleTotal">TOTAL</td>
+                    }
+                }
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">PAR</td>
+                @foreach (var hole in Model.Round.Holes)
+                {
+                   <td>@Html.DropDownList("ParForHole" + hole.HoleNumber, new SelectList(Model.ParList, "Value", "Text", hole.Par), new { @class = "HandicapDropDown" })</td>
+                    if (Model.Round.HolesInRound == 18 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">@Model.Round.Front9Total</td>
+                    }
+                    if (Model.Round.HolesInRound == 9 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">@Model.Round.Front9Total</td>
+                        <td class="tourPlayerScorecardHoleTotal">@Model.Round.FullRoundTotal</td>
+                    }
+                    if (Model.Round.HolesInRound == 18 && hole.HoleNumber == 18)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">@Model.Round.Back9Total</td>
+                        <td class="tourPlayerScorecardHoleTotal">@Model.Round.FullRoundTotal</td>
+                    }
+                }
+              </tr>
+              <tr>
+                <td class="tourPlayerScorecardRoundColMeta">HDCP</td>
+                @foreach (var hole in Model.Round.Holes)
+                {
+                   <td>@Html.DropDownList("HandicapForHole" + hole.HoleNumber, new SelectList(Model.HoleHandicapList, "Value", "Text", hole.Handicap), new { @class = "HandicapDropDown" }) </td>
+                    if (Model.Round.HolesInRound == 18 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut"></td>
+                    }
+                    if (Model.Round.HolesInRound == 9 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut"></td>
+                        <td class="tourPlayerScorecardHoleTotal"></td>
+                    }
+                    if (Model.Round.HolesInRound == 18 && hole.HoleNumber == 18)
+                    {
+                        <td class="tourPlayerScorecardHoleOut"></td>
+                        <td class="tourPlayerScorecardHoleTotal"></td>
+                    }
+                }
+              </tr>
+              
+        </tbody>
+    </table>
+    <table>
+        <tr>
+           <td></td>
+           <td><input type="submit" value="SetRound" /> </td>
+           <td></td>                 
+        </tr>
+    </table>      
+                
+</form>
+
+                

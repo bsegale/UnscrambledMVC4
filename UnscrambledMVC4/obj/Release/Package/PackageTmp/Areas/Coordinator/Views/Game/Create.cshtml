@@ -1,0 +1,17 @@
+﻿@model Unscrambled.Domain.Game
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@{
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_GameDetails.cshtml");
+}
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "MyGames")
+</div>

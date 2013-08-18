@@ -1,0 +1,317 @@
+@charset 'utf-8';
+
+/**** http://meyerweb.com/eric/tools/css/reset/ 
+      v2.0 | 20110126
+      License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+{
+    display: block;
+}
+body
+{
+    line-height: 1;
+}
+ol, ul
+{
+    list-style: none;
+}
+blockquote, q
+{
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after
+{
+    content: '';
+    content: none;
+}
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/**** elements ****/
+body
+{
+    background:             url(../images/bg.png);
+    color:                  #4b4b4b;
+    font-family:            Arial;
+}
+hgroup
+{
+    padding-bottom:         50px;
+    padding-left:           125px;
+}
+hgroup > h1
+{
+    font-size:              34px;
+    color:                  #ff5400;
+    height:                 105px;
+}
+hgroup > h2
+{
+    font-size:              22px;
+    color:                  #4b4b4b;
+    margin-top:             -60px;
+}
+a
+{
+    color:                  #ff5400;
+    text-decoration:        none;
+    padding-bottom:         2px;
+}
+a:hover
+{
+    color:                  #7ac000;
+    text-decoration:        none;
+}
+a:active
+{
+    color:                  #ff5400;
+    text-decoration:        none;
+    position:               relative;
+    top:                    1px;
+}
+p
+{
+    font-size:              14px;
+    margin-bottom:          15px;
+    line-height:            24px;
+}
+nav
+{
+    width:                  auto;
+    float:                  right;
+    margin-top:             -16px;
+    padding-right:          20px;
+}
+nav a
+{
+    margin-right:           0px;
+    margin-left:            70px;
+    font-size:              16px;
+    border-bottom:          none;
+}
+nav h1
+{
+    display:                 none;
+}
+mark 
+{
+    display:                inline-block;
+    color:                  #fff;
+    background-color:       transparent;
+}   
+label
+{
+    float:                  left;
+    color:                  #ff5400;
+    display:                inline-block;
+    width:                  100px;
+    height:                 auto;
+    margin-bottom:          15px;
+    margin-top:             10px;
+}
+
+input
+{
+    float:                  left;
+    width:                  400px;
+    padding:                10px;
+    font-family:            Arial;
+    color:                  #4b4b4b;
+    font-size:              16px;
+    margin-bottom:          15px;
+    margin-top:             -10px;
+    margin-right:           15px;
+}
+input[type="submit"]
+{
+    border:                 none;
+    float:                  left;
+    clear:                  left;
+    cursor:                 pointer;
+    color:                  #fff;
+    font-size:              20px;
+    padding:                5px 36px 8px 36px;
+    margin-left:            100px;
+    width:                  auto;
+}
+input[type="submit"]:active
+{
+    position:               relative;
+    top:                    1px;
+}
+footer
+{
+    float:                  left;
+    margin-top:             50px;
+    padding-top:            0px;
+}
+footer ul
+{
+    margin-bottom:          1000px;
+}
+footer ul li
+{
+    display:                inline;
+    margin-right:           10px;
+}
+footer ul li a
+{
+    font-size:              12px;
+}
+footer ul li img
+{
+    vertical-align:         bottom;
+    position:               relative;
+    top:                    6px;
+}
+
+/**** #sitenav ****/
+#sitenav
+{
+    padding:                5px 0;
+    width:                  100%;
+    background-color:       #000;
+    margin-bottom:          25px;
+    z-index:                10;
+    float:                  left;
+    position:               fixed;
+}
+#sitenav header
+{
+    width: 768px;
+    margin: 0 auto;
+    position: relative;
+}
+#sitenav header h1
+{
+    font-weight:            bold;
+    color:                  #fff;
+    font-size:              12px;
+    position:               relative;
+    top:                    15px;
+}
+#sitenav header h1 a
+{
+    background-color:       #ff5400;
+    color:                  #fff;
+    font-size:              20px;
+    padding:                5px 25px 5px 25px;
+    width:                  300px;
+}
+#sitenav header h1 a:hover
+{
+    color:                  #fff;
+    background-color:       #7ac000;
+}
+
+/**** #content ****/
+#content
+{
+    float:                  none;
+    padding-top:            0px;
+    width:                  768px;
+    margin:                 0 auto;
+    position:               relative;
+}
+
+/**** #home ****/
+#home > hgroup
+{
+    background:             url(../images/intro.png) no-repeat -15px -10px;
+}
+
+/**** #services ****/
+#services > hgroup
+{
+    background:             url(../images/portfolio.png) no-repeat -15px -10px;
+}
+#services figure
+{
+    position:               relative;
+    width:                  600px;
+    height:                 350px;
+}
+#services figcaption
+{
+    position:               absolute;
+    top:                    50px;
+    left:                   0px;
+    width:                  600px;
+    color:                  #fff;
+    text-align:             center;
+    font-weight:            bold;
+}
+#services video, 
+#services canvas
+{
+    position:               absolute;
+    top:                    0;
+    left:                   0;
+}
+#services div
+{
+    top:                    95px;
+    position:               relative;
+}
+
+/**** #about ****/
+#about > hgroup
+{
+    background:             url(../images/faded_me.png) no-repeat;
+}
+
+/**** #content, #services, #about ****/
+#home, #services, #about
+{
+    padding-top:            100px;
+    float:                  left;
+    margin-bottom:          1000px;
+}
+
+/**** #contact ****/
+#contact
+{
+    padding-top:            100px;
+    float:                  left;
+    margin-bottom:          0px;
+}
+#contact > hgroup
+{
+    background:             url(../images/contact.png) no-repeat -25px -10px;
+}
+#contact label
+{
+    clear:                  left;
+}
+
+/**** #toggles ****/
+#toggles input
+{
+    margin-top:             13px;
+    padding:                0px;
+    width:                  auto;
+    height:                 auto;
+}
+
+/**** .linkButton ****/
+.linkButton
+{ 
+    color:                  #fff;    
+    background-color:       #ff5400;
+}
+.linkButton:hover
+{ 
+    background-color:       #7ac000;
+}

@@ -1,0 +1,13 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.EditGameDetailsConfirmationPageView
+
+@{
+    ViewBag.Title = "ViewRounds";
+}
+
+
+@{
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/PageTop.cshtml");
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_EditGameDetailsConfirmation.cshtml");
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/PageLeftNavAndBottom.cshtml", Model.leftNavVM);
+}
+

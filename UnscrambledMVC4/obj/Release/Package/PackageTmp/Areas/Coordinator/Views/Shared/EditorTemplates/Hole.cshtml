@@ -1,0 +1,53 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.Hole
+    <tr>
+        <td>        
+            @Html.HiddenFor(h => h.ID)
+            @Html.HiddenFor(h => h.HoleNumber)
+            @Html.HiddenFor(h => h.RoundID)
+            @Html.DisplayFor(h => h.HoleNumber)      
+        </td>
+        <td>
+            <div class="editor-field">
+                @if (Model.Par == 3)
+                {
+                    @Html.Label("3") 
+                    @Html.RadioButtonFor(model => model.Par, "3", new { @checked = "checked" })
+                    @Html.Label("4")
+                    @Html.RadioButtonFor(model => model.Par, "4")
+                    @Html.Label("5")
+                    @Html.RadioButtonFor(model => model.Par, "5")
+                }
+                @if (Model.Par == 4)
+                {
+                    @Html.Label("3") 
+                    @Html.RadioButtonFor(model => model.Par, "3")
+                    @Html.Label("4")
+                    @Html.RadioButtonFor(model => model.Par, "4", new { @checked = "checked" })
+                    @Html.Label("5")
+                    @Html.RadioButtonFor(model => model.Par, "5")
+                }
+                @if (Model.Par == 5)
+                {
+                    @Html.Label("3") 
+                    @Html.RadioButtonFor(model => model.Par, "3")
+                    @Html.Label("4")
+                    @Html.RadioButtonFor(model => model.Par, "4")
+                    @Html.Label("5")
+                    @Html.RadioButtonFor(model => model.Par, "5", new { @checked = "checked" })
+                }
+                @if (Model.Par == null)
+                {
+                    @Html.Label("3") 
+                    @Html.RadioButtonFor(model => model.Par, "3")
+                    @Html.Label("4")
+                    @Html.RadioButtonFor(model => model.Par, "4")
+                    @Html.Label("5")
+                    @Html.RadioButtonFor(model => model.Par, "5")
+                }
+            </div>
+        </td>
+        <td>
+            @Html.DropDownListFor(h => h.Handicap, (IEnumerable<SelectListItem>)ViewBag.HandicapSelectListItems, Model.Handicap)
+        </td>
+    </tr>
+

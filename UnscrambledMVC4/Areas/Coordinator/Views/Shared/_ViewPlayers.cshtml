@@ -1,0 +1,111 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.ViewPlayersPageView
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">View Players</td>
+                            @if (Model.viewPlayerVM.Game.GameStateID == 1)
+                            {
+                                @:<td class="sectionLinks"><a href="@Url.Action("SetPlayers", "Game", new { id = @Model.viewPlayerVM.Game.ID })"</a>Edit Players</td>
+                                @:<td class="sectionLinks"><a href="@Url.Action("AddPlayers", "Game", new { id = @Model.viewPlayerVM.Game.ID })"</a>Add Players</td>
+                                @:<td class="sectionLinks"><a href="@Url.Action("DeletePlayers", "Game", new { id = @Model.viewPlayerVM.Game.ID })"</a>Delete Players</td>
+                                @:<td class="sectionLinks"><a href="@Url.Action("MyGames", "Game", new { id = @Model.viewPlayerVM.Game.ID })">Game List</a></td>
+                            }
+                            else
+                            {
+                                <td class="sectionLinks"></td>
+                                <td class="sectionLinks"></td>
+                                <td class="sectionLinks"></td>
+                                <td class="sectionLinks"><a href="@Url.Action("MyGames", "Game", new { id = @Model.viewPlayerVM.Game.ID })">Game List</a></td>
+                            }
+                                    
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+
+<div id="contentLayer">
+
+
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">The players and their indexs are listed below. </span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                       
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+
+    <table class="formTable" width="100%">
+        <col style="width:5%">
+        <col style="width:0%">
+        <col style="width:45%">
+        <col style="width:10%">
+        <col style="width:40%">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Player</th>
+                <th>Index</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @{
+        int playerNumber = 1;
+        string playerDivStr = "PlayerError1";
+    }
+
+    @foreach (var player in Model.viewPlayerVM.Players)
+    {
+        @:<tr>
+            <td>@playerNumber.ToString()</td>
+            <td></td>
+            <td>@player.Name</td>
+            <td>@player.PlayerIndex</td>
+            <td></td>
+        @:</tr>
+        
+        playerNumber = playerNumber + 1;
+    }
+   </tbody>
+
+
+</table>
+
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><a href="@Url.Action("GameDetails", "Game", new { id = @Model.viewPlayerVM.Game.ID})" class="linkButton"><span class="textInLinkButton">To Game Details</span></a></div>
+        <div class="ansR"><a href="@Url.Action("SetRound", "Game", new { id = @Model.viewPlayerVM.Round.ID})" class="linkButton"><span class="textInLinkButton">To Course</span></a></div>
+    </div>
+
+
+</div>

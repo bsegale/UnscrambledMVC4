@@ -1,0 +1,76 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.ChangeHandicapsToAutoCalcConfirmationPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">Confirm Change to Automatic Handicap Calculation</td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"><a href="@Url.Action("MyGames", "Game", new { id = @Model.changeHandicapsToAutoCalcVM.game.ID})">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+
+<div id="contentLayer">
+
+<form class="change-autocalc-confirmation-form" action="/Coordinator/Game/ChangeHandicapsToAutoCalcConfirmation" method="post" name="change_sethandicaps_automatically" id="change_sethandicps_automatically">
+
+
+ <input type="hidden" name="GameID" value="@Model.changeHandicapsToAutoCalcVM.game.ID" />
+ <input type="hidden" name="RoundID" value="@Model.changeHandicapsToAutoCalcVM.RoundID" />
+
+
+</table>
+
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Are you sure you want to change your game to set handicaps automatically?</span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><a href="@Url.Action("ViewHandicaps", "Game", new { id = @Model.changeHandicapsToAutoCalcVM.RoundID})" class="linkButton"><span class="textInLinkButton">Cancel</span></a></div>
+        <div class="ansR"><button id="ChangeSetHandicapsSubmit" name="SubmitForm" class="submit" type="submit" value="Save">YES</button></div>
+    </div>
+
+</div>
+
+    
+</form>
+    
+
+
+
+
+
+

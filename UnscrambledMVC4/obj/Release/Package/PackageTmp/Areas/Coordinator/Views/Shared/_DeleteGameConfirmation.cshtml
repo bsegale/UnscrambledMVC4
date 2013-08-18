@@ -1,0 +1,13 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PartialViewDeleteGameConfirmation
+
+<h2>Delete Player</h2>
+
+<h3>Are you sure you want to delete the game @Model.Game.Name?</h3>
+<p>This will permanently remove the game.</p>
+
+<form class="game-details-form" action="/Coordinator/Game/DeleteGameConfirmed" method="post" name="delete_game" />
+@Html.Hidden("GameID", Model.Game.ID)
+    <p>
+        <button id="DeleteGameButton" name="FormSubmit" class="submit" type="submit" value="delete">Delete Game</button>
+        <button id="CancelDeleteGameButton" name="FormSubmit" class="submit" type="submit" value="cancel">Never Mind</button>
+    </p>

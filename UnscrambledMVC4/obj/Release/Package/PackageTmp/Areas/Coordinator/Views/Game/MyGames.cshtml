@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Unscrambled.Domain.Game>
+
+@{
+    ViewBag.Title = "My Game List";
+}
+
+<h2>My Game List</h2>
+
+<p>
+    @Html.ActionLink("Create New Game", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Join Code
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Game Type
+        </th>
+        <th>
+            Handicapped
+        </th>
+        <th>
+            Rounds
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JoinCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameType.Name)
+        </td>
+        <td>
+            @if (item.IsHandicapped == true)
+            {
+                @:Yes 
+            }          
+            @if (item.IsHandicapped == false)
+            {
+                @:No
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfRounds)
+        </td>
+        <td>
+            @Html.ActionLink("Setup", "ViewPlayers", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "DeleteGameConfirmation", new { id = item.ID }) |
+            @Html.ActionLink("Start", "StartGame", new { id = item.ID })
+        </td>
+    </tr>
+}
+
+</table>

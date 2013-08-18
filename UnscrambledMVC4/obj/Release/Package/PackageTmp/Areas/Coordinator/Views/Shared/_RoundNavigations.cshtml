@@ -1,0 +1,15 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PartialViewRoundNav
+           
+<table class="game_navigations">
+    <tr>
+    <td><label>Rounds Menu</label></td>
+    <td>@Html.ActionLink("View Rounds", "ViewRounds", new { id = Model.Game.ID }) | </td>
+    @foreach(var round in Model.Rounds) {
+         <td>@Html.ActionLink("Set Round " + round.RoundNumberInGame, "SetRound", new { id = round.ID }) | </td>
+         <td>@Html.ActionLink("Delete Round " + round.RoundNumberInGame, "DeleteRound", new { id = round.ID }) </td>
+    }
+    
+    
+    </tr>
+</table>
+

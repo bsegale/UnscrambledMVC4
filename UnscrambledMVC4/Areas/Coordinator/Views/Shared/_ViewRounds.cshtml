@@ -1,0 +1,84 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PartialViewViewRounds
+
+@{
+    int holeCounter = 1;
+}
+
+<link rel="stylesheet" type="text/css" href="/Content/players.css">
+<link rel="stylesheet" type="text/css" href="/Content/global.css">
+
+@foreach (var round in Model.Rounds)
+{
+        <table cellspacing="0">
+        <tbody>
+            <tr>
+                <td class="tourPlayerScorecardRoundHeader" colspan="22">Round #@round.RoundNumberInGame | Slope: @round.Slope</td>
+            </tr>
+            <tr class="tourPlayerScorecardRoundSubHeader">
+                <td class="tourPlayerScorecardRoundColMeta">HOLE</td>
+                @foreach (var hole in round.Holes)
+                {
+                    <td>@hole.HoleNumber</td>
+                    if (round.HolesInRound == 18 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">OUT</td>
+                    }
+                    if (round.HolesInRound == 9 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">OUT</td>
+                        <td class="tourPlayerScorecardHoleTotal">TOTAL</td>
+                    }
+                    if (round.HolesInRound == 18 && hole.HoleNumber == 18)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">IN</td>
+                        <td class="tourPlayerScorecardHoleTotal">TOTAL</td>
+                    }
+                }
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">PAR</td>
+                @foreach (var hole in round.Holes)
+                {
+                   <td>@hole.Par</td>
+                    if (round.HolesInRound == 18 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">@round.Front9Total</td>
+                    }
+                    if (round.HolesInRound == 9 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">@round.Front9Total</td>
+                        <td class="tourPlayerScorecardHoleTotal">@round.FullRoundTotal</td>
+                    }
+                    if (round.HolesInRound == 18 && hole.HoleNumber == 18)
+                    {
+                        <td class="tourPlayerScorecardHoleOut">@round.Back9Total</td>
+                        <td class="tourPlayerScorecardHoleTotal">@round.FullRoundTotal</td>
+                    }
+                }
+              </tr>
+              <tr>
+                <td class="tourPlayerScorecardRoundColMeta">HDCP</td>
+                @foreach (var hole in round.Holes)
+                {
+                   <td>@hole.Handicap</td>
+                    if (round.HolesInRound == 18 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut"></td>
+                    }
+                    if (round.HolesInRound == 9 && hole.HoleNumber == 9)
+                    {
+                        <td class="tourPlayerScorecardHoleOut"></td>
+                        <td class="tourPlayerScorecardHoleTotal"></td>
+                    }
+                    if (round.HolesInRound == 18 && hole.HoleNumber == 18)
+                    {
+                        <td class="tourPlayerScorecardHoleOut"></td>
+                        <td class="tourPlayerScorecardHoleTotal"></td>
+                    }
+                }
+              </tr>
+        </tbody>
+    </table>      
+}
+
+                

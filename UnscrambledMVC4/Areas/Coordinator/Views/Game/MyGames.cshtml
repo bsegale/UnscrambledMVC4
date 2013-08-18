@@ -1,0 +1,14 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.MyGamesPageView
+
+@{
+    ViewBag.Title = "My Game List";
+}
+
+@{
+    
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_MyGames.cshtml");
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/CoordinatorLeftNavAndBottom.cshtml", Model.leftNavVM);
+}
+
+
+

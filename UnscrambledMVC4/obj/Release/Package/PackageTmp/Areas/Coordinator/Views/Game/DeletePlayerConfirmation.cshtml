@@ -1,0 +1,12 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PageViewDeletePlayerConfirmation
+
+@{
+    ViewBag.Title = "ViewRounds";
+}
+
+
+@{
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_GameNavigations.cshtml", Model.partialViewGameNav);
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_PlayerNavigations.cshtml", Model.partialViewPlayersNav);
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_DeletePlayerConfirmation.cshtml", Model.partialViewDeletePlayerConfirmation);
+}

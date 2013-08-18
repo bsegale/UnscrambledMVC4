@@ -1,0 +1,193 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.SetPlayersPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+
+
+<div id="contentLayer">
+
+<form class="edit-players-form" action="/Coordinator/Game/SetPlayers" method="post" name="edit_players" id="edit_players">
+
+
+ <input type="hidden" name="NumberOfPlayersOrTeams" value="@Model.setPlayersVM.Game.NumberOfPlayersOrTeams" />
+ <input type="hidden" name="GameID" value="@Model.setPlayersVM.Game.ID" />
+
+
+</table>
+
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Please enter the player names.</span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                                   
+                                  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+
+    <table class="formTable" width="100%">
+        <col style="width:5%">
+        <col style="width:0%">
+        <col style="width:45%">
+        <col style="width:50%">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Player</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @{
+        int playerNumber = 1;
+        string playerDivStr = "PlayerError1";
+    }
+
+    @foreach (var player in Model.setPlayersVM.Game.Players)
+    {
+        @:<tr>
+            <td>@playerNumber.ToString()</td>
+            <td>@Html.Hidden("PlayerID" + playerNumber, player.ID)</td>
+            <td><input type="text" class="textBoxPlayerName" value="@player.Name" id="@genPlayerNameID(playerNumber)" name="@genPlayerNameName(playerNumber)" /> </td>
+            <td id="@playerDivStr" class="tdError" style="visibility:@isVisible(playerNumber - 1)" >@errorMessage(playerNumber - 1) </td>
+        @:</tr>
+        
+        playerNumber = playerNumber + 1;
+        playerDivStr = "PlayerError" + playerNumber.ToString();
+    }
+   </tbody>
+
+
+</table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><button id="PlayerSubmitAndStayButton" name="SubmitForm" class="submit" type="submit" value="SaveAndStay">Save Players</button></div>
+        <div class="ansR"><button id="PlayerSubmitAndDoneButton" name="SubmitForm" class="submit" type="submit" value="SaveAndDone">Save & Next</button></div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+                  
+
+   
+
+    
+</form>
+    
+@helper isVisible(int playerNumber)
+{
+    
+    if (Model.setPlayersVM.playerNameErrors[playerNumber].Value == true)
+    {
+        @("visible");
+    }
+    else if (Model.setPlayersVM.playerIndexErrors[playerNumber].Value == true)
+    {
+        @("visible");
+    }
+    else
+    {
+        @("hidden");
+    }
+}
+
+
+
+@helper errorMessage(int playerNumber)
+{
+    
+    if (Model.setPlayersVM.playerNameErrors[playerNumber].Value == true)
+    {
+        @("Bad player name.");
+    }
+    else if (Model.setPlayersVM.playerIndexErrors[playerNumber].Value == true)
+    {
+        @("Index must be between -10 and 50.");
+    }
+    else
+    {
+        @("");
+    }
+}
+
+@helper genPlayerNameID(int playerNumber)
+{
+    string playerIDStr = "PlayerName" + playerNumber.ToString();
+    @(playerIDStr);
+    
+}
+
+@helper genPlayerNameName(int playerNumber)
+{
+    string playerIDStr = "PlayerName" + playerNumber.ToString();
+    @(playerIDStr);
+    
+}
+
+@helper genPlayerIndexID(int playerNumber)
+{
+    string playerIDStr = "PlayerIndex" + playerNumber.ToString();
+    @(playerIDStr);
+    
+}
+
+@helper genPlayerIndexName(int playerNumber)
+{
+    string playerIDStr = "PlayerIndex" + playerNumber.ToString();
+    @(playerIDStr);
+    
+}
+
+@helper isDisabled()
+{
+    if (Model.setPlayersVM.Game.IsHandicapped == "N")
+    {
+        @Html.Raw("style=visibility:hidden;");
+    }
+    else if (Model.setPlayersVM.Game.IsHandicapped == "Y")
+    {   
+        if (Model.setPlayersVM.Game.CalcHandicapsFromIndex == "Y")
+        {
+            @Html.Raw("style=background-color:none;");
+        }
+        else if (Model.setPlayersVM.Game.CalcHandicapsFromIndex == "N")
+        {
+            @Html.Raw("disabled style=background-color:#F0F0F0;");
+        }
+    }
+    
+}
+
+
+

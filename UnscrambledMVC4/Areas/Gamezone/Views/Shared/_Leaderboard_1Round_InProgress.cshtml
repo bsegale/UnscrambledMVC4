@@ -1,0 +1,43 @@
+﻿@model UnscrambledMVC4.Areas.Gamezone.Models.ViewModels.PageViewGameLeaderboard
+
+@{
+    ViewBag.Title = "Leaderboard";
+    int rowCount = 1;
+    int lastPlayerHole = 1;
+}
+    <table class="leaderboard-table">
+        <thead>
+            <tr class="leaderboard-table-header">
+                <td class="leaderboard-td" colspan="5">Leaderboard</td>
+            </tr>
+            <tr class="colhead">
+                <th class="sortable header">POS</th>
+                <th class="sortable header">PLAYER</th>
+                <th class="sortable header">TO PAR</th>
+                <th class="textcenter sortable header">TOTAL</th>
+                <th class="textcenter sortable header">THRU</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in @Model.PlayersOnLeaderboard) 
+            {
+                <tr @AlternateBackground(rowCount)>
+                    <td class="textcenter">@player.GameRank</td>
+                    <td class="player">@player.PlayerName</td>
+                    <td class="textcenter score">@player.GameToPar.ToString()</td>
+                    <td class="textcenter">@player.GameTotal.ToString()</td>
+                    <td class="textcenter">@player.LastCompleteHoleInCurrentRound.ToString()</td>
+                </tr>
+                rowCount ++;
+            }
+        </tbody>
+    </table>
+
+
+@helper AlternateBackground(int rowCount) {
+    if (rowCount == null) 
+    { 
+        rowCount = 1;
+    }
+    <text>class="@(rowCount % 2 == 0 ? "evenrow" : "")"</text>
+}

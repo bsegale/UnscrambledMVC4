@@ -1,0 +1,14 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.ViewGameDetailsPageView
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+@{
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_ViewGameDetails.cshtml");
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/PageLeftNavAndBottom.cshtml", Model.leftNavVM);
+}
+

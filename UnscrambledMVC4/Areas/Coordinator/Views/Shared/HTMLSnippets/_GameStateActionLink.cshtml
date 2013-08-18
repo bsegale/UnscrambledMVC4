@@ -1,0 +1,13 @@
+﻿@model Unscrambled.Domain.Game
+
+@if (Model.GameStateID == 1)
+{
+                @Html.ActionLink("Start", "StartGame", new { id = Model.ID });
+}
+
+@if (Model.GameStateID == 2)
+{
+                @Html.ActionLink("Active", "../../Gamezone/Live/Leaderboard", new { id = Model.ID });
+}
+
+            

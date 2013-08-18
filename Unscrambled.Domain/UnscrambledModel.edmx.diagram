@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3f03fc68b514442e87a5b3adc14f273e" Name="Diagram1">
+        <EntityTypeShape EntityType="UnscrambledDBModel.Coordinator" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.FoursomePlayer" Width="1.5" PointX="17.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.GameLeaderboard" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.Game" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.GameSetupState" Width="1.5" PointX="5.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.GameState" Width="1.5" PointX="0.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.GameType" Width="1.5" PointX="0.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.Hole" Width="1.5" PointX="12.5" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.PlayerGameResult" Width="2" PointX="7.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.PlayerRoundResult" Width="1.5" PointX="12.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.Player" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.RoundFoursome" Width="1.5" PointX="12.5" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.RoundLeaderboard" Width="1.5" PointX="10.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.RoundPlayerHandicap" Width="1.5" PointX="7.5" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.Round" Width="1.5" PointX="10.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.RoundSetupState" Width="1.5" PointX="12.5" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.RoundState" Width="1.5" PointX="8" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.ScorecardHole" Width="1.5" PointX="17.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.Scorecard" Width="1.5" PointX="15" PointY="17.125" IsExpanded="true" />
+        <AssociationConnector Association="UnscrambledDBModel.Coordinator_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_FoursomePlayers_Players" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_FoursomePlayers_RoundFoursomes" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_FoursomePlayers_Scorecards" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_GameLeaderBoard_Game" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_PlayerGameResult_GameLeaderboard" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_RoundLeaderboard_GameLeaderboard" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_GameSetupStates_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_GameStates_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_Players_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_RoundLeaderboards_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_Rounds_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_Scorecards_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.GameType_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_Holes_Rounds" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_PlayerGameResult_Players" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_PlayerGameResult_Scorecard" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_PlayerRoundResults_PlayerGameResults" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_PlayerRoundResult_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_PlayersOnRoundLeaderboard_PlayersOnRoundLeaderboard" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_Scorecards_PlayerRoundResults" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_RoundPlayerHandicaps_Players" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_Foursomes_Rounds" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_Scorecards_Foursomes" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_RoundPlayerHandicaps_RoundPlayerHandicaps" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_Rounds_RoundStates" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_RoundSetupStates_Rounds" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_Scorecards_Rounds" ManuallyRouted="false" />
+        <AssociationConnector Association="UnscrambledDBModel.FK_ScorecardHoles_Scorecard" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UnscrambledDBModel.sysdiagram" Width="1.5" PointX="4.0815793294839464" PointY="30.24461869813717" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

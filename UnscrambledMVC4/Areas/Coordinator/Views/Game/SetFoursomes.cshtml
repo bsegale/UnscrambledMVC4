@@ -1,0 +1,10 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.SetFoursomesPageView
+
+
+
+@{
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/PageTop.cshtml");
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_SetFoursomes.cshtml");
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/PageLeftNavAndBottom.cshtml", Model.leftNavVM);
+
+}

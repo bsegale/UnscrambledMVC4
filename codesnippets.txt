@@ -1,0 +1,32 @@
+ public void dbUpdate()
+        {
+            var gameLeaderboards = db.GameLeaderboards.ToList();
+
+            UnscrambledDB db1 = new UnscrambledDB();
+            UnscrambledDB db2 = new UnscrambledDB();
+            UnscrambledDB db3 = new UnscrambledDB();
+
+            foreach (var gameLeaderboard in gameLeaderboards)
+            {
+                var playerGameResults = db.PlayerGameResults.Where(p => p.GameLeaderboardID == gameLeaderboard.ID).ToList();
+                
+                foreach (var playerGameResult in playerGameResults)
+                {
+                    var scorecards = db.Scorecards.Where(h => h.PlayerGameResultID == playerGameResult.ID).ToList();
+                    foreach (var scorecard in scorecards)
+                    {
+                        scorecard.GameId = gameLeaderboard.GameID;
+
+                        try
+                        {
+                            db.Entry(scorecard).State = EntityState.Modified;
+                            db.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.InnerException);
+                        }
+                    }
+                }
+            }
+        }

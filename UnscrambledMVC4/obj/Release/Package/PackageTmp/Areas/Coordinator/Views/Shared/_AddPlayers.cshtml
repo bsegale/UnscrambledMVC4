@@ -1,0 +1,18 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PartialViewAddPlayers
+           
+
+<h2>Add Players</h2>
+
+<h3>How many players do you want to add to the game?</h3>
+<p>You currently have <strong>@Model.Game.NumberOfPlayersOrTeams</strong> in your game.</p>
+
+<form class="game-details-form" action="/Coordinator/Game/AddPlayers" method="post" name="add_player" />
+@Html.Hidden("GameID", Model.Game.ID)
+
+<p>
+    <input id="NumberOfPlayersToAdd" name="NumberOfPlayersToAdd" type="text" />
+</p>
+    <p>
+        <button id="AddPlayersButton" name="FormSubmit" class="submit" type="submit" value="delete">Add Players</button>
+        <button id="CancelAddPlayersButton" name="FormSubmit" class="submit" type="submit" value="cancel">Cancel</button>
+    </p>

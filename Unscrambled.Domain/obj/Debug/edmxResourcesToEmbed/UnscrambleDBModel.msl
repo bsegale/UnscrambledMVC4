@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UnscrambledDBModelStoreContainer" CdmEntityContainer="UnscrambledDBEntities">
+    <EntitySetMapping Name="Coordinators">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.Coordinator">
+        <MappingFragment StoreEntitySet="Coordinators">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoursomePlayers">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.FoursomePlayer">
+        <MappingFragment StoreEntitySet="FoursomePlayers">
+          <ScalarProperty Name="RoundFoursomeID" ColumnName="RoundFoursomeID" />
+          <ScalarProperty Name="ScorecardID" ColumnName="ScorecardID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameLeaderboards">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.GameLeaderboard">
+        <MappingFragment StoreEntitySet="GameLeaderboards">
+          <ScalarProperty Name="CurrentRoundNumber" ColumnName="CurrentRoundNumber" />
+          <ScalarProperty Name="NumberOfPlayers" ColumnName="NumberOfPlayers" />
+          <ScalarProperty Name="NumberOfRounds" ColumnName="NumberOfRounds" />
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Games">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.Game">
+        <MappingFragment StoreEntitySet="Games">
+          <ScalarProperty Name="CalcHandicapsFromIndex" ColumnName="CalcHandicapsFromIndex" />
+          <ScalarProperty Name="IsHandicapped" ColumnName="IsHandicapped" />
+          <ScalarProperty Name="GameStateID" ColumnName="GameStateID" />
+          <ScalarProperty Name="NumberOfPlayersOrTeams" ColumnName="NumberOfPlayersOrTeams" />
+          <ScalarProperty Name="NumberOfRounds" ColumnName="NumberOfRounds" />
+          <ScalarProperty Name="GameTypeID" ColumnName="GameTypeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="JoinCode" ColumnName="JoinCode" />
+          <ScalarProperty Name="CoordinatorID" ColumnName="CoordinatorID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameSetupStates">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.GameSetupState">
+        <MappingFragment StoreEntitySet="GameSetupStates">
+          <ScalarProperty Name="SetupStateGameDetails" ColumnName="SetupStateGameDetails" />
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameStates">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.GameState">
+        <MappingFragment StoreEntitySet="GameStates">
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameTypes">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.GameType">
+        <MappingFragment StoreEntitySet="GameTypes">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Holes">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.Hole">
+        <MappingFragment StoreEntitySet="Holes">
+          <ScalarProperty Name="Handicap" ColumnName="Handicap" />
+          <ScalarProperty Name="Par" ColumnName="Par" />
+          <ScalarProperty Name="HoleNumber" ColumnName="HoleNumber" />
+          <ScalarProperty Name="RoundID" ColumnName="RoundID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayerGameResults">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.PlayerGameResult">
+        <MappingFragment StoreEntitySet="PlayerGameResults">
+          <ScalarProperty Name="GameNotAdjustedTotal" ColumnName="GameNotAdjustedTotal" />
+          <ScalarProperty Name="GameNotAdjustedPar" ColumnName="GameNotAdjustedPar" />
+          <ScalarProperty Name="GameAdjustedTotal" ColumnName="GameAdjustedTotal" />
+          <ScalarProperty Name="GameAdjustedPar" ColumnName="GameAdjustedPar" />
+          <ScalarProperty Name="GameRank" ColumnName="GameRank" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="GameLeaderboardID" ColumnName="GameLeaderboardID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayerRoundResults">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.PlayerRoundResult">
+        <MappingFragment StoreEntitySet="PlayerRoundResults">
+          <ScalarProperty Name="RoundNumberInGame" ColumnName="RoundNumberInGame" />
+          <ScalarProperty Name="LastCompletedHole" ColumnName="LastCompletedHole" />
+          <ScalarProperty Name="PlayerGameResultID" ColumnName="PlayerGameResultID" />
+          <ScalarProperty Name="ScorecardID" ColumnName="ScorecardID" />
+          <ScalarProperty Name="RoundNotAdjustedTotal" ColumnName="RoundNotAdjustedTotal" />
+          <ScalarProperty Name="RoundNotAdjustedPar" ColumnName="RoundNotAdjustedPar" />
+          <ScalarProperty Name="RoundAdjustedTotal" ColumnName="RoundAdjustedTotal" />
+          <ScalarProperty Name="RoundAdjustedPar" ColumnName="RoundAdjustedPar" />
+          <ScalarProperty Name="RoundRank" ColumnName="RoundRank" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="RoundLeaderBoardID" ColumnName="RoundLeaderBoardID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Players">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.Player">
+        <MappingFragment StoreEntitySet="Players">
+          <ScalarProperty Name="Round4Handicap" ColumnName="Round4Handicap" />
+          <ScalarProperty Name="Round3Handicap" ColumnName="Round3Handicap" />
+          <ScalarProperty Name="Round2Handicap" ColumnName="Round2Handicap" />
+          <ScalarProperty Name="Round1Handicap" ColumnName="Round1Handicap" />
+          <ScalarProperty Name="PlayerIndex" ColumnName="PlayerIndex" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayerSetupStates">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.PlayerSetupState">
+        <MappingFragment StoreEntitySet="PlayerSetupStates">
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoundFoursomes">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.RoundFoursome">
+        <MappingFragment StoreEntitySet="RoundFoursomes">
+          <ScalarProperty Name="FoursomeNumberInRound" ColumnName="FoursomeNumberInRound" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RoundID" ColumnName="RoundID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoundLeaderboards">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.RoundLeaderboard">
+        <MappingFragment StoreEntitySet="RoundLeaderboards">
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+          <ScalarProperty Name="RoundNumberInGame" ColumnName="RoundNumberInGame" />
+          <ScalarProperty Name="GameLeaderboardID" ColumnName="GameLeaderboardID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoundPlayerHandicaps">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.RoundPlayerHandicap">
+        <MappingFragment StoreEntitySet="RoundPlayerHandicaps">
+          <ScalarProperty Name="CalcHandicapFromIndex" ColumnName="CalcHandicapFromIndex" />
+          <ScalarProperty Name="Handicap" ColumnName="Handicap" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="RoundID" ColumnName="RoundID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rounds">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.Round">
+        <MappingFragment StoreEntitySet="Rounds">
+          <ScalarProperty Name="RoundStateID" ColumnName="RoundStateID" />
+          <ScalarProperty Name="Slope" ColumnName="Slope" />
+          <ScalarProperty Name="FullRoundTotal" ColumnName="FullRoundTotal" />
+          <ScalarProperty Name="Back9Total" ColumnName="Back9Total" />
+          <ScalarProperty Name="Front9Total" ColumnName="Front9Total" />
+          <ScalarProperty Name="HolesInRound" ColumnName="HolesInRound" />
+          <ScalarProperty Name="RoundNumberInGame" ColumnName="RoundNumberInGame" />
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoundSetupStates">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.RoundSetupState">
+        <MappingFragment StoreEntitySet="RoundSetupStates">
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="RoundID" ColumnName="RoundID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoundStates">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.RoundState">
+        <MappingFragment StoreEntitySet="RoundStates">
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScorecardHoles">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.ScorecardHole">
+        <MappingFragment StoreEntitySet="ScorecardHoles">
+          <ScalarProperty Name="AdjustedScore" ColumnName="AdjustedScore" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Handicap" ColumnName="Handicap" />
+          <ScalarProperty Name="Par" ColumnName="Par" />
+          <ScalarProperty Name="HoleNumber" ColumnName="HoleNumber" />
+          <ScalarProperty Name="ScorecardID" ColumnName="ScorecardID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Scorecards">
+      <EntityTypeMapping TypeName="UnscrambledDBModel.Scorecard">
+        <MappingFragment StoreEntitySet="Scorecards">
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="FoursomeID" ColumnName="FoursomeID" />
+          <ScalarProperty Name="RoundID" ColumnName="RoundID" />
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+          <ScalarProperty Name="Strokes" ColumnName="Strokes" />
+          <ScalarProperty Name="Slope" ColumnName="Slope" />
+          <ScalarProperty Name="FullRoundTotal" ColumnName="FullRoundTotal" />
+          <ScalarProperty Name="Back9Total" ColumnName="Back9Total" />
+          <ScalarProperty Name="Front9Total" ColumnName="Front9Total" />
+          <ScalarProperty Name="PlayerRoundResultID" ColumnName="PlayerRoundResultID" />
+          <ScalarProperty Name="PlayerGameResultID" ColumnName="PlayerGameResultID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

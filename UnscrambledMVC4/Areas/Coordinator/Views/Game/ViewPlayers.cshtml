@@ -1,0 +1,20 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.ViewPlayersPageView
+
+@{
+    ViewBag.Title = "Players";
+}
+
+
+@{
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/PageTop.cshtml");
+    if (Model.viewPlayerVM.Game.IsHandicapped == "Y")
+    {
+        Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_ViewPlayers.cshtml");
+    }
+    else
+    {
+        Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_ViewPlayersNoCaps.cshtml");
+    }
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/PageLeftNavAndBottom.cshtml", Model.leftNavVM);
+
+}

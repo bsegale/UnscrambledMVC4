@@ -1,0 +1,76 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.ChangeSetHandicapsConfirmationPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">Change to Manual Handicap Confirmation</td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"><a href="/Coordinator/Game/MyGames/144">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+
+<div id="contentLayer">
+
+<form class="change-sethandicap-confirmation-form" action="/Coordinator/Game/ChangeSetHandicapsConfirmed" method="post" name="change_sethandicps_manually" id="change_sethandicps_manually">
+
+
+ <input type="hidden" name="GameID" value="@Model.changeSetHandicapsVM.game.ID" />
+ <input type="hidden" name="RoundID" value="@Model.changeSetHandicapsVM.RoundID" />
+
+
+</table>
+
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Are you sure you want to change your game to set handicaps manually?</span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><button id="ChangeSetHandicapsCancel" name="SubmitForm" class="submit" type="submit" value="Cancel">Cancel</button></div>
+        <div class="ansR"><button id="ChangeSetHandicapsSubmit" name="SubmitForm" class="submit" type="submit" value="Save">YES</button></div>
+    </div>
+
+</div>
+
+    
+</form>
+    
+
+
+
+
+
+

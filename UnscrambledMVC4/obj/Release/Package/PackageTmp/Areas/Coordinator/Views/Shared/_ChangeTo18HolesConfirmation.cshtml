@@ -1,0 +1,15 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.Round
+
+<h2>Warning</h2>
+
+<h3>Are you sure you want to change to 18 holes?</h3></br>
+<p>This will add holes 10 thru 18 to your existing round.</p>
+
+<form class="set-round-form" action="/Coordinator/Game/ChangeHoles" method="post" name="change_holes">
+@Html.Hidden("RoundID", Model.ID)
+    <p>
+        <input type="submit" name="SubmitForm" value="Switch To 18" />
+        <input type="submit" name="SubmitForm" value="Never Mind" />|
+        @Html.ActionLink("Back to My Game", "MyGames")
+    </p>
+</form>

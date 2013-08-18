@@ -1,0 +1,16 @@
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Debug\Unscrambled.Domain.dll
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Debug\Unscrambled.Domain.pdb
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\obj\Debug\Unscrambled.Domain.dll
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\obj\Debug\Unscrambled.Domain.pdb
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Debug\Unscrambled.Domain.dll.config
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Debug\EntityFramework.dll
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Debug\EntityFramework.xml
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\obj\Debug\Unscrambled.Domain.csprojResolveAssemblyReference.cache
+C:\Users\bsegale\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Debug\Unscrambled.Domain.dll.config
+C:\Users\bsegale\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Debug\Unscrambled.Domain.dll
+C:\Users\bsegale\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Debug\Unscrambled.Domain.pdb
+C:\Users\bsegale\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Debug\EntityFramework.dll
+C:\Users\bsegale\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Debug\EntityFramework.xml
+C:\Users\bsegale\vsapps\UnscrambledMVC4\Unscrambled.Domain\obj\Debug\Unscrambled.Domain.csprojResolveAssemblyReference.cache
+C:\Users\bsegale\vsapps\UnscrambledMVC4\Unscrambled.Domain\obj\Debug\Unscrambled.Domain.dll
+C:\Users\bsegale\vsapps\UnscrambledMVC4\Unscrambled.Domain\obj\Debug\Unscrambled.Domain.pdb

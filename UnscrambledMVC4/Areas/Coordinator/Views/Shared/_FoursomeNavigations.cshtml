@@ -1,0 +1,37 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PartialViewFoursomeNav
+@using Unscrambled.Domain
+
+@{
+    if (Model.Rounds.Count() > 1)
+    {
+        // FoursomeNav(Model.Rounds);
+        <table class="game_navigations">
+            <tr>
+                <td><label>Choose Round</label></td>
+                @foreach(var round in Model.Rounds) 
+                {
+                    <td>@Html.ActionLink("Round " + round.RoundNumberInGame, "SetFoursomes", new { id = round.GameID, roundId = round.ID }) | </td>
+                }
+            </tr>
+    </table>
+    }
+
+    
+}
+
+@helper FoursomeNav (IEnumerable<Round> rounds) {
+    
+    <table class="game_navigations">
+            <tr>
+                <td><label>Choose Round</label></td>
+                @foreach(var round in rounds) 
+                {
+                    <td>@Html.ActionLink("Round " + round.RoundNumberInGame, "SetFoursome", new { id = round.ID }) | </td>
+                }
+            </tr>
+    </table>
+}
+        
+
+
+

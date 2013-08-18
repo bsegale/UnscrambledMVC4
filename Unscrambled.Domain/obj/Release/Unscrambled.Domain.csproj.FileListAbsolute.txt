@@ -1,0 +1,4 @@
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Release\Unscrambled.Domain.dll
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\bin\Release\Unscrambled.Domain.pdb
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\obj\Release\Unscrambled.Domain.dll
+C:\Users\bryan\workspace\vsapps\UnscrambledMVC4\Unscrambled.Domain\obj\Release\Unscrambled.Domain.pdb

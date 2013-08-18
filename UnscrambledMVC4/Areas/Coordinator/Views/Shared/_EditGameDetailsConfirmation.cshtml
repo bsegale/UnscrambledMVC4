@@ -1,0 +1,42 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.EditGameDetailsConfirmationPageView
+
+<div id="contentLayer">
+<form class="game-details-form" action="/Coordinator/Game/EditGameConfirmed" method="post" name="edit_game_confirmed"  >
+    @Html.Hidden("NumberOfPlayersToStart", Model.editGameDetailsConfirmationVM.NumberOfPlayersToStart)
+    @Html.Hidden("NumberOfPlayersToStart", Model.editGameDetailsConfirmationVM.NumberOfRoundsToStart)
+    @Html.Hidden("NumberOfPlayersToDelete", Model.editGameDetailsConfirmationVM.NumberOfPlayersToDelete)
+    @Html.Hidden("NumberOfRoundsToDelete", Model.editGameDetailsConfirmationVM.NumberOfRoundsToDelete)
+    @Html.Hidden("NumberOfPlayersAfterDelete", Model.editGameDetailsConfirmationVM.NumberOfPlayersAfterDelete)
+    @Html.Hidden("NumberOfRoundsAfterDelete", Model.editGameDetailsConfirmationVM.NumberOfRoundsAfterDelete)
+    @Html.Hidden("GameID", Model.editGameDetailsConfirmationVM.GameID)
+    @Html.Hidden("Name", Model.editGameDetailsConfirmationVM.EditedGameDetails.Name);
+    @Html.Hidden("NumberOfPlayersOrTeams", Model.editGameDetailsConfirmationVM.EditedGameDetails.NumberOfPlayersOrTeams);
+    @Html.Hidden("NumberOfRounds", Model.editGameDetailsConfirmationVM.EditedGameDetails.NumberOfRounds)
+    @Html.Hidden("IsHandicapped", Model.editGameDetailsConfirmationVM.EditedGameDetails.IsHandicapped)
+    
+    @Html.Hidden("GameTypeID", Model.editGameDetailsConfirmationVM.EditedGameDetails.GameTypeID)
+    @Html.Hidden("ID", Model.editGameDetailsConfirmationVM.EditedGameDetails.ID)
+
+
+@{
+    int playerCount = Model.editGameDetailsConfirmationVM.NumberOfPlayersToStart;
+    int roundCount = Model.editGameDetailsConfirmationVM.NumberOfRoundsToStart;
+}
+
+@{
+    if (@Model.editGameDetailsConfirmationVM.NumberOfPlayersToDelete > 0 && Model.editGameDetailsConfirmationVM.NumberOfRoundsToDelete < 1)
+    {
+        Html.RenderPartial("~/Areas/Coordinator/Views/Shared/HTMLSnippets/_EditGameDetailsConfirmationMessage1.cshtml");
+    }
+
+}
+
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><a href="@Url.Action("GameDetails", "Game", new { id = @Model.editGameDetailsConfirmationVM.GameID})" class="linkButton"><span class="textInLinkButton">Cancel</span></a></div>
+        <div class="ansR"><button id="PlayerSubmitAndDoneButton" name="SubmitForm" class="submit" type="submit" value="SaveAndDone">Confirm</button></div>
+    </div>
+
+</form>
+
+</div>
+

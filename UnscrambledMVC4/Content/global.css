@@ -1,0 +1,1395 @@
+/* ----------------------------------------------------------------------------
+	GLOBAL.CSS
+	All global styles. Do not put section-specific or Tour-specific styles in this document.
+	*/
+		/* NOTE: Anything beginning with [*:first-child+html] is an IE7-specific hack */
+/*	----------------------------------------------------------------------------
+	Table Of Contents
+	1. Globals
+		A. Links
+		B. Tables
+		C. Spacers
+	2. Structure
+		A. Container
+			1. Subpage Content
+			2. Subpage Right Rail
+		B. Header
+		C. Sponsored Links
+			1. Homepage
+			2. Subpages
+		D. Footer
+*/
+/*	----------------------------------------------------------------------------
+	(1) GLOBALS */
+*, form, input { margin:0; padding:0;}
+a img { border: none; }
+a { outline: none !important; }
+img { -ms-interpolation-mode: bicubic; }
+.hidden { display: none; visibility: hidden; }
+.hide { visibility: hidden; display: none !important; }
+.show { visibility: visible; display: block !important; }
+.hideInline { visibility: hidden; display: inline; }
+.showInline { visibility: hidden; display: inline; }
+.b { font-weight:bold; }
+.c { text-align:center; }
+.tourFSize10 { font-size: 10px;	}
+div.tourClear { position: relative; font-size: 0px; height: 0px; clear: both; _margin-bottom:-2px;}
+#sidebar1 li, #sidebar2 li, #sidebar300x250 li, #sidebar160x600 li{
+	text-align:left !important;
+}
+
+/*	----------------------------------------
+	(1a) GLOBALS - LINKS */
+a.more:link,
+a.more:active,
+a.more:visited { color: #3C6E0B; text-decoration:none; }
+a.more:hover { text-decoration:underline; }
+
+a:hover img {
+	text-decoration:none;
+}
+
+
+h1 a:link,
+h1 a:visited,
+h1 a:active { text-decoration: none; }
+h1 a:hover { text-decoration: underline; }
+span.fecPur {color:#590692;}
+span.fecOrg {color:#FF6801;}
+span.fecGrn {color:#00CC01;}
+
+/*	----------------------------------------
+	(1b) GLOBALS - TABLES */
+
+table { font: 10px Verdana, Arial, Helvetica, sans-serif;}
+
+/*	----------------------------------------
+	(1c) GLOBALS - SPACERS */
+.tourSpacer3 { 	height: 3px;	}
+.tourSpacer10 { width: 10px; height: 10px;	}
+.tourSpacer20 { width: 20px; height: 20px;	}
+
+/*	----------------------------------------------------------------------------
+	(2) STRUCTURE */
+/*	----------------------------------------
+	(2a) STRUCTURE - CONTAINER */
+#tourContainer {
+	width:1000px;
+	height:auto;
+	margin:0 auto;
+	text-align:center;
+	background:#FFF;
+}
+	#tourContent {
+		background: #fff none;
+		position:relative;
+		top:0px;
+		left:0px;
+		text-align:left;
+	}
+/*  ----------------------------------------
+	SUBPAGE CONTENT */
+#tourFullContent {
+	position:relative;
+	float:left;
+	width:670px;
+	height:auto;
+	margin-left:10px;
+	_margin-left:5px;
+}
+/*  ----------------------------------------
+	SUBPAGE RIGHT RAIL */
+#tourFullRight {
+	position:relative;
+	float:left;
+	width:300px;
+	height:auto;
+	margin-left: 10px;
+	overflow: visible !important;
+}
+	#tour300Ad {
+		width:300px;
+		height:250px;
+		padding-bottom: 0 !important;
+	}
+/*  ----------------------------------------
+	(2b) STRUCTURE - HEADER */
+
+#tour728Ad {
+	position:relative;
+	margin:0 auto;
+	width:100%;
+	height:90px;
+	text-align:center;
+	background:#071131 !important;
+	z-index:9999 !important;
+	padding-top:0px !important;
+	padding-bottom:0px !important;
+}
+#tourHeadContainer {
+	position:relative;
+	display:table;
+	top:-20px;
+	width:100%;
+	height:auto;
+}
+
+#tourHeaderTopTours, #tourHeaderLogo,
+#tourHeaderTitle, #tourHeaderMainNav,
+#tourHeaderLoginSearch #tourHeaderLogin,
+#tourHeaderLoginSearch #tourHeaderSearhFrom {
+	float: left;
+}
+
+/* Drop Down Nav Defaults */
+.tourSOSMain, .tourSOSNavMain {
+	float: left !important;
+	*position: relative !important;
+	*z-index: 50;
+}
+ .tourSOSNavMain {
+	 *float: none !important;
+ }
+.tourSOSSub li, .tourSOSNavSub li { display: block !important; zoom:1; }
+.tourSOSSub li a, .tourSOSNavSub li a { 
+	display: block !important;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 9px;
+	font-weight:bold;
+}
+.tourSOSSub, .tourSOSNavSub {
+	background: transparent none;
+	position: absolute;
+	left:-999em;
+	z-index: 101;
+	padding-bottom: 15px;
+	*left:-999em !important;
+
+}
+.tourSOSMain:hover .tourSOSSub, .tourSOSMain.sfhover .tourSOSSub
+{
+	left: auto;
+	top: 0px;
+	*left: 0px !important;
+	*z-index: 50;
+}
+
+a.tourSOSTextLink { padding:0 10px; _width:84%; }
+.tourSOSSubLogo {
+	margin: 5px auto;
+	text-align:center;
+}
+
+/* Top Tour Drop Down Styles */
+#tourSOSSubChampsMain, #tourSOSSubNWTMain, #tourSOSSubTourMain {
+	display: block !important;
+	height: 25px;
+}
+ /* Champs */
+#tourSOSSubChampsSub {
+	border-top: 2px solid #ce1a01;
+	border-bottom: 2px solid #ce1a01;
+	background-color: #dae7f0;
+	width: 135px;
+}
+#tourSOSSubChampsSub a.tourSOSTextLink { color: #ce1a01; }
+#tourSOSSubChampsSub a.tourSOSTextLink:hover { background-color: #fff; color: #6e0901; }
+
+	/* NWT */
+#tourSOSSubNWTSub {
+	border-top: 2px solid #0388b3;
+	border-bottom: 2px solid #0388b3;
+	background-color: #dae7f0;
+	width: 140px;
+}
+#tourSOSSubNWTSub a.tourSOSTextLink { color:#0d5a85; }
+#tourSOSSubNWTSub a.tourSOSTextLink:hover { background-color: #fff; color: #003d56; }
+
+/* Tour */
+#tourSOSSubTourSub {
+	border-top: 2px solid #0388b3;
+	border-bottom: 2px solid #0388b3;
+	background-color: #dae7f0;
+	width: 126px;
+}
+#tourSOSSubTourSub a.tourSOSTextLink { color:#0d5a85; }
+#tourSOSSubTourSub a.tourSOSTextLink:hover { background-color: #fff; color: #003d56; }
+
+
+#tourHeaderGlobalNav {
+	 float: right !important;
+    font-size: 11px !important;
+    margin: 12px 5px 0 0;
+    width: 425px; 
+}
+
+#tourHeaderGlobalNav li {
+	padding: 0 4px;
+}
+#tourHeaderGlobalNav a, #tourHeaderLogin, #tourHeaderLogin a {
+	color: #fff;
+	font-size: 10px Verdana,Arial,Helvetica,sans-serif !important;
+}
+
+#tourHeaderLogin {
+	margin-top:5px;
+	padding-right: 10px;
+}
+
+#tourHeaderTopNavCont {  }
+
+/* IE 6 & 7 fix to prevent the SoS Nav from going behind content. */
+#tourFullContent {
+	margin-top: 10px;
+	*z-index: -1 !important;
+}
+#tourFullRight {
+	padding-top: 10px;
+}
+
+#tourHeaderLoginSearch {
+	position:absolute;
+	right: 0;
+	bottom: 0;
+	_left: 595px;
+}
+
+
+
+#tourBreakingNewsTopperCont { padding: 5px 0; }
+#tourBreakingNewsTopper {
+	padding: 5px;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+/*  -----------------------------------------
+	(2c) SPONSORED LINKS */
+/*  -----------------------------------------
+	(2c1) SPONSORED LINKS - HOMEPAGE */
+#tourSponsoredLinks {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:100%;
+	/*height:90px;*/
+	height:10px;
+	padding:20px auto 10px;
+	text-align:left;
+	font-weight:bold;
+	color:#666;
+	background: #fff none;
+}
+	#tourSponsoredLinks a {
+		color:#24659B;
+		text-decoration:none;
+		padding:2px;
+	}
+	#tourSponsoredLinksHeader {
+		width:98%;
+		padding:5px;
+		border-bottom:1px solid #999;
+		color:#999;
+	}
+	div.tourSponsLinksPod {
+		width:225px;
+		height:auto;
+		margin:20px 10px;
+		float:left;
+	}
+		div.tourSponsPodHead {
+			font-size:12px;
+		}
+/*  -----------------------------------------
+	(2c2) SPONSORED LINKS - SUBPAGES */
+#tourSponsoredLinksSub {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:670px;
+	/*height:155px;*/
+	height:10px;
+	margin:20px 0 10px 0;
+	text-align:left;
+	font-weight:bold;
+	color:#666;
+	overflow:hidden;
+}
+	#tourSponsoredLinksSub a {
+		color:#24659B;
+		text-decoration:none;
+		padding:2px;
+	}
+	div.tourSponsLinksPodSub {
+		width:310px;
+		height:auto;
+		margin:5px;
+		float:left;
+	}
+/*	----------------------------------------
+	(2d) STRUCTURE - FOOTER 
+
+	OLD AND NOT USED ANY MORE!!!
+#tourFooter {
+	position:relative;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:270px;
+	background:#002248 url(http://i.cdn.turner.com/pgatour/.element/img/3.0/global/footer.jpg) repeat-x center top;
+	text-align:left;
+	color:#C6E0F9;
+}
+	div.tourFooterLinks {
+		float:left;
+		width:180px;
+		margin:20px 10px;
+		_margin:20px 7px;
+	}
+	div.tourFooterHeader {
+		color:#C6E0F9;
+		font-size:12px;
+		font-weight:bold;
+	}
+	#tourFooter a {
+		color:#698CB4;
+		text-decoration:none;
+	}
+	#tourFooter a:hover {
+		color:#3CB2E4;
+	}
+	#tourFooter ul {
+		padding:5px 0px;
+	}
+	#tourFooter li {
+		list-style:none outside;
+	}
+	#tourFooter li:before 	{
+		content:"\003e"; color:#698CB4; padding-right:4px;
+	}
+	div.tourFooterCopyright {
+		width:100%;
+		height:auto;
+		color:#698CB4;
+		font-size:10px;
+		text-align:center;
+	}
+	*/
+/*	----------------------------------------
+	(3a) Subpages - Left */
+div.tourLeftContent {
+	position: relative;
+	float: left;
+	width: 670px;
+	height: auto;
+	margin: 0 10px 0 10px;
+	overflow: hidden;
+	*z-index: -1;
+}
+
+/*	----------------------------------------
+	(3b) Subpages - Right */
+div.tourRightRail {
+	position: relative;
+	float: left;
+	width: 300px;
+	height: auto;
+	margin-left: 0px !important;
+	overflow: visible !important;
+}
+/* IE7 Hack */
+*:first-child + HTML .tourRightRail {	LEFT: 0px !important; }
+
+div.ieContainerStyleRight {
+    display: inline; clear: right !important; float: right; margin-left: 10px; min-width:170px;
+}
+
+div.ieContainerStyleLeft {
+    display: inline; clear: left !important; float: left; margin-right: 10px; min-width:170px;
+}
+
+div.ieImgContainerStyleRight {
+    display: inline; clear: right !important; float: right; margin-left: 5px;
+}
+
+div.ieImgContainerStyleLeft {
+    display: inline; clear: left !important; float: left; margin-right: 5px;
+}
+
+div.ieContainerStyleCenter {
+    width:100%;
+}
+
+div.tourStoryCVPmain {
+    width:640px !important;
+    min-height:360px;
+    _height:360px;
+    background-color:rgb(0,0,0);
+}
+
+div.tourStoryCVPinline {
+    width:288px !important;
+    min-height:162px;
+    _height:162px;
+    background-color:rgb(0,0,0);
+}
+
+/**************************
+ New Homepages structures
+ **************************/
+#tourHPTopCont, #tourHPBotCont {
+	*zoom:1;
+	position:relative;
+}
+
+#tourHPTopCont {
+	border-bottom: none !important;
+	*z-index: -1; /* IE 6 & 7 Hack for SoS DD */
+	*zoom:1;
+}
+
+#tourHPBotLeftCont, #tourHPTopLeftCont {
+	float:left;
+	width: 652px;
+	background: #FFF none;
+
+}
+
+#tourHPTopLeftCont { background-color: #FFF; }
+
+/* Standard T1 Story */
+#tourHPT1Box {
+	position: relative;
+	width: 640px;
+	height: 493px;
+	border-top: none !important;
+	border-left: none !important;
+	background-color: #000;
+}
+
+#tourT1ViewPort {
+	position:relative;
+	height: 360px;
+}
+
+#tourHPT1Box .tourT1DescriptonBox {
+	position: absolute;
+	filter:alpha(opacity=90);
+	-moz-opacity:.90;
+	opacity:.90;
+	height: 82px;
+	width:100%;
+	bottom:0;
+	left:0;
+}
+
+#tourHPT1Box .tourT1DescriptonText, #tourHPT1Celeb .tourT1DescriptonText {
+	padding: 15px 5px 11px 30px;
+	position: absolute;
+	height: 65px;
+	width:605px;
+	bottom:0;
+	left: 0;
+	color: #dadada;
+	/*overflow:auto;*/
+	font-size: 10px;
+    _font-size: 8pt;
+	line-height: 20px;
+}
+
+#tourHPT1Box .tourT1DescriptonText p, #tourHPT1Celeb .tourT1DescriptonText p {
+	font-size: 12px;
+	line-height: 14px;
+/*
+	font-size: 9pt;
+	height:  20px;
+	overflow: hidden;
+*/
+}
+
+#tourHPT1Box .tourT1PhotoCredit {
+	position: absolute;
+	color: #7F7F7F;
+	right: 5px;
+	top: 280px;
+	padding-right:5px;
+	font-size: 9px;
+}
+
+#tourHPT1Box .tourT1DescriptonText h1, #tourHPT1Box .tourT1DescriptonText h1 a, #tourHPT1Celeb .tourT1DescriptonText h1, #tourHPT1Celeb .tourT1DescriptonText h1 a {
+	color: #dadada;
+	font-size: 27px;
+	line-height: 33px;
+	height: 33px;
+	overflow: hidden;
+    font-weight:normal;
+	padding-bottom:2px;
+}
+
+#tourHPT1Box .tourT1DescriptonText ul {
+	overflow:hidden;
+	height:20px;
+	zoom:1;
+}
+
+#tourHPT1Box .tourT1DescriptonText ul li, #tourHPT1Celeb .tourT1DescriptonText ul li{
+	font-weight: bold;
+	list-style: none;
+	padding-bottom: 5px;
+}
+
+#tourHPT1Box .tourT1Bullets a {
+}
+
+#tourT1CarouselCont {
+	position: absolute;
+	float: left;
+	width: 640px;
+	top: 360px;
+	padding: 0 0 15px;
+}
+
+
+.tourT1Breaking, .tourT1Live {
+	height:32px;
+	margin: 0 0 0 -30px;
+	padding-left:85px;
+	width:470px;
+
+}
+
+.tourT1Breaking { background:transparent url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/r/breakingTag.gif) no-repeat scroll 0 0; }
+.tourT1Live { background:transparent url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/r/liveTag.gif) no-repeat scroll 0 0; }
+
+
+#tourT1CarouselCont .previous_button, #tourT1CarouselCont .next_button {
+	float:left;
+	width:30px;
+	height: 115px;
+}
+
+#tourT1CarouselCont .previous_button_over, #tourT1CarouselCont .next_button_over {
+	cursor: pointer;
+}
+
+#tourT1CarouselCont .previous_button_disabled, #tourT1CarouselCont .next_button_disabled {
+	cursor: default !important;
+}
+
+.tourT1CarouselButSpace {
+	width:30px;
+	height: 115px;
+}
+#tourT1Carousel {
+	position:relative;
+	float: left;
+	width: 580px;
+	height:115px;
+	overflow:hidden;
+}
+
+#tourT1Carousel ul {
+	position:relative;
+	width:10000px;
+	list-style:none;
+}
+
+#tourT1Carousel ul li {
+	display:block;
+	position:relative;
+	float:left;
+	width: 143px;
+	height: 114px;
+	margin: 0 auto;
+	text-align:center;
+	border-top: 0 !important;
+	cursor: pointer;
+}
+
+#tourT1Carousel ul li h2 {
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	height: 13px;
+	overflow: hidden;
+	padding: 2px 5px 0;
+	width: 130px;
+}
+
+/* Google Chrome/ MAC Safari Hack */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+		#tourT1Carousel ul li h2, .tourT1DescriptonText h1, .tourT1MoreLink {
+			font-weight: normal !important;
+		}
+}
+
+#tourT1Carousel ul li p {
+	color: #83878a;
+	font-size: 10px;
+	height: 12px;
+	padding: 0px 5px;
+	overflow: hidden;
+	width: 130px;
+}
+#tourT1Carousel ul li img {
+	margin: 5px;
+}
+.tourT1CarouselOverLay {
+	position: absolute;
+	width: 144px;
+	height: 114px;
+	top:0;
+	left:0;
+	margin: 0 !important;
+	border: 0px none !important;
+}
+
+/* Celeb Story */
+#tourHPT1Celeb {
+	width: 640px;
+	border-top: none !important;
+	border-left: none !important;
+	position:relative;
+	height: 493px;
+}
+
+#tourHPT1Celeb .tourT1DescriptonBox {
+	position: absolute;
+	filter:alpha(opacity=85);
+	-moz-opacity:.85;
+	opacity:.85;
+	height: 82px;
+	width: 100%;
+	bottom:0;
+	left:0;
+}
+
+#tourHPT1Celeb .tourT1DescriptonText {
+	padding: 15px 5px 2px 20px;
+	position: absolute;
+	height: 74px;
+	width:615px;
+	bottom:0;
+	left: 0;
+	color: #fff;
+	/*overflow:auto;
+	font-size: 11px;
+	line-height: 16px;*/
+}
+
+#tourHPT1Celeb .tourT1PhotoCredit {
+	position: absolute;
+	color: #a8a8a8;
+	right: 5px;
+	top: 415px;
+	padding-right:5px;
+}
+
+#tourHPT1Celeb .tourT1DescriptonText h1 {
+	color: #fff;
+	font-size: 21px;
+	line-height: 30px;
+}
+
+#tourHPT1VideoContainer {
+	position: absolute;
+	left: 0px;
+	width: 640px;
+	height: 360px;
+	background: #000 none;
+
+}
+
+.videoHide { left: -10000px !important; }
+/* end of T1 */
+
+/* Top Left */
+#tourHPLatestNewsMoreLinks {
+	font-size: 9px;
+	float: right;
+	font-weight: bold;
+}
+
+#tourHPLatestNews {
+	overflow: hidden;
+	font-size:11px;
+}
+
+#tourHPLatestNews h3 {
+	font-size: 15px;
+	font-weight: normal;
+	margin: 0 0 5px; 
+}
+
+#tourHPLatestNews ul { list-style: none; }
+#tourHPLatestNews ul li {
+	padding: 0 0 3px 10px;
+	background: transparent url(http://i.cdn.turner.com/pgatour/.element/img/5.0/global/greySquareBullet.gif) no-repeat scroll left 5px;
+}
+
+
+/* /Top Left */
+
+
+#tourHPBotCont {
+	border-top: none !important;
+	border-bottom: none !important;
+}
+#tourHPBotLeftCont { padding-bottom: 10px; }
+#tourStandingsContainer {
+	padding: 12px 7px 2px;
+	border-left: none !important;
+	width: 626px;
+	/* TA */
+	background-color: #99CC00;
+	/* /TA */
+}
+
+#tourStandingsTabSet {
+	z-index:2;
+	position: relative;
+	zoom:1; 
+}
+
+#tourStandingsTabSet ul {
+	position: relative;
+	list-style: none;
+	float:left;
+	z-index: 2;
+}
+#tourStandingsTabSet ul li {
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: none !important;
+	margin-bottom:-1px;
+	cursor: pointer;
+	float:left;
+	height: 25px;
+}
+
+#tourStandingsTabSet ul li a {
+	padding: 5px 10px;
+	display: block;
+	color: #fff;
+}
+#tourStandingsTabSet ul li a:hover { text-decoration: none; }
+
+#tourStandingsTabR { font-size: 11px !important; }
+
+#tourStandingsContentContainer { z-index:1; }
+
+.tourStandingsContent { 
+	position: relative;
+	padding: 10px 11px;
+	margin-bottom: 8px;
+	height: 225px;
+	height: 235px\9; /* IE fix */
+}
+.tourStandingsContent h2 {
+	font-size: 18px;
+    font-weight: normal;
+	padding: 0;
+	zoom:1;
+}
+
+.tour88x31StandingsAd {
+	right: 18px !important;
+	left: 535px\9;
+	z-index: 2\9;
+	_left:auto;
+}
+
+.tourStandingsContentLeft,.tourStandingsContentRight {
+	float: left;
+	width: 300px;
+}
+.tourStandingsLogo {
+	width: 150px;
+	height: 85px;
+	text-align: center;
+	float: left;
+	overflow:hidden;
+}
+
+.tourStandingsLogo img { margin: auto; }
+
+.tourStandingsActiveLinks {
+	width: 130px;
+	padding-left: 10px; 
+	float:left;
+	position:relative;
+	top:10px;
+}
+
+.tourStandingsContent h3 {
+	font-weight: bold;
+	color: #01172e;
+	font-size: 7pt;
+}
+
+.tourStandingsLink, .tourStandingsLinkNoArrow {
+	background: transparent url(http://i.cdn.turner.com/pgatour/.element/img/5.0/global/tourStandingsLinkArrow.gif) no-repeat scroll right 5px;
+	color: #BC1800 !important;
+	font-size: 10px;
+	font-weight:bold;
+	padding-right: 7px;
+}
+.tourStandingsLinkNoArrow { background: transparent none !important; }
+
+.tourStandingsActiveLinks h3 { padding-bottom: 5px; }
+
+.tourStandingsActiveLinks ul { list-style: none; }
+.tourStandingsActiveLinks ul li {
+	font-size: 7pt;
+	font-weight: bold;
+	color: #bb1700 !important;
+	background: transparent url(http://i.cdn.turner.com/pgatour/.element/img/5.0/global/redSquareBullet.gif) no-repeat scroll left 5px;
+	padding-left:10px;
+}
+.tourStandingsActiveLinks ul li a { color: #bc1800 !important; }
+
+.tourStandingsTVTimes, .tourStandingsXMTimes {
+	margin-top: 5px;
+	border-top: 1px solid #fff;
+	overflow: hidden;
+}
+.tourStandingsTVTimes {
+	height: 50px;
+	height: 55px\9;
+}
+.tourStandingsXMTimes {
+	height: 57px;
+	height: 62px\9;
+}
+.tourStandingsTVTimes h3, .tourStandingsXMTimes h3 { padding-top: 2px; }
+/*
+.tourStandingsTVTimes div.tourStandingsLabels {
+    float: left;
+    width: 78px;
+}
+
+.tourTVTIME {
+    float: left;
+    width: 180px;
+}*/
+.tourTVTIME {
+	height: 25px;
+}
+
+.tourTVTimesDate {
+	color: #00284c;
+	font-size: 10px;
+	padding: 2px 0px 5px 0px;
+	width: 70px;
+	float:left;
+}
+.tourTVTimesChannels {
+	width:225px;
+	float:left;
+	text-align:center;
+}
+.tourTVTimesChannels img {
+	width:25px;
+	height:25px;
+}
+.tourTVTimesChannels ul, .tourXMTimes ul {
+	/*padding-top:5px;*/
+	padding-left:5px;
+	list-style: none;
+}
+.tourTVTimesChannels ul {
+	margin-top: -4px;
+}
+.tourTVTimesChannels ul li {
+	text-align:left;
+	float:left;
+	padding-right: 1px;
+	font-size: 9px;
+	width: 109px;
+}
+
+.tourTVTimesSingleRowItem { padding-top: 0px; }
+
+.tourTVTimesChannels ul li img { vertical-align:middle; }
+
+.tourXMBtn {
+	float:left;
+	width: 73px;
+    margin-top: 2px;
+}
+.tourXMTimes {
+	float:left;
+	width: 220px;
+}
+
+.tourXMTimes ul {
+	padding-left: 10px;
+    padding-top: 0px;
+}
+.tourXMTimes ul li {
+	text-align:left;
+	float:left;
+	width: 100px;
+	padding-right: 5px;
+}
+
+.tourXMTimes .tourStandingsLink {
+	background-position: right 8px;
+	padding-top: 5px;
+	float:left;
+    	font-size: 9px;
+	position:relative;
+	left:-70px;
+}
+
+#tourHPBotRightCont, #tourHPTopRightCont {
+	float:left;
+	width: 330px;
+	height: 100%;
+}
+
+#tourHPBotRightCont .rightPod, #tourHPTopRightCont .rightPod {
+	width: 301px;
+	padding: 5px 14px 5px 15px;
+}
+
+.tourRRBorder {
+	height: 0;
+	margin: 5px 0;
+	position: relative;
+	font-size: 0px;
+	padding: 0;
+}
+
+.tourAdvertBug {
+	display: block;
+	background: #e5f5fc;
+	color: #c7c3c2;
+	font-size: 9px;
+}
+
+#tourSponsoredLinksContainer {
+	border-top: none !important;
+}
+
+#tourFooter {
+	text-align: left;
+	width: 100%;
+	padding-top: 25px;
+	border-right: none !important;
+	border-bottom: none !important;
+	border-left: none !important;
+
+}
+	div.tourFooterLinks {
+		float:left;
+		border-right: none !important;
+		border-bottom: none !important;
+		border-top: none !important;
+		width: 170px;
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 245px;
+		margin-bottom: 20px;
+		font-size:10px;
+	}
+	div.tourFooterHeader {
+		font-size:12px;
+		font-weight:bold;
+		padding: 10px 0;
+	}
+	#tourFooter a {
+		color:#FFF !important;
+		text-decoration:none;
+	}
+	#tourFooter a:hover { text-decoration: underline; }
+
+	#tourFooter ul { padding:5px 0px; }
+	#tourFooter li { list-style:none outside; margin-bottom: 4px;}
+
+	div.tourFooterCopyright {
+		width:100%;
+		height:auto;
+		color:#698CB4;
+		font-size:10px;
+		text-align:center;
+	}
+
+.leftPod .tour88x31Ad, #tourPhotoGalleryContainer .tour88x31Ad { right:10px; }
+
+.tourStandingsContentRight {
+	width: 290px;
+	height: 205px;
+	height: 210px\9; /* IE Fix */
+	padding-left: 10px;
+	overflow:hidden;
+}
+.tourStandingsLive {
+	border-collapse:collapse;
+	width: 100%;
+	height: 175px;
+	height: 185px\9;
+}
+
+.tourStandingsNonLive {
+	border-collapse:collapse;
+	width: 100%;
+	height: 175px;
+	height: 185px \9;
+}
+
+.tourStandingsLive tr {
+	height: 25px;
+	height: 27px \9; /* IE Fix */
+}
+.tourStandingsNonLive tr {
+	height: 25px;
+}
+
+.tourStandingsNonLive .logo {
+	vertical-align: middle;
+	text-align: center;
+	height: 41px;
+}
+
+.tourStandingsLive .topRow, .tourStandingsNonLive .topRow {
+	height: 15px !important;
+	height: 10px !important \9; /* IE Fix */
+	font-weight: bold !important;
+}
+.tourStandingsLive .topRow td, .tourStandingsNonLive .topRow td {
+	padding-bottom: 5px;
+	border: none !important;
+	font-size: 9px;
+}
+
+.tourStandingsLive tr td {
+	padding: 0 3px;
+	border-right: 1px solid #fff;
+}
+
+.tourStandingsLive .name, .tourStandingsNonLive .name {
+    width: 125px;
+    font-weight:700;
+    padding-left: 6px;
+}
+
+.tourStandingsLive .tot, .tourStandingsNonLive .tot { border: none !important; }
+
+.tourStandingsLive .rank, .tourStandingsLive .day,
+.tourStandingsLive .thru, .tourStandingsLive .tot,
+.tourStandingsNonLive .evts, .tourStandingsNonLive .pts,
+.tourStandingsNonLive .rank{
+	text-align: center; 
+}
+
+.tourStandingsLive .day { width: 60px; }
+
+.tourStandingsLive .odd, .tourStandingsNonLive .odd { background: #fff none; }
+
+.tourStandingsLive .even td, .tourStandingsNonLive .even td { border-right: 1px solid #edf3f8; }
+
+.tourStandingsLive .odd td, .tourStandingsNonLive .odd td { border-right: 1px solid #fff; }
+
+.tourStandingsLive .odd td.pts, .tourStandingsNonLive .odd td.pts,
+.tourStandingsLive .even td.pts, .tourStandingsNonLive .even td.pts
+{ border-right: 0px solid #fff !important; }
+
+.tourStandingsLive .ents, .tourStandingsNonLive .ents { text-align:center; }
+
+.tourStandingsRightBottom {
+	margin-top: 5px;
+	position: relative;
+	height:0;
+}
+
+.tourStandingsContentRightFullLBLink {
+	position: absolute;
+	right: 0px; 
+}
+.tourStandingsContentRightORImg { max-width: 280px; max-height: 203px; float:right; }
+
+.tourStandingsColors_r .logo {
+	border-bottom: 1px solid #d9e6ee;
+	background: #00284b none;
+}
+.tourStandingsColors_r .topRow {
+	color: #fff;
+	background: #00284b none;
+}
+
+.tourStandingsColors_s .logo {
+	border-bottom: 1px solid #d9e6ee;
+	background: #6a0701 none;
+}
+.tourStandingsColors_s .topRow {
+	color: #fff;
+	background: #6a0701 none;
+}
+
+.tourStandingsColors_h .logo {
+	border-bottom: 1px solid #d9e6ee;
+	background: #257da1 none;
+}
+.tourStandingsColors_h .topRow {
+	color: #fff;
+	background: #257da1 none;
+}
+
+.tourStandingsBotRowBorder { border-bottom: 3px solid #002848; }
+
+.tourBulletVideoIcon, .tourBulletPicIcon, .tourBulletAudioIcon {
+    margin-left: 3px;
+    position: relative;
+    top: 1px;
+}
+
+#tourAd985x50Top .adunit_985x50, #tourAd985x50Top .adunit_970x66 { padding-bottom: 10px; }
+#tourAd985x50Bot .adunit_985x50, #tourAd985x50Bot .adunit_970x66 { padding: 10px 0; }
+
+/* 2009/2010 Redesign Subpage Fixes */
+.tourLeftContent, .tourRightRail { padding: 10px 0; }
+
+#tourPhotoGalleryContainer img {
+	border-bottom: 2px solid #fff;
+}
+
+#tourTournT1Content a:hover {
+	text-decoration: underline !important;
+}
+div.tourStoryFontSizeText {
+	font-size: 10px !important;
+}
+
+tr.tourTableFooter a:hover {
+	text-decoration: underline !important;
+}
+div.tourTournNavHalf a:hover, div.tourTournNavHalf .selected a:hover {
+	text-decoration: underline;
+}
+div.tourPageNavHalf a:hover, div.tourPageNavHalf .selected a:hover  {
+	text-decoration: underline;
+}
+
+
+/* Quick Hack Live Flag */
+.tourHPLIVEFlag {
+	color: #BC1800 !important;
+}
+
+.tourInlineHeadText {
+	font-weight: bold;
+	color: #bc1800;
+}
+
+/* Using this over .tourClear */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+img#wpstats {display:none;}
+
+/* Social Media Implementation */
+#tourLBSocialMedia {
+	position:relative;
+	top:6px;
+}
+
+#tourStatsSocialMedia {
+	position:relative;
+	float:right;
+	left:10px;
+	margin-bottom:5px;
+}
+
+#tourShottrackerSocialMedia {
+	position:relative;
+	margin:0px 0px 0px 10px;
+	*top:255px;
+}
+
+#tourVideoSocialMedia {
+	position:relative;
+	float:right;
+	top:9px;
+}
+
+#tourStorySocialMedia {
+	position:relative;
+	float:right;
+	top:3px;
+	left:-12px;
+	margin-bottom:5px;
+}
+/*
+#tourStorySubhead{
+	top:-20px;
+	position:relative;
+	left:-20px;
+	height:26px;
+	background-color:#dae7f0;
+	width:668px;
+}
+
+#tourStorySMQuicklinksTop{
+	left:-115px;
+	position:relative;
+	top:2px;
+}
+
+#tourStorySubfooter{
+	background-color:#DAE7F0;
+	height:26px;
+	left:-20px;
+	position:relative;
+	top:21px;
+	width: 668px;
+}
+
+#tourStorySMQuicklinksBot{
+	float:right; 
+	position:relative; 
+	top:5px;
+}
+*/
+#tourPlayersSocialMedia {
+	position:relative;
+	float:right;
+	top:10px;
+	left:9px;
+	z-index:1000;
+	*margin-bottom:-15px;
+}
+
+#tourScorecardSocialMedia {
+	position:relative;
+	float:right;
+	top:3px;
+	left:8px;
+}
+
+#tourFacebookLike, #tourTwitterTweet {
+	float: left;
+}
+
+/* 2012 Gigya Implementation */
+.tourLBSocialMedia {
+	position:relative;
+	top:6px;
+}
+
+.tourPgatourLBSocialMedia {
+	position:relative;
+	top:6px;
+	float:left;
+}
+
+.tourStatsSocialMedia {
+	position:relative;
+	float:right;
+	left:10px;
+	margin-bottom:5px;
+}
+
+.tourShottrackerSocialMedia {
+	position:absolute;
+	margin:-37px 0px 0px 10px;
+	*top:255px;
+	
+}
+
+.tourVideoSocialMedia {
+	position:relative;
+	top:9px;
+	left:10px;
+}
+
+.tourStorySocialMedia {
+	position:relative;
+	top:3px;
+	left:5px;
+	margin-bottom:5px;
+	float:left;
+}
+
+.tourPlayersSocialMedia {
+	position:absolute;
+	top:22px;
+	left:345px;
+	z-index:1000;
+}
+
+.tourScorecardSocialMedia {
+	position:relative;
+	float:right;
+	top:3px;
+	left:8px;
+}
+
+.tourReportSocialMedia{
+	margin-top:-2px;
+}
+
+.gig-bar-container table{
+	border:none !important;
+}
+
+.gig-bar-container table td{
+	border:none !important;
+	padding:0px !important;
+}
+
+.gig-bar-container .tourGigyaShareButton{
+	float:left;
+	cursor:pointer;
+}
+
+.gig-bar-container .tourGigyaShareCount{
+	float:right;
+	background:url(http://i.cdn.turner.com/pgatour/.element/apps/gigya/1.0/img/bubble.png) no-repeat 0px 0px;
+	width:33px;
+	height:20px;
+	margin-left:2px;
+}
+
+.gig-bar-container .tourGigyaShareCount span{
+	font-family:Verdana;
+	font-size:10px;
+	font-weight:bold;
+	display:block;
+	text-align:center;
+	margin:3px 0px 0px 1px;
+}
+
+.gig-bar-container .tourGigyaShareCount.Facebook span{
+	color:#3b5a97;
+}
+
+.gig-bar-container .tourGigyaShareCount.Twitter span{
+	color:#249dc6;
+}
+
+.gig-bar-container .tourGigyaShareCount.Share span{
+	color:#007236;
+}
+
+.gig-bar-container .tourGigyaShareCount.Comments span{
+	color:#89a5bd;
+}
+
+/* Temporarily hide the "Customize the Leaderboard" link on the Champions and Nationwide Tour leaderboards */
+tr.tourTableFooter td span a {
+	display:none;
+}

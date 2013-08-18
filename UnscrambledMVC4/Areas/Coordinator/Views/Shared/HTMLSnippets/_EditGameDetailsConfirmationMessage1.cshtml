@@ -1,0 +1,64 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.EditGameDetailsConfirmationPageView
+
+@{
+    int playerCount = Model.editGameDetailsConfirmationVM.NumberOfPlayersToStart;
+}
+
+<table class="grid">
+        <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">You have reached the confirmation screen because you have decided to reducee the number of players in your game. 
+                                This will reduce the number of players in your game from <strong>@Model.editGameDetailsConfirmationVM.NumberOfPlayersToStart</strong> to <strong> @Model.editGameDetailsConfirmationVM.NumberOfPlayersAfterDelete</strong>.  The following players will
+                                be deleted from your game: </span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table class="formTable" width="100%">
+    <col style="width:30%">
+    <col style="width:35%">
+    <col style="width:35%">
+    <tbody>
+    <tr>
+        <th>Player #</th>
+        <th>
+            Player
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var player in Model.editGameDetailsConfirmationVM.ListOfPlayerToDelete) {
+        <tr>
+            <td>@playerCount</td>
+            @if (player.Name.Equals(""))
+            {
+                <td>Player @playerCount</td>
+            }
+            else
+            {
+                <td>@player.Name</td>
+            }
+        <td>@Html.Hidden("Player" + @playerCount, player.ID)</td>
+        </tr>
+        playerCount -= 1;
+    }
+    </tbody>
+</table>

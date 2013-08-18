@@ -1,0 +1,119 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.DeleteFoursomesPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">View Game Details</td>
+                            <td class="sectionLinks">Set Players</td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"><a href="@Url.Action("MyGames","Game")">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+<div id="contentLayer">
+
+<form class="delete-foursomes-form" action="/Coordinator/Game/DeleteFoursomes" method="post" name="delete_players" id="delete_players">
+
+ <input type="hidden" name="GameID" value="@Model.deleteFoursomesViewModel.Game.ID" />
+ <input type="hidden" name="RoundID" value="@Model.deleteFoursomesViewModel.RoundID" />
+
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Select the checkbox next to each player that you would like to delete.</span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+
+    <table class="formTable" width="100%">
+        <col style="width:5%">
+        <col style="width:0%">
+        <col style="width:40%">
+        <col style="width:15%">
+        <col style="width:40%">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Foursome</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @{
+        int foursomeNumber = 1;
+        string foursomeIDStr = "FoursomeIDToDelete";
+    }
+
+    @foreach (var foursome in Model.deleteFoursomesViewModel.deletableFoursomes)
+    {
+        foursomeIDStr = "FoursomeIDToDelete";
+        foursomeIDStr = foursomeIDStr + foursomeNumber.ToString();
+        @:<tr>
+            <td>@foursomeNumber.ToString()</td>
+            <td>@Html.Hidden("FoursomeID" + foursomeNumber, foursome.ID)</td>
+            <td>@foursome.Name</td>
+            <td></td>
+            <td><input id="@foursomeIDStr" name="@foursomeIDStr" type="checkbox" value="@foursome.ID" /></td>
+        @:</tr>
+        
+        foursomeNumber = foursomeNumber + 1;
+       
+    }
+   </tbody>
+
+
+</table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><button id="FoursomeSubmitAndStayButton" name="SubmitForm" class="submit" type="submit" value="SaveAndStay">Cancel</button></div>
+        <div class="ansR"><button id="FoursomeSubmitAndDoneButton" name="SubmitForm" class="submit" type="submit" value="SaveAndDone">Delete Foursomes</button></div>
+    </div>
+
+</form>
+
+</div>
+
+
+
+
+
+
+                  
+
+   
+
+    
+</form>
+    

@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UnscrambledDBModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="UnscrambledDBEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="Coordinators" EntityType="UnscrambledDBModel.Coordinator" />
+    <EntitySet Name="FoursomePlayers" EntityType="UnscrambledDBModel.FoursomePlayer" />
+    <EntitySet Name="Foursomes" EntityType="UnscrambledDBModel.Foursome" />
+    <EntitySet Name="GameLeaderboards" EntityType="UnscrambledDBModel.GameLeaderboard" />
+    <EntitySet Name="Games" EntityType="UnscrambledDBModel.Game" />
+    <EntitySet Name="GameSetupStates" EntityType="UnscrambledDBModel.GameSetupState" />
+    <EntitySet Name="GameStates" EntityType="UnscrambledDBModel.GameState" />
+    <EntitySet Name="GameTypes" EntityType="UnscrambledDBModel.GameType" />
+    <EntitySet Name="Holes" EntityType="UnscrambledDBModel.Hole" />
+    <EntitySet Name="PlayerGameResults" EntityType="UnscrambledDBModel.PlayerGameResult" />
+    <EntitySet Name="PlayerRoundResults" EntityType="UnscrambledDBModel.PlayerRoundResult" />
+    <EntitySet Name="Players" EntityType="UnscrambledDBModel.Player" />
+    <EntitySet Name="RoundLeaderboards" EntityType="UnscrambledDBModel.RoundLeaderboard" />
+    <EntitySet Name="Rounds" EntityType="UnscrambledDBModel.Round" />
+    <EntitySet Name="RoundStates" EntityType="UnscrambledDBModel.RoundState" />
+    <EntitySet Name="ScorecardHoles" EntityType="UnscrambledDBModel.ScorecardHole" />
+    <EntitySet Name="Scorecards" EntityType="UnscrambledDBModel.Scorecard" />
+    <AssociationSet Name="Coordinator_Games" Association="UnscrambledDBModel.Coordinator_Games">
+      <End Role="Coordinators" EntitySet="Coordinators" />
+      <End Role="Games" EntitySet="Games" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FoursomePlayers_Foursomes" Association="UnscrambledDBModel.FK_FoursomePlayers_Foursomes">
+      <End Role="Foursomes" EntitySet="Foursomes" />
+      <End Role="FoursomePlayers" EntitySet="FoursomePlayers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FoursomePlayers_Players" Association="UnscrambledDBModel.FK_FoursomePlayers_Players">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="FoursomePlayers" EntitySet="FoursomePlayers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FoursomePlayers_Scorecards" Association="UnscrambledDBModel.FK_FoursomePlayers_Scorecards">
+      <End Role="Scorecards" EntitySet="Scorecards" />
+      <End Role="FoursomePlayers" EntitySet="FoursomePlayers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scorecards_Foursomes" Association="UnscrambledDBModel.FK_Scorecards_Foursomes">
+      <End Role="Foursomes" EntitySet="Foursomes" />
+      <End Role="Scorecards" EntitySet="Scorecards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GameLeaderBoard_Game" Association="UnscrambledDBModel.FK_GameLeaderBoard_Game">
+      <End Role="Games" EntitySet="Games" />
+      <End Role="GameLeaderboards" EntitySet="GameLeaderboards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlayerGameResult_GameLeaderboard" Association="UnscrambledDBModel.FK_PlayerGameResult_GameLeaderboard">
+      <End Role="GameLeaderboards" EntitySet="GameLeaderboards" />
+      <End Role="PlayerGameResults" EntitySet="PlayerGameResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoundLeaderboard_GameLeaderboard" Association="UnscrambledDBModel.FK_RoundLeaderboard_GameLeaderboard">
+      <End Role="GameLeaderboards" EntitySet="GameLeaderboards" />
+      <End Role="RoundLeaderboards" EntitySet="RoundLeaderboards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GameSetupStates_Games" Association="UnscrambledDBModel.FK_GameSetupStates_Games">
+      <End Role="Games" EntitySet="Games" />
+      <End Role="GameSetupStates" EntitySet="GameSetupStates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GameStates_Games" Association="UnscrambledDBModel.FK_GameStates_Games">
+      <End Role="GameStates" EntitySet="GameStates" />
+      <End Role="Games" EntitySet="Games" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Players_Games" Association="UnscrambledDBModel.FK_Players_Games">
+      <End Role="Games" EntitySet="Games" />
+      <End Role="Players" EntitySet="Players" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoundLeaderboards_Games" Association="UnscrambledDBModel.FK_RoundLeaderboards_Games">
+      <End Role="Games" EntitySet="Games" />
+      <End Role="RoundLeaderboards" EntitySet="RoundLeaderboards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rounds_Games" Association="UnscrambledDBModel.FK_Rounds_Games">
+      <End Role="Games" EntitySet="Games" />
+      <End Role="Rounds" EntitySet="Rounds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scorecards_Games" Association="UnscrambledDBModel.FK_Scorecards_Games">
+      <End Role="Games" EntitySet="Games" />
+      <End Role="Scorecards" EntitySet="Scorecards" />
+    </AssociationSet>
+    <AssociationSet Name="GameType_Games" Association="UnscrambledDBModel.GameType_Games">
+      <End Role="GameTypes" EntitySet="GameTypes" />
+      <End Role="Games" EntitySet="Games" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Holes_Rounds" Association="UnscrambledDBModel.FK_Holes_Rounds">
+      <End Role="Rounds" EntitySet="Rounds" />
+      <End Role="Holes" EntitySet="Holes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlayerGameResult_Players" Association="UnscrambledDBModel.FK_PlayerGameResult_Players">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="PlayerGameResults" EntitySet="PlayerGameResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlayerGameResult_Scorecard" Association="UnscrambledDBModel.FK_PlayerGameResult_Scorecard">
+      <End Role="PlayerGameResults" EntitySet="PlayerGameResults" />
+      <End Role="Scorecards" EntitySet="Scorecards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlayerRoundResult_Player" Association="UnscrambledDBModel.FK_PlayerRoundResult_Player">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="PlayerRoundResults" EntitySet="PlayerRoundResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlayersOnRoundLeaderboard_PlayersOnRoundLeaderboard" Association="UnscrambledDBModel.FK_PlayersOnRoundLeaderboard_PlayersOnRoundLeaderboard">
+      <End Role="RoundLeaderboards" EntitySet="RoundLeaderboards" />
+      <End Role="PlayerRoundResults" EntitySet="PlayerRoundResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scorecards_PlayerRoundResults" Association="UnscrambledDBModel.FK_Scorecards_PlayerRoundResults">
+      <End Role="PlayerRoundResults" EntitySet="PlayerRoundResults" />
+      <End Role="Scorecards" EntitySet="Scorecards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rounds_RoundStates" Association="UnscrambledDBModel.FK_Rounds_RoundStates">
+      <End Role="RoundStates" EntitySet="RoundStates" />
+      <End Role="Rounds" EntitySet="Rounds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scorecards_Rounds" Association="UnscrambledDBModel.FK_Scorecards_Rounds">
+      <End Role="Rounds" EntitySet="Rounds" />
+      <End Role="Scorecards" EntitySet="Scorecards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScorecardHoles_Scorecard" Association="UnscrambledDBModel.FK_ScorecardHoles_Scorecard">
+      <End Role="Scorecards" EntitySet="Scorecards" />
+      <End Role="ScorecardHoles" EntitySet="ScorecardHoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlayerRoundResults_PlayerGameResults" Association="UnscrambledDBModel.FK_PlayerRoundResults_PlayerGameResults">
+      <End Role="PlayerGameResult" EntitySet="PlayerGameResults" />
+      <End Role="PlayerRoundResult" EntitySet="PlayerRoundResults" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Coordinator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Username" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Games" Relationship="UnscrambledDBModel.Coordinator_Games" FromRole="Coordinators" ToRole="Games" />
+  </EntityType>
+  <EntityType Name="FoursomePlayer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="FoursomeID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="ScorecardID" Type="Int32" />
+    <NavigationProperty Name="Foursome" Relationship="UnscrambledDBModel.FK_FoursomePlayers_Foursomes" FromRole="FoursomePlayers" ToRole="Foursomes" />
+    <NavigationProperty Name="Player" Relationship="UnscrambledDBModel.FK_FoursomePlayers_Players" FromRole="FoursomePlayers" ToRole="Players" />
+    <NavigationProperty Name="Scorecard" Relationship="UnscrambledDBModel.FK_FoursomePlayers_Scorecards" FromRole="FoursomePlayers" ToRole="Scorecards" />
+  </EntityType>
+  <EntityType Name="Foursome">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="RoundID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FoursomeNumberInRound" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FoursomePlayers" Relationship="UnscrambledDBModel.FK_FoursomePlayers_Foursomes" FromRole="Foursomes" ToRole="FoursomePlayers" />
+    <NavigationProperty Name="Scorecards" Relationship="UnscrambledDBModel.FK_Scorecards_Foursomes" FromRole="Foursomes" ToRole="Scorecards" />
+  </EntityType>
+  <EntityType Name="GameLeaderboard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="GameID" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfRounds" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfPlayers" Type="Int32" Nullable="false" />
+    <Property Name="CurrentRoundNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Game" Relationship="UnscrambledDBModel.FK_GameLeaderBoard_Game" FromRole="GameLeaderboards" ToRole="Games" />
+    <NavigationProperty Name="PlayerGameResults" Relationship="UnscrambledDBModel.FK_PlayerGameResult_GameLeaderboard" FromRole="GameLeaderboards" ToRole="PlayerGameResults" />
+    <NavigationProperty Name="RoundLeaderboards" Relationship="UnscrambledDBModel.FK_RoundLeaderboard_GameLeaderboard" FromRole="GameLeaderboards" ToRole="RoundLeaderboards" />
+  </EntityType>
+  <EntityType Name="Game">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="CoordinatorID" Type="Int32" Nullable="false" />
+    <Property Name="JoinCode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="GameTypeID" Type="Int32" Nullable="false" />
+    <Property Name="IsHandicapped" Type="Boolean" Nullable="false" />
+    <Property Name="NumberOfRounds" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfPlayersOrTeams" Type="Int32" Nullable="false" />
+    <Property Name="GameStateID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Coordinator" Relationship="UnscrambledDBModel.Coordinator_Games" FromRole="Games" ToRole="Coordinators" />
+    <NavigationProperty Name="GameLeaderboards" Relationship="UnscrambledDBModel.FK_GameLeaderBoard_Game" FromRole="Games" ToRole="GameLeaderboards" />
+    <NavigationProperty Name="GameSetupStates" Relationship="UnscrambledDBModel.FK_GameSetupStates_Games" FromRole="Games" ToRole="GameSetupStates" />
+    <NavigationProperty Name="GameState" Relationship="UnscrambledDBModel.FK_GameStates_Games" FromRole="Games" ToRole="GameStates" />
+    <NavigationProperty Name="Players" Relationship="UnscrambledDBModel.FK_Players_Games" FromRole="Games" ToRole="Players" />
+    <NavigationProperty Name="RoundLeaderboards" Relationship="UnscrambledDBModel.FK_RoundLeaderboards_Games" FromRole="Games" ToRole="RoundLeaderboards" />
+    <NavigationProperty Name="Rounds" Relationship="UnscrambledDBModel.FK_Rounds_Games" FromRole="Games" ToRole="Rounds" />
+    <NavigationProperty Name="Scorecards" Relationship="UnscrambledDBModel.FK_Scorecards_Games" FromRole="Games" ToRole="Scorecards" />
+    <NavigationProperty Name="GameType" Relationship="UnscrambledDBModel.GameType_Games" FromRole="Games" ToRole="GameTypes" />
+  </EntityType>
+  <EntityType Name="GameSetupState">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="GameID" Type="Int32" Nullable="false" />
+    <Property Name="SetupStateGameDetails" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Game" Relationship="UnscrambledDBModel.FK_GameSetupStates_Games" FromRole="GameSetupStates" ToRole="Games" />
+  </EntityType>
+  <EntityType Name="GameState">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="State" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Games" Relationship="UnscrambledDBModel.FK_GameStates_Games" FromRole="GameStates" ToRole="Games" />
+  </EntityType>
+  <EntityType Name="GameType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Games" Relationship="UnscrambledDBModel.GameType_Games" FromRole="GameTypes" ToRole="Games" />
+  </EntityType>
+  <EntityType Name="Hole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="RoundID" Type="Int32" Nullable="false" />
+    <Property Name="HoleNumber" Type="Int32" Nullable="false" />
+    <Property Name="Par" Type="Int32" />
+    <Property Name="Handicap" Type="Int32" />
+    <NavigationProperty Name="Round" Relationship="UnscrambledDBModel.FK_Holes_Rounds" FromRole="Holes" ToRole="Rounds" />
+  </EntityType>
+  <EntityType Name="PlayerGameResult">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="GameLeaderboardID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="GameRank" Type="Int32" />
+    <Property Name="GameAdjustedPar" Type="Int32" />
+    <Property Name="GameAdjustedTotal" Type="Int32" />
+    <Property Name="GameNotAdjustedPar" Type="Int32" />
+    <Property Name="GameNotAdjustedTotal" Type="Int32" />
+    <NavigationProperty Name="GameLeaderboard" Relationship="UnscrambledDBModel.FK_PlayerGameResult_GameLeaderboard" FromRole="PlayerGameResults" ToRole="GameLeaderboards" />
+    <NavigationProperty Name="Player" Relationship="UnscrambledDBModel.FK_PlayerGameResult_Players" FromRole="PlayerGameResults" ToRole="Players" />
+    <NavigationProperty Name="Scorecards" Relationship="UnscrambledDBModel.FK_PlayerGameResult_Scorecard" FromRole="PlayerGameResults" ToRole="Scorecards" />
+    <NavigationProperty Name="PlayerRoundResults" Relationship="UnscrambledDBModel.FK_PlayerRoundResults_PlayerGameResults" FromRole="PlayerGameResult" ToRole="PlayerRoundResult" />
+  </EntityType>
+  <EntityType Name="PlayerRoundResult">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="RoundLeaderBoardID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="RoundRank" Type="Int32" />
+    <Property Name="RoundAdjustedPar" Type="Int32" />
+    <Property Name="RoundAdjustedTotal" Type="Int32" />
+    <Property Name="RoundNotAdjustedPar" Type="Int32" />
+    <Property Name="RoundNotAdjustedTotal" Type="Int32" />
+    <Property Name="ScorecardID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerGameResultID" Type="Int32" />
+    <Property Name="LastCompletedHole" Type="Int32" />
+    <Property Name="RoundNumberInGame" Type="Int32" />
+    <NavigationProperty Name="Player" Relationship="UnscrambledDBModel.FK_PlayerRoundResult_Player" FromRole="PlayerRoundResults" ToRole="Players" />
+    <NavigationProperty Name="RoundLeaderboard" Relationship="UnscrambledDBModel.FK_PlayersOnRoundLeaderboard_PlayersOnRoundLeaderboard" FromRole="PlayerRoundResults" ToRole="RoundLeaderboards" />
+    <NavigationProperty Name="Scorecards" Relationship="UnscrambledDBModel.FK_Scorecards_PlayerRoundResults" FromRole="PlayerRoundResults" ToRole="Scorecards" />
+    <NavigationProperty Name="PlayerGameResult" Relationship="UnscrambledDBModel.FK_PlayerRoundResults_PlayerGameResults" FromRole="PlayerRoundResult" ToRole="PlayerGameResult" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="GameID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PlayerIndex" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="Round1Handicap" Type="Int32" />
+    <Property Name="Round2Handicap" Type="Int32" />
+    <Property Name="Round3Handicap" Type="Int32" />
+    <Property Name="Round4Handicap" Type="Int32" />
+    <NavigationProperty Name="FoursomePlayers" Relationship="UnscrambledDBModel.FK_FoursomePlayers_Players" FromRole="Players" ToRole="FoursomePlayers" />
+    <NavigationProperty Name="Game" Relationship="UnscrambledDBModel.FK_Players_Games" FromRole="Players" ToRole="Games" />
+    <NavigationProperty Name="PlayerGameResults" Relationship="UnscrambledDBModel.FK_PlayerGameResult_Players" FromRole="Players" ToRole="PlayerGameResults" />
+    <NavigationProperty Name="PlayerRoundResults" Relationship="UnscrambledDBModel.FK_PlayerRoundResult_Player" FromRole="Players" ToRole="PlayerRoundResults" />
+  </EntityType>
+  <EntityType Name="RoundLeaderboard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="GameLeaderboardID" Type="Int32" Nullable="false" />
+    <Property Name="RoundNumberInGame" Type="Int32" Nullable="false" />
+    <Property Name="GameID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GameLeaderboard" Relationship="UnscrambledDBModel.FK_RoundLeaderboard_GameLeaderboard" FromRole="RoundLeaderboards" ToRole="GameLeaderboards" />
+    <NavigationProperty Name="Game" Relationship="UnscrambledDBModel.FK_RoundLeaderboards_Games" FromRole="RoundLeaderboards" ToRole="Games" />
+    <NavigationProperty Name="PlayerRoundResults" Relationship="UnscrambledDBModel.FK_PlayersOnRoundLeaderboard_PlayersOnRoundLeaderboard" FromRole="RoundLeaderboards" ToRole="PlayerRoundResults" />
+  </EntityType>
+  <EntityType Name="Round">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="GameID" Type="Int32" Nullable="false" />
+    <Property Name="RoundNumberInGame" Type="Int32" Nullable="false" />
+    <Property Name="HolesInRound" Type="Int32" />
+    <Property Name="Front9Total" Type="Int32" />
+    <Property Name="Back9Total" Type="Int32" />
+    <Property Name="FullRoundTotal" Type="Int32" />
+    <Property Name="Slope" Type="Int32" />
+    <Property Name="RoundStateID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Game" Relationship="UnscrambledDBModel.FK_Rounds_Games" FromRole="Rounds" ToRole="Games" />
+    <NavigationProperty Name="Holes" Relationship="UnscrambledDBModel.FK_Holes_Rounds" FromRole="Rounds" ToRole="Holes" />
+    <NavigationProperty Name="RoundState" Relationship="UnscrambledDBModel.FK_Rounds_RoundStates" FromRole="Rounds" ToRole="RoundStates" />
+    <NavigationProperty Name="Scorecards" Relationship="UnscrambledDBModel.FK_Scorecards_Rounds" FromRole="Rounds" ToRole="Scorecards" />
+  </EntityType>
+  <EntityType Name="RoundState">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="State" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Rounds" Relationship="UnscrambledDBModel.FK_Rounds_RoundStates" FromRole="RoundStates" ToRole="Rounds" />
+  </EntityType>
+  <EntityType Name="ScorecardHole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="ScorecardID" Type="Int32" Nullable="false" />
+    <Property Name="HoleNumber" Type="Int32" Nullable="false" />
+    <Property Name="Par" Type="Int32" Nullable="false" />
+    <Property Name="Handicap" Type="Int32" Nullable="false" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="AdjustedScore" Type="Int32" />
+    <NavigationProperty Name="Scorecard" Relationship="UnscrambledDBModel.FK_ScorecardHoles_Scorecard" FromRole="ScorecardHoles" ToRole="Scorecards" />
+  </EntityType>
+  <EntityType Name="Scorecard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="PlayerGameResultID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerRoundResultID" Type="Int32" Nullable="false" />
+    <Property Name="Front9Total" Type="Int32" />
+    <Property Name="Back9Total" Type="Int32" />
+    <Property Name="FullRoundTotal" Type="Int32" />
+    <Property Name="Slope" Type="Int32" />
+    <Property Name="Strokes" Type="Int32" />
+    <Property Name="GameID" Type="Int32" Nullable="false" />
+    <Property Name="RoundID" Type="Int32" Nullable="false" />
+    <Property Name="FoursomeID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="FoursomePlayers" Relationship="UnscrambledDBModel.FK_FoursomePlayers_Scorecards" FromRole="Scorecards" ToRole="FoursomePlayers" />
+    <NavigationProperty Name="Foursome" Relationship="UnscrambledDBModel.FK_Scorecards_Foursomes" FromRole="Scorecards" ToRole="Foursomes" />
+    <NavigationProperty Name="Game" Relationship="UnscrambledDBModel.FK_Scorecards_Games" FromRole="Scorecards" ToRole="Games" />
+    <NavigationProperty Name="PlayerGameResult" Relationship="UnscrambledDBModel.FK_PlayerGameResult_Scorecard" FromRole="Scorecards" ToRole="PlayerGameResults" />
+    <NavigationProperty Name="PlayerRoundResult" Relationship="UnscrambledDBModel.FK_Scorecards_PlayerRoundResults" FromRole="Scorecards" ToRole="PlayerRoundResults" />
+    <NavigationProperty Name="Round" Relationship="UnscrambledDBModel.FK_Scorecards_Rounds" FromRole="Scorecards" ToRole="Rounds" />
+    <NavigationProperty Name="ScorecardHoles" Relationship="UnscrambledDBModel.FK_ScorecardHoles_Scorecard" FromRole="Scorecards" ToRole="ScorecardHoles" />
+  </EntityType>
+  <Association Name="Coordinator_Games">
+    <End Role="Coordinators" Type="UnscrambledDBModel.Coordinator" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Games" Type="UnscrambledDBModel.Game" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coordinators">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Games">
+        <PropertyRef Name="CoordinatorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FoursomePlayers_Foursomes">
+    <End Role="Foursomes" Type="UnscrambledDBModel.Foursome" Multiplicity="1" />
+    <End Role="FoursomePlayers" Type="UnscrambledDBModel.FoursomePlayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Foursomes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FoursomePlayers">
+        <PropertyRef Name="FoursomeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FoursomePlayers_Players">
+    <End Role="Players" Type="UnscrambledDBModel.Player" Multiplicity="1" />
+    <End Role="FoursomePlayers" Type="UnscrambledDBModel.FoursomePlayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FoursomePlayers">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FoursomePlayers_Scorecards">
+    <End Role="Scorecards" Type="UnscrambledDBModel.Scorecard" Multiplicity="0..1" />
+    <End Role="FoursomePlayers" Type="UnscrambledDBModel.FoursomePlayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scorecards">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FoursomePlayers">
+        <PropertyRef Name="ScorecardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scorecards_Foursomes">
+    <End Role="Foursomes" Type="UnscrambledDBModel.Foursome" Multiplicity="1" />
+    <End Role="Scorecards" Type="UnscrambledDBModel.Scorecard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Foursomes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Scorecards">
+        <PropertyRef Name="FoursomeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GameLeaderBoard_Game">
+    <End Role="Games" Type="UnscrambledDBModel.Game" Multiplicity="1" />
+    <End Role="GameLeaderboards" Type="UnscrambledDBModel.GameLeaderboard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Games">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameLeaderboards">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlayerGameResult_GameLeaderboard">
+    <End Role="GameLeaderboards" Type="UnscrambledDBModel.GameLeaderboard" Multiplicity="1" />
+    <End Role="PlayerGameResults" Type="UnscrambledDBModel.PlayerGameResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameLeaderboards">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlayerGameResults">
+        <PropertyRef Name="GameLeaderboardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoundLeaderboard_GameLeaderboard">
+    <End Role="GameLeaderboards" Type="UnscrambledDBModel.GameLeaderboard" Multiplicity="1" />
+    <End Role="RoundLeaderboards" Type="UnscrambledDBModel.RoundLeaderboard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameLeaderboards">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoundLeaderboards">
+        <PropertyRef Name="GameLeaderboardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GameSetupStates_Games">
+    <End Role="Games" Type="UnscrambledDBModel.Game" Multiplicity="1" />
+    <End Role="GameSetupStates" Type="UnscrambledDBModel.GameSetupState" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Games">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GameSetupStates">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GameStates_Games">
+    <End Role="GameStates" Type="UnscrambledDBModel.GameState" Multiplicity="1" />
+    <End Role="Games" Type="UnscrambledDBModel.Game" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameStates">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Games">
+        <PropertyRef Name="GameStateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Players_Games">
+    <End Role="Games" Type="UnscrambledDBModel.Game" Multiplicity="1" />
+    <End Role="Players" Type="UnscrambledDBModel.Player" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Games">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Players">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoundLeaderboards_Games">
+    <End Role="Games" Type="UnscrambledDBModel.Game" Multiplicity="1" />
+    <End Role="RoundLeaderboards" Type="UnscrambledDBModel.RoundLeaderboard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Games">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoundLeaderboards">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rounds_Games">
+    <End Role="Games" Type="UnscrambledDBModel.Game" Multiplicity="1" />
+    <End Role="Rounds" Type="UnscrambledDBModel.Round" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Games">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Rounds">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scorecards_Games">
+    <End Role="Games" Type="UnscrambledDBModel.Game" Multiplicity="1" />
+    <End Role="Scorecards" Type="UnscrambledDBModel.Scorecard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Games">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Scorecards">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GameType_Games">
+    <End Role="GameTypes" Type="UnscrambledDBModel.GameType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Games" Type="UnscrambledDBModel.Game" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Games">
+        <PropertyRef Name="GameTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Holes_Rounds">
+    <End Role="Rounds" Type="UnscrambledDBModel.Round" Multiplicity="1" />
+    <End Role="Holes" Type="UnscrambledDBModel.Hole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rounds">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Holes">
+        <PropertyRef Name="RoundID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlayerGameResult_Players">
+    <End Role="Players" Type="UnscrambledDBModel.Player" Multiplicity="1" />
+    <End Role="PlayerGameResults" Type="UnscrambledDBModel.PlayerGameResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlayerGameResults">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlayerGameResult_Scorecard">
+    <End Role="PlayerGameResults" Type="UnscrambledDBModel.PlayerGameResult" Multiplicity="1" />
+    <End Role="Scorecards" Type="UnscrambledDBModel.Scorecard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlayerGameResults">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Scorecards">
+        <PropertyRef Name="PlayerGameResultID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlayerRoundResult_Player">
+    <End Role="Players" Type="UnscrambledDBModel.Player" Multiplicity="1" />
+    <End Role="PlayerRoundResults" Type="UnscrambledDBModel.PlayerRoundResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlayerRoundResults">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlayersOnRoundLeaderboard_PlayersOnRoundLeaderboard">
+    <End Role="RoundLeaderboards" Type="UnscrambledDBModel.RoundLeaderboard" Multiplicity="1" />
+    <End Role="PlayerRoundResults" Type="UnscrambledDBModel.PlayerRoundResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoundLeaderboards">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlayerRoundResults">
+        <PropertyRef Name="RoundLeaderBoardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scorecards_PlayerRoundResults">
+    <End Role="PlayerRoundResults" Type="UnscrambledDBModel.PlayerRoundResult" Multiplicity="1" />
+    <End Role="Scorecards" Type="UnscrambledDBModel.Scorecard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlayerRoundResults">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Scorecards">
+        <PropertyRef Name="PlayerRoundResultID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rounds_RoundStates">
+    <End Role="RoundStates" Type="UnscrambledDBModel.RoundState" Multiplicity="1" />
+    <End Role="Rounds" Type="UnscrambledDBModel.Round" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoundStates">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Rounds">
+        <PropertyRef Name="RoundStateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scorecards_Rounds">
+    <End Role="Rounds" Type="UnscrambledDBModel.Round" Multiplicity="1" />
+    <End Role="Scorecards" Type="UnscrambledDBModel.Scorecard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rounds">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Scorecards">
+        <PropertyRef Name="RoundID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScorecardHoles_Scorecard">
+    <End Role="Scorecards" Type="UnscrambledDBModel.Scorecard" Multiplicity="1" />
+    <End Role="ScorecardHoles" Type="UnscrambledDBModel.ScorecardHole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scorecards">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ScorecardHoles">
+        <PropertyRef Name="ScorecardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlayerRoundResults_PlayerGameResults">
+    <End Type="UnscrambledDBModel.PlayerGameResult" Role="PlayerGameResult" Multiplicity="0..1" />
+    <End Type="UnscrambledDBModel.PlayerRoundResult" Role="PlayerRoundResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlayerGameResult">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlayerRoundResult">
+        <PropertyRef Name="PlayerGameResultID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,245 @@
+﻿  @model Unscrambled.Areas.Coordinator.Models.ViewModels.SetPlayersPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+
+<script>
+    function enable()
+    {
+        // document.edit_players.PlayerIndex1.disabled = false;
+        var elem = document.getElementById('edit_players').elements;
+        var elemName = "";
+
+        for (var i = 0; i < elem.length; i++) {
+            elemID = elem[i].id.toString();
+            if (elemID.indexOf("PlayerIndex") !== -1)
+            {
+                var playerIndex = document.getElementById(elemID);
+                playerIndex.disabled = false;
+                playerIndex.style.backgroundColor = "";
+            }
+        }
+    }
+    function disable() {
+        // document.edit_players.PlayerIndex1.disabled = true;
+        var elem = document.getElementById('edit_players').elements;
+        for (var i = 0; i < elem.length; i++) {
+            elemID = elem[i].id.toString();
+            if (elemID.indexOf("PlayerIndex") !== -1) {
+                var playerIndex = document.getElementById(elemID);
+                playerIndex.disabled = true;
+                playerIndex.style.backgroundColor = "#F0F0F0";
+            }
+        }
+    }
+</script>
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">View Game Details</td>
+                            <td class="sectionLinks"><a href="@Url.Action("AddPlayers","Game", new { id = @Model.setPlayersVM.Game.ID })"</a>Add Players</td>
+                            <td class="sectionLinks"><a href="@Url.Action("DeletePlayers", "Game", new { id = @Model.setPlayersVM.Game.ID })"</a>Delete Players</td>
+                            <td class="sectionLinks"><a href="/Coordinator/Game/MyGames">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+<div id="contentLayer">
+
+<form class="edit-players-form" action="/Coordinator/Game/SetPlayers" method="post" name="edit_players" id="edit_players">
+
+
+ <input type="hidden" name="NumberOfPlayersOrTeams" value="@Model.setPlayersVM.Game.NumberOfPlayersOrTeams" />
+ <input type="hidden" name="GameID" value="@Model.setPlayersVM.Game.ID" />
+
+
+</table>
+
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Would you like to calculate player handicaps based on their index? </span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                                
+                                @MyRadioHelper.CreateCalcHandicappedRadioHTML(Model.setPlayersVM.Game.CalcHandicapsFromIndex)          
+                                  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+
+    <table class="formTable" width="100%">
+        <col style="width:5%">
+        <col style="width:0%">
+        <col style="width:45%">
+        <col style="width:10%">
+        <col style="width:40%">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Player</th>
+                <th>Index</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @{
+        int playerNumber = 1;
+        string playerDivStr = "PlayerError1";
+    }
+
+    @foreach (var player in Model.setPlayersVM.Game.Players)
+    {
+        @:<tr>
+            <td>@playerNumber.ToString()</td>
+            <td>@Html.Hidden("PlayerID" + playerNumber, player.ID)</td>
+            <td><input type="text" class="textBoxPlayerName" value="@player.Name" id="@genPlayerNameID(playerNumber)" name="@genPlayerNameName(playerNumber)" /> </td>
+            <td><input type="text" class="textBoxPlayerIndex" value="@player.PlayerIndex" id="@genPlayerIndexID(playerNumber)" name="@genPlayerIndexName(playerNumber)" @isDisabled() /></td>
+            <td id="@playerDivStr" class="tdError" style="visibility:@isVisible(playerNumber - 1)" >@errorMessage(playerNumber - 1) </td>
+        @:</tr>
+        
+        playerNumber = playerNumber + 1;
+        playerDivStr = "PlayerError" + playerNumber.ToString();
+    }
+   </tbody>
+
+
+</table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><button id="PlayerSubmitAndStayButton" name="SubmitForm" class="submit" type="submit" value="SaveAndStay">Save Players</button></div>
+        <div class="ansR"><button id="PlayerSubmitAndDoneButton" name="SubmitForm" class="submit" type="submit" value="SaveAndDone">Save & Next</button></div>
+    </div>
+
+</form>
+
+</div>
+
+
+
+
+
+
+                  
+
+   
+
+    
+</form>
+    
+@helper isVisible(int playerNumber)
+{
+    
+    if (Model.setPlayersVM.playerNameErrors[playerNumber].Value == true)
+    {
+        @("visible");
+    }
+    else if (Model.setPlayersVM.playerIndexErrors[playerNumber].Value == true)
+    {
+        @("visible");
+    }
+    else
+    {
+        @("hidden");
+    }
+}
+
+
+
+@helper errorMessage(int playerNumber)
+{
+    
+    if (Model.setPlayersVM.playerNameErrors[playerNumber].Value == true)
+    {
+        @("Bad player name.");
+    }
+    else if (Model.setPlayersVM.playerIndexErrors[playerNumber].Value == true)
+    {
+        @("Index must be between -10 and 50.");
+    }
+    else
+    {
+        @("");
+    }
+}
+
+@helper genPlayerNameID(int playerNumber)
+{
+    string playerIDStr = "PlayerName" + playerNumber.ToString();
+    @(playerIDStr);
+    
+}
+
+@helper genPlayerNameName(int playerNumber)
+{
+    string playerIDStr = "PlayerName" + playerNumber.ToString();
+    @(playerIDStr);
+    
+}
+
+@helper genPlayerIndexID(int playerNumber)
+{
+    string playerIDStr = "PlayerIndex" + playerNumber.ToString();
+    @(playerIDStr);
+    
+}
+
+@helper genPlayerIndexName(int playerNumber)
+{
+    string playerIDStr = "PlayerIndex" + playerNumber.ToString();
+    @(playerIDStr);
+    
+}
+
+@helper isDisabled()
+{
+    if (Model.setPlayersVM.Game.IsHandicapped == "N")
+    {
+        @Html.Raw("style=visibility:hidden;");
+    }
+    else if (Model.setPlayersVM.Game.IsHandicapped == "Y")
+    {   
+        if (Model.setPlayersVM.Game.CalcHandicapsFromIndex == "Y")
+        {
+            @Html.Raw("style=background-color:none;");
+        }
+        else if (Model.setPlayersVM.Game.CalcHandicapsFromIndex == "N")
+        {
+            @Html.Raw("disabled style=background-color:#F0F0F0;");
+        }
+    }
+    
+}
+
+
+

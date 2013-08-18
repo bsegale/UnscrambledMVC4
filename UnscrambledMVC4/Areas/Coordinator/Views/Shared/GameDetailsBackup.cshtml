@@ -1,0 +1,59 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.Game
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+           
+          
+<form class="game-details-form" action="/Coordinator/Game/Create" method="post" name="create_game">
+@Html.Hidden("CoordinatorID", Model.CoordinatorID)
+<ul>
+    <li>
+         <h2>Set Game Details</h2>
+         <span class="required_notification">* Denotes Required Field</span>
+    </li>
+    <li>
+        @Html.LabelFor(model => model.Name, "Game Name")
+        <input type="text" name="Name" placeholder="Enter Game Name" value="@Model.Name" required />
+    </li>
+    <li>
+        <label for="email">Number Of Players/Teams:</label>
+        <input type="text" name="NumberOfPlayersOrTeams" placeholder="Enter Number" value="@Model.NumberOfPlayersOrTeams" required />
+        <span class="form_hint">Must between 1 - 120"</span>
+    </li>
+    <li>
+        <label for="GameTypeID">Game Type:</label>
+        <div class="game-details-select">
+        @Html.DropDownListFor(model => model.GameTypeID, new SelectList(ViewBag.GameTypes, "Value", "Text", Model == null ? 0 : Model.GameTypeID))
+        </div>
+        <span class="form_hint">Choose your game type</span>
+    </li>
+    <li>
+        @Html.LabelFor(model => model.IsHandicapped, "Is Game Handicapped:")
+        <div class="game-details-select">
+        <select name="IsHandicapped">
+        @MySelectHelper.CreateOptionsInSelectTag(ViewBag.IsHandicappedSelectItems, Model.IsHandicapped.ToString())
+        </select>
+        </div>              
+    </li>
+    <li>
+        <label for="NumberOfRounds">Number of Rounds:</label>
+        <div class="game-details-select">
+        <select name="NumberOfRounds">
+        @MySelectHelper.CreateOptionsInSelectTag(ViewBag.NumRounds, Model.NumberOfRounds.ToString())
+        </select>
+        </div>
+        <span class="form_hint">How many rounds in your game?</span>
+    </li>
+    <li>
+        <button class="submit" type="submit">Create Game</button>
+    </li>
+</ul>
+
+
+
+
+
+
+
+
+
+</form>
+

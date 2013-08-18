@@ -1,0 +1,40 @@
+﻿@model Unscrambled.Domain.Game
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Game</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend></legend>
+
+    <div class="display-label">JoinCode</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JoinCode)
+    </div>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    <div class="display-label">GameType</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GameType.Name)
+    </div>
+    <div class="display-label">IsHandicapped</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsHandicapped)
+    </div>
+    <div class="display-label">NumberOfRounds</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberOfRounds)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "MyGames")
+    </p>
+}

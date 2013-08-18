@@ -1,0 +1,12 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.PageViewSetPlayers
+
+@{
+    ViewBag.Title = "Players";
+}
+
+
+@{
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_GameNavigations.cshtml", Model.partialViewGameNav);
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_PlayerNavigations.cshtml", Model.partialViewPlayersNav);
+    Html.RenderPartial("~/Areas/Coordinator/Views/Shared/_SetPlayers.cshtml", Model.partialViewSetPlayers);
+}

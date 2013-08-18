@@ -1,0 +1,59 @@
+﻿@model Unscrambled.Domain.Game
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend></legend>
+        @Html.HiddenFor(model => model.CoordinatorID)
+        @Html.HiddenFor(model => model.JoinCode)
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name, "Game Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GameTypeID, "Game Type")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.GameTypeID, new SelectList(ViewBag.GameTypes, "Value", "Text", Model == null ? 0 : Model.GameTypeID))
+            @Html.ValidationMessageFor(model => model.GameTypeID)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsHandicapped, "Is Handicapped")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsHandicapped)
+            @Html.ValidationMessageFor(model => model.IsHandicapped)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumberOfRounds, "Number of Rounds")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.NumberOfRounds, new SelectList(ViewBag.NumRounds, "Value", "Text", Model == null ? -1000 : Model.NumberOfRounds))
+            @Html.ValidationMessageFor(model => model.NumberOfRounds)
+        </div>
+        <br>
+        <p>
+            <input type="submit" value="Edit Game" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

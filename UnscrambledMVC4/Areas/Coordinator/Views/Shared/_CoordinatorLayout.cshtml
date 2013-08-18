@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Main</title>
+    <link rel="stylesheet" type="text/css" href="/Content/Coordinator.css" />
+    <script type="text/javascript" src="/Scripts/FormValidations.js"></script>
+</head>
+<body class="bodyClass">
+    
+    <div id="toolbarLayer" align="right" style="visibility: inherit;">
+        <div id="signoutLayer" style=""><a id="signout_00" class="toolbarBtnTxt signoutBtn" aria-label="Save &amp; Sign Out"><span>Save &amp; Exit</span></a></div><div id="toolsBtnLayer"><a class="toolbarBtnTxt btnTools" id="Print" aria-label="Print" role="button">Print Center</a><a class="toolbarBtnTxt" id="Flags" tabindex="101" aria-label="Flags" role="button"><span>Flags</span></a></div>
+    </div>
+
+<div id="ttoContainer" class="clear">
+    
+    @RenderBody()
+
+</div>
+
+<div id="footerLayer" align="center" role="contentinfo" style="margin: 0px auto;">
+            <div id="rightRailContainer" style="display: block;">
+                <div id="helpContainer">
+                    <div id="help_top">
+                        <span id="ttlc_title" class="closingDivider">TurboTax Community</span>
+                        <div id="ttlcBtn" class="closingDivider" role="button" onclick="RightRailHelper.toggle()"><span id="ttlcBtnText" style="display: inline;">Show +</span></div>
+                        <div id="ttlcBorder" class="diagonal_pattern_border"></div>
+                    </div>
+                    <div id="help"><div id="liveCommunityLayer" class="screenLg" style="display: none;"><iframe name="CIAFrame" class="CIAFrame" src="blank.htm" scrolling="no" noresize="" frameborder="no"></iframe></div></div>
+                    <div id="help_bottom"></div>
+                </div>
+            </div>
+            <div id="promoLayer" style="visibility: hidden;"></div>
+            <div> 
+                <a class="privacy"><span>License Agreement</span></a><span class="copyright"> | </span><a class="privacy"><span>Privacy</span></a><span class="copyright"> | </span><a class="privacy"><span>Security</span></a><span class="copyright"> | </span><a class="privacy"><span>Support</span></a><br><span class="copyright">© 2013 Intuit Inc.  All rights reserved.</span>
+            </div>
+        </div>
+</body>
+
+
+</html>

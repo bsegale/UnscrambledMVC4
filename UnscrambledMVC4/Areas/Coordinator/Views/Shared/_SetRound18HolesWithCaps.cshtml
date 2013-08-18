@@ -1,0 +1,158 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.SetRoundPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+@{
+    ViewBag.Title = "Course Details";
+}
+
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">View Game Details</td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"><a href="@Url.Action("MyGames", "Game", new { id = @Model.setRoundVM.RoundViewModel.GameID})">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+<div id="contentLayer">
+
+<form class="set-round-form" action="/Coordinator/Game/SetRound" method="post" name="set_round" >
+@Html.Hidden("GameID", Model.setRoundVM.RoundViewModel.GameID)
+@Html.Hidden("RoundID", Model.setRoundVM.RoundViewModel.ID)
+@Html.Hidden("RoundNumberInGame", Model.setRoundVM.RoundViewModel.RoundNumberInGame)
+@Html.Hidden("HolesInRound", Model.setRoundVM.RoundViewModel.HolesInRound)
+
+
+        <table class="tableQuestionArea">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"<span class="main">You are currently playing 18 holes in this round.  </span>@Html.ActionLink("Click To Change To 9 Holes.", "ChangeRoundTo9Holes", new { id = Model.setRoundVM.RoundViewModel.ID })</span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+      
+    </tbody>
+
+</table>
+
+    <table class="tableRoundSlope" width="100%">
+        <col style="width:15%">
+        <col style="width:10%">
+        <col style="width:75%">
+        <tbody>
+            <tr>
+                <td><label for="Slope">Course Slope:</label></td>
+                @if (@Model.setRoundVM.RoundViewModel.SlopeErrorMessage == "")
+                {
+                <td><input type="text" class="textBoxSlope" id="Slope" name="Slope" value="@Model.setRoundVM.RoundViewModel.Slope" ></td>
+                <td><span class="main">* Enter the course slope for handicap calculation. </span></td>
+                }
+                else
+                {
+                    <td><input type="text" class="textBoxSlope" id="Slope" name="Slope" value="@Model.setRoundVM.RoundViewModel.Slope" ></td>
+                    <td><span class="main" style="color:red">* You must enter a valid slope between 55-155.</span></td>
+                }
+            </tr>
+        </tbody>
+    </table>
+
+
+
+        <table class="tableFront9" cellspacing="0">
+        <tbody>
+            <tr class="tourPlayerScorecardRoundSubHeader">
+                <td class="tourPlayerScorecardRoundColMeta">HOLE</td>
+                @for (var i = 0; i <= 8; i++)
+                {
+
+                        @Html.Hidden("HoleID" + Model.setRoundVM.HoleViewModels.ElementAt(i).HoleNumber,Model.setRoundVM.HoleViewModels.ElementAt(i).ID)
+                        <td>@Model.setRoundVM.HoleViewModels.ElementAt(i).HoleNumber</td>
+                }
+                    <td class="tourPlayerScorecardHoleOut">OUT</td>
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">PAR</td>
+                @for (var i = 0; i <= 8; i++)
+                {
+                    <td>@MySelectHelper.CreateOptionsInParSelectTag(Model.setRoundVM.HoleViewModels.ElementAt(i))</td>
+                }
+                <td class="tourPlayerScorecardHoleOut">@Model.setRoundVM.RoundViewModel.Front9Total</td>
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">HDCP</td>
+                @for (var i = 0; i <= 8; i++)
+                {
+                    <td>@MySelectHelper.CreateOptionsInHandicapSelectTag(Model.setRoundVM.HoleViewModels.ElementAt(i)) </td>
+                }
+                <td class="tourPlayerScorecardHoleOut"></td>
+            </tr>
+                
+             
+        </tbody>
+    </table>
+
+    <table class="tableBack9" cellspacing="0">
+        <tbody>
+            <tr class="tourPlayerScorecardRoundSubHeader">
+                <td class="tourPlayerScorecardRoundColMeta">HOLE</td>
+                @for (var i = 9; i <= 17; i++)
+                {
+                    @Html.Hidden("HoleID" + Model.setRoundVM.HoleViewModels.ElementAt(i).HoleNumber, Model.setRoundVM.HoleViewModels.ElementAt(i).ID)
+                    <td>@Model.setRoundVM.HoleViewModels.ElementAt(i).HoleNumber</td>
+                }
+                    <td class="tourPlayerScorecardHoleOut">OUT</td>
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">PAR</td>
+                @for (var i = 9; i <= 17; i++)
+                {
+                    <td>@MySelectHelper.CreateOptionsInParSelectTag(Model.setRoundVM.HoleViewModels.ElementAt(i))</td>
+                }
+                <td class="tourPlayerScorecardHoleOut">@Model.setRoundVM.RoundViewModel.Back9Total</td>
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">HDCP</td>
+                @for (var i = 9; i <= 17; i++)
+                {
+                    <td>@MySelectHelper.CreateOptionsInHandicapSelectTag(Model.setRoundVM.HoleViewModels.ElementAt(i)) </td>
+                }
+                <td class="tourPlayerScorecardHoleOut"></td>
+            </tr>
+             
+        </tbody>
+    </table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><button id="PlayerSubmitAndStayButton" name="SubmitForm" class="submit" type="submit" value="Cancel">Cancel</button></div>
+        <div class="ansR"><button id="PlayerSubmitAndDoneButton" name="SubmitForm" class="submit" type="submit" value="SetRound">Set Round</button></div>
+    </div>
+
+
+
+</div>
+    
+                
+</form>
+
+                

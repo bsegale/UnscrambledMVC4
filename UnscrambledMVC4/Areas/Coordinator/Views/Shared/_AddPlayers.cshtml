@@ -1,0 +1,85 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.AddPlayersPageView
+           
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">Add Players</td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"><a href="@Url.Action("MyGames","Game", new { id = @Model.addPlayersViewModel.Game.ID })"</a>Game List</td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+<div id="contentLayer"> 
+        
+<form action="/Coordinator/Game/AddPlayers" method="post" name="AddPlayers" >
+@Html.Hidden("GameID", Model.addPlayersViewModel.Game.ID)
+<table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">How many players do you want to add to the game?  You currently have <strong>@Model.addPlayersViewModel.Game.NumberOfPlayersOrTeams</strong> in your game.</span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+    <table class="formTable" width="100%">
+        <col style="width:25%">
+        <col style="width:25%">
+        <col style="width:50%">
+        <tbody>
+        <tr>
+                <td>Number of Players</td>
+                <td><input type="text" id="NumberOfPlayersToAdd" name="NumberOfPlayersToAdd" placeholder="Enter Number" style="width: 90px"; /></td>             
+                <td id="numberOfPlayersErrorMessage" class="tdError" style="visibility:@isVisible(Model.addPlayersViewModel.numberPlayersHasErrors)" >Total players between 1-120.</td>
+        </tr>
+        
+        </tbody>
+</table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><a href="@Url.Action("SetPlayers", "Game", new { id = @Model.addPlayersViewModel.Game.ID})" class="linkButton"><span class="textInLinkButton">Cancel</span></a></div>
+        <div class="ansR"><button id="AddPlayersSubmitButton" name="FormSubmit" class="submit" type="submit" value="Save">Add Players</button></div>
+    </div>
+</div>
+
+
+@helper isVisible(bool hasErrors)
+{
+    if (hasErrors == true)
+    {
+        @("visible");
+    }
+    else
+    {
+        @("hidden");
+    }
+}
+
+
+
+</form>
+
+

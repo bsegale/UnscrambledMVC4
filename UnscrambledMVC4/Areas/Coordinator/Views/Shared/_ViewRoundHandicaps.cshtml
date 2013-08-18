@@ -1,0 +1,152 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.ViewRoundHandicapsPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">View Round Handicaps</td>
+                            <td class="sectionLinks"><a href="/Coordinator/Game/SetHandicaps/144">Edit Handicaps</a></td>
+                            <td class="sectionLinks"><a href="@Url.Action("MyGames", "Game", new { id = @Model.viewRoundHandicapsVM.Game.ID})">Game List</a></td>Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+   
+   
+<div id="contentLayer">
+
+<form class="edit-players-form" action="/Coordinator/Game/SetPlayers" method="post" name="edit_players" id="edit_players">
+
+
+ <input type="hidden" name="NumberOfPlayersOrTeams" value="@Model.viewRoundHandicapsVM.Game.NumberOfPlayersOrTeams" />
+ <input type="hidden" name="GameID" value="@Model.viewRoundHandicapsVM.Game.ID" />
+
+
+</table>
+
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        @if (Model.viewRoundHandicapsVM.Game.CalcHandicapsFromIndex == "Y")
+                        {
+                            <tr>
+                                <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Handicaps were calculated based on each player's index and the course slope.</span></span></td>
+                            </tr>
+                        }
+                        else if (Model.viewRoundHandicapsVM.Game.CalcHandicapsFromIndex == "N")
+                        {
+                            <tr>
+                                <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Handicaps were set by the game coordinator not calculated based on course slope and player index.  </span>
+                                    <a href="@Url.Action("ChangeHandicapsToAutoCalcConfirmation", "Game", new { id = @Model.viewRoundHandicapsVM.RoundPlayersViewModels.ElementAt(0).RoundID})">Change to Automatic Calculation</a></span></td>
+                            </tr>
+                        }
+
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">                               
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+
+    <table class="formTable" width="100%">
+        <col style="width:5%">
+        <col style="width:0%">
+        <col style="width:45%">
+        <col style="width:10%">
+        <col style="width:40%">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Player</th>
+                <th>Handicap</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @{
+        int playerNumber = 1;
+        string playerDivStr = "PlayerError1";
+    }
+
+    @foreach (var roundPlayer in Model.viewRoundHandicapsVM.RoundPlayersViewModels)
+    {
+        @:<tr>
+            <td>@playerNumber.ToString()</td>
+            <td></td>
+            <td>@roundPlayer.Player.Name</td>
+            <td>@roundPlayer.Handicap</td>
+            if (roundPlayer.CalcHandicapFromIndex == "Y" && Model.viewRoundHandicapsVM.Game.CalcHandicapsFromIndex == "Y")
+            {
+                <td>@Html.ActionLink("Overide Automatic Calculation", "SetPlayerHandicap", new { id = roundPlayer.ID, playerId = roundPlayer.PlayerID }) </td>
+            }
+            else if (roundPlayer.CalcHandicapFromIndex == "N" && Model.viewRoundHandicapsVM.Game.CalcHandicapsFromIndex == "Y")
+            {
+                <td>@Html.ActionLink("Change to Automatic Calculation", "ChangeRoundPlayerHandicapToAutomatic", new { id = roundPlayer.ID }) </td>
+            }
+            else
+            {
+                <td></td>
+            }
+        @:</tr>
+        
+        playerNumber = playerNumber + 1;
+        playerDivStr = "PlayerError" + playerNumber.ToString();
+    }
+   </tbody>
+
+
+</table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><a href="@Url.Action("SetRound", "Game", new { id = @Model.viewRoundHandicapsVM.RoundPlayersViewModels.ElementAt(0).RoundID})" class="linkButton"><span class="textInLinkButton">Back to Course</span></a></div>
+        <div class="ansR"><a href="@Url.Action("SetFoursomes", "Game", new { id = @Model.viewRoundHandicapsVM.RoundPlayersViewModels.ElementAt(0).RoundID})" class="linkButton"><span class="textInLinkButton">To Foursomes</span></a></div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+                  
+
+   
+
+    
+</form>
+    
+
+
+
+

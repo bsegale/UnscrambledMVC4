@@ -1,0 +1,134 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.SetPlayerHandicapPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">Set Round Foursomes</td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"><a href="/Coordinator/Game/MyGames/144">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+
+<div id="contentLayer">
+
+<form class="set-playerhandicap-form" action="/Coordinator/Game/SetPlayerHandicap" method="post" name="set_player_handicap" id="edit_players">
+
+
+ <input type="hidden" name="GameID" value="@Model.setPlayerHandicapVM.Game.ID" />
+ <input type="hidden" name="RoundID" value="@Model.setPlayerHandicapVM.RoundPlayerViewModel.RoundID" />
+ <input type="hidden" name="RoundPlayerID" value="@Model.setPlayerHandicapVM.RoundPlayerViewModel.ID" />
+
+</table>
+
+    <table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Enter a handicap for this player.  This will replace the automatically calculated value.</span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                                
+                                  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+
+    <table class="formTable" width="100%">
+        <col style="width:5%">
+        <col style="width:0%">
+        <col style="width:45%">
+        <col style="width:10%">
+        <col style="width:40%">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Player</th>
+                <th>Handicap</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td></td>
+            <td>@Html.Hidden("PlayerID", @Model.setPlayerHandicapVM.RoundPlayerViewModel.PlayerID)</td>
+            <td>@Model.setPlayerHandicapVM.RoundPlayerViewModel.PlayerName </td>
+            <td><input type="text" class="textBoxPlayerIndex" value="@Model.setPlayerHandicapVM.RoundPlayerViewModel.Handicap" id="PlayerHandicap" name="PlayerHandicap" /></td>
+            <td id="HandicapError" class="tdError" style="visibility:@isVisible()" >Handicap must be between -10 and 50.</td>
+        </tr>
+
+   </tbody>
+
+
+</table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><button id="SetPlayerHandicapCancel" name="SubmitForm" class="submit" type="submit" value="Cancel">Cancel</button></div>
+        <div class="ansR"><button id="SetPlayerHandicapSubmit" name="SubmitForm" class="submit" type="submit" value="Save">Save</button></div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+                  
+
+   
+
+    
+</form>
+    
+@helper isVisible()
+{
+    
+    if (Model.setPlayerHandicapVM.RoundPlayerViewModel.HandicapErrorMessage != "")
+    {
+        @("visible");
+    }
+    else
+    {
+        @("hidden");
+    }
+}
+
+
+
+
+

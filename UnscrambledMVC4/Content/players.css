@@ -1,0 +1,809 @@
+	.tourClear{clear:both;}
+	/* Page Container*/
+	#tourPlayerFullContainer{width:1000px; background-color:#00F; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/textured_bkgr.gif); border:1px #5ebcda solid; background-repeat:no-repeat; background-color:#5ebcda;}
+	/* Player Bio*/
+	#tourPlayerBioHeader{height:60px; padding-left:15px; padding-right:15px;}
+	#tourPlayerBioName{width:auto; float:left; font-family:Verdana, Geneva, sans-serif; font-size:30px; color:#FFF; padding-top:20px; height:40px; font-weight:normal;}
+	#tourPlayer234x60BioAd{float:right; width:234px; height:60px;}
+	#tourPlayerBioContainer{width:968px; padding:0 15px 15px;}
+	#tourPlayerBio{width:100%; height:283px; background-color:#dae7f0; border: 1px solid #032e50; position:relative;}
+	#tourPlayerBioStripe{width:968px; float: left; position:absolute; background-color:#FFF; height:195px; bottom:47px; top:39px; left:0px;}
+	#tourPlayerPhoto{position:relative; width:151px; height:212px; top:48px; margin-left:10px; float:left;}
+	#tourPlayerPhotoImage{position: absolute; margin-top:4px;}
+	#tourPlayerPhotoImageBorder{position: absolute; z-index: 1; margin-left: -4px;}
+	#tourPlayer300x250BioAd{margin:-20px 10px 0px 0px; width:300px; float:right; clear:both; *margin:12px 10px 0px 0px;}
+	#tourPlayerIndex #tourPlayer300x250BioAd{position:relative; margin:0px 10px 0px 0px; top:10px; width:300px; float:right; clear:none;}
+	#tourPlayerAdvertText{background-color:#f4f8f9; text-align:center; height:12px; color:#c4c4c4;}
+	#tourPlayerBioTable{float:left; position:relative; width:472px; margin-left:25px; height:165px; top:57px; color:#01274c; z-index:3;}
+	.tourPlayersSocialMedia{top:9px !important;}
+	
+	/*Re-Vamp*/
+	.tourPlayerBioCells{padding-bottom:21px; height:10px;}
+	.tourPlayerBioTop{padding-bottom:28px; height:20px;}
+	.tourBioAlignValueLeft p{padding-left:32px;}
+	.tourBioSpacing{padding-bottom:8px !important;}
+	#tourPlayerBioLeft{float:left; width:206px; padding-right:34px}
+	#tourPlayerBioLeft div{width:206px;}
+	#tourPlayerBioCountry{float:left; padding-right:70px; width:170px; vertical-align:middle;}
+	#tourPlayerBioCountry img{float:left; padding-right:8px; padding-top:5px;}
+	#tourPlayerBioCountry p{padding-top:5px;}
+	#tourPlayerBioSocial{float:right;padding-right: 52px;}
+	.tourPlayerBioTextLeft{font-weight:bold; width:74px; vertical-align:top; float:left;}
+	.tourPlayerBioValueLeft{font-weight:normal; width:132px; vertical-align:top; white-space:nowrap; float:left;}
+	.tourPlayerBioValueLeft img{padding:2px 2px 0px;}
+	#bioTico{padding-top:4px;}
+	#bioFBico{padding-top:4px;}
+	/*#tourPlayerBioDivider{width:39px;height:142px;float:left;}*/
+	#tourPlayerBioRight{float:left; width:227px;}
+	/*#tourPlayerBioRight div{width:227px;}*/
+	.tourPlayerBioTextRight{font-weight:bold; width:94px; vertical-align:top; float:left;}
+	.tourPlayerBioValueRight{font-weight:normal; width:168px; vertical-align:top; float:left; width:133px;}
+	#tourPlayerBioFollow{position:relative; top:-12px;}
+	#tourBioTableCellTextWebsite{font-weight:bold; text-decoration:underline; padding-left:6px; display:inline-block; padding-top:12px;}
+	#tourPlayerBioArrowLess{background:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/arrowLess.gif) no-repeat;}
+	#tourPlayerBioArrowMore{background:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/arrow.gif) no-repeat;}
+	.tourBioArrow{display:inline-block; width:3px; height:5px; padding-bottom:2px;}
+	#tourPlayerBioToggle{padding-left:4px;}
+	
+	
+	/* Player Bio Table - */
+	table#tourBioTable{line-height:25px; color:#01274c; width:472px;}
+	table #tourBioTableCellCountry{width:212px;}
+	table #tourBioTableCellFBT{width:232px; padding-bottom:9px;}
+	table #tourBioTableCellFBT #social_media_container #facebook_like{margin-left:14px;}
+	table td#tourBioTableCellCountry img{padding-right:4px;float:left;}
+	table td#tourBioTableCellCountry p{position:relative; top:-5px; font-size:11px;}
+	table td.tourBioTableCellName{font-weight:bold;}
+	table td.tourBioTableCellNameLeft{font-weight:bold; width:74px; vertical-align:top; line-height:1; padding-bottom:21px;}
+	table td.tourBioTableCellNameRight{font-weight:bold; width:94px; vertical-align:top; line-height:1;}
+	table td.tourBioTableCellValueLeft{font-weight:normal; width:116px; vertical-align:top; line-height:1; white-space:nowrap;}
+	table td.tourBioTableCellValueLeft img{padding:0px 2px;}
+	table td.tourBioTableCellValueRight{font-weight:normal; width:168px; vertical-align:top; line-height:1;}
+	table td.tourBioTableCellValue{font-weight:normal;}
+	table td #tourBioTableCellTextWebsite{font-weight:bold; text-decoration:underline; vertical-align:baseline;}
+	table td.tourBioAlignValueLeft{padding-left:27px;}
+	table td#tourBioDivider{width:39px;}
+	table td.tourBioBirthday{padding-bottom:8px !important;}
+	.tourAlignBase{vertical-align:baseline !important; padding-bottom:0px !important; padding-top:13px;}
+	/* Player Bottom Content Container */
+	/*(See Common)
+	#tourPlayerContentContainer{height:auto; padding: 0px 15px 15px;}*/
+	/* Player Nav Bar */
+	#tourPlayerNavBar{width:968px; height:26px; border-top: 1px solid #032e50; border-right: 1px solid #032e50; list-style-type:none; overflow:hidden; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/off_tab.gif)}
+	.tourPlayerNavBarDivider{background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/divider.gif); width:2px; height:26px; float:left;}
+	.tourPlayerNavBarBtns{float:left; text-align:center; padding:6px 0; font-family:Verdana, Geneva, sans-serif; font-weight:bold; font-size:12px;}
+	.tourPlayerNavBarBtns a{color:#c6cfd6;}
+	.tourPlayerNavBarBtns a:hover{color:#FFFFFF; text-decoration:none !important;}
+	#tourPlayerNavBarProfileActive{width:99px; background-color:#dae7f0; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/on_tab.gif);}
+	#tourPlayerNavBarProfileActive a{color:#00284b;}
+	#tourPlayerNavBarProfile{width:99px;}
+	#tourPlayerNavBarScorecardsActive{width:133px; background-color:#dae7f0; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/on_tab.gif);}
+	#tourPlayerNavBarScorecardsActive a{color:#00284b;}
+	#tourPlayerNavBarScorecards{width:133px;}
+	#tourPlayerNavBarSeasonActive{width:97px; background-color:#dae7f0; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/on_tab.gif);}
+	#tourPlayerNavBarSeasonActive a{color:#00284b;}
+	#tourPlayerNavBarSeason{width:97px;}
+	#tourPlayerNavBarCareerActive{width:96px; background-color:#dae7f0; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/on_tab.gif);}
+	#tourPlayerNavBarCareerActive a{color:#00284b;}
+	#tourPlayerNavBarCareer{width:96px;}
+	#tourPlayerNavBarStatsActive{width:183px; background-color:#dae7f0; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/on_tab.gif);}
+	#tourPlayerNavBarStatsActive a{color:#00284b;}
+	#tourPlayerNavBarStats{width:183px;}
+	#tourPlayerNavBarStreaksActive{width:104px; background-color:#dae7f0; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/on_tab.gif);}
+	#tourPlayerNavBarStreaksActive a{color:#00284b;}
+	#tourPlayerNavBarStreaks{width:104px;}
+	#tourPlayerNavBarFedexActive{width:112px; background-color:#dae7f0; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/on_tab.gif);}
+	#tourPlayerNavBarFedexActive a{color:#00284b;}
+	#tourPlayerNavBarFedex{width:112px;}
+	#tourPlayerNavBarMediaActive{width:130px; background-color:#dae7f0; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/on_tab.gif);}
+	#tourPlayerNavBarMediaActive a{color:#00284b;}
+	#tourPlayerNavBarMedia{width:130px;}
+	/* PROFILE PAGE */
+	
+	/* Profile Left */
+	#tourPlayerProfileLeft{width:648px; float:left;}
+	/* Player Profile Stats */
+	#tourPlayerProfileContainer{background-color:#dae7f0; width:968px; border-left: 1px solid #032e50; border-right: 1px solid #032e50; border-bottom: 1px solid #032e50; position:relative;}
+	#tourPlayerProfileTabStatsContainer{height:22px; width:561px; padding-top:4px; margin-left:70px;}
+	#tourPlayerProfileStatsTableContainer table{text-align:center; width:637px;}
+	#tourPlayerProfileStatsContainer1{width:649px; height:244px; margin-top:25px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/table_1tab.gif)}
+	#tourPlayerProfileStatsContainer2{width:649px; height:244px; margin-top:25px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/table_2tabs.gif)}
+	#tourPlayerProfileStatsContainer3{width:649px; height:244px; margin-top:25px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/table_3tabs.gif)}
+	#tourPlayerProfileStatsTable{float:left; text-align:center; width:100%;}
+	#tourPlayerProfileStatsTable1{float:left; text-align:center; width:100%;}
+	#tourPlayerProfileStatsTable2{float:left; text-align:center; width:100%;}
+	#tourPlayerProfileStatsTable3{float:left; text-align:center; width:100%;}
+	.tourPlayerProfileStatsTabs{float:left; height:27px; margin:0px 4px 0px 0;}
+	.tourPlayerProfileStatsTabLinks{height:inherit; width:inherit; position:absolute; height:27px; width:183px;}
+	#tourPlayerProfileRStatsTabDefault{width:183px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/tour_off.gif);}
+ 	#tourPlayerProfileRStatsTabOff{width:183px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/tour_off.gif);}
+	#tourPlayerProfileRStatsTabOn{width:183px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/tour_on.gif);}
+	#tourPlayerProfileSStatsTabDefault{width:183px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/ch_off.gif);}
+	#tourPlayerProfileSStatsTabOff{width:183px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/ch_off.gif);}
+	#tourPlayerProfileSStatsTabOn{width:183px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/ch_on.gif);}
+	#tourPlayerProfileHStatsTabDefault{width:183px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/nw_off.gif);}
+	#tourPlayerProfileHStatsTabOff{width:183px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/nw_off.gif);}
+	#tourPlayerProfileHStatsTabOn{width:183px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/stats_table/nw_on.gif);}
+	table td.tourPlayerProfileStatsColMeta{width:67px; font-weight:bold; color:#01294c; height: 24px; padding-right:8px; text-align:center; font-size:12px; text-transform:uppercase;}
+	table tr#tourPlayerProfileStatsRowHead{color:#01294c; font-weight:bold; font-size:9px; height:40px; *height:43px;}
+	table tr.tourPlayerProfileStatsRowA{color:#01294c; font-weight:bold; font-size:9px;}
+	table tr.tourPlayerProfileStatsRowB{*height:25px;}
+	table tr td.tourTextWidth{width:53px;}
+	table tr td#tourTextWidthCuts{width:43px;}
+	.tourPlayerProfileStatsMoney{width:71px;}
+	/*.tourPlayerProfileStatsMoney p{width:64px;}*/
+	/* Player Profile Ranking */
+	#tourPlayerProfileNumbersContainer{margin-left: 59px; margin-top:13px; width: 600px; height: 48px;}
+	.tourPlayerProfileNumbersText{float:left;text-align:right; font-family:Verdana, Geneva, sans-serif; font-size:11px; color:#01274c; margin-top:13px; height:25px; padding-right:4px; width:63px;}
+	.tourPlayerProfileNumbersValue{float:left;text-align:left; color:#01274c; font-family:"Times New Roman", Times, serif; font-size:38px;}
+	#tourPlayerPorfileNumbersTextOWGR{width:83px;}
+	
+	/* Player Profile Ranking */
+			/*PGATOUR*/ 
+	#tourPlayerProfileNumbersContainerR{margin-left: 59px; margin-top:13px; width: 600px; height: 48px;}
+	.tourPlayerProfileNumbersTextR{float:left;text-align:right; font-family:Verdana, Geneva, sans-serif; font-size:11px; color:#01274c; margin-top:13px; height:25px; padding-right:4px; width:63px;}
+	.tourPlayerProfileNumbersValue{float:left;text-align:left; color:#01274c; font-family:"Times New Roman", Times, serif; font-size:38px;}
+	#tourPlayerPorfileNumbersTextOWGR{width:83px;}
+			/*Champions*/
+	#tourPlayerProfileNumbersContainerS{margin-left: 57px; margin-top:13px; width: 600px; height: 48px;}
+	.tourPlayerProfileNumbersTextS{float:left;text-align:right; font-family:Verdana, Geneva, sans-serif; font-size:11px; color:#01274c; margin-top:13px; height:25px; padding-right:5px; width:100px;}
+	#tourPlayerProfileNumbersTextMid{margin-left:30px;}
+			/*Nationwide*/
+	#tourPlayerProfileNumbersContainerH{margin-left: 63px; margin-top:13px; width: 583px; height: 48px;}
+	.tourPlayerProfileNumbersTextH{float:left; text-align:right; font-family:Verdana, Geneva, sans-serif; font-size:11px; color:#01274c; margin-top:13px; height:25px; padding-right:16px; width:103px;}
+	
+	/* Player Profile Video */
+	
+	#tourPlayerProfileVideoContainer{width:640px; margin-left:10px; margin-top:22px;}
+	#tourPlayerProfileVideoHeader{height:31px; font-size:15px;}
+	#tourPlayerProfileVideoHeaderText{float:left; color:#68859D; letter-spacing:4px; font-weight:bold; font-size:11px; margin-top:9px;}
+	#tourPlayerProfileVideoHeaderAd{float:right; width:88px; height:31px; position:relative; bottom:10px; text-align:right;}
+	div#tourPlayerProfileVideoContainer .tourVideoContainer{width:640px; height:441px; margin:0; background:#000 none;}
+	div#tourPlayerProfileVideoContainer #tourVidDetailBlurb{width:600px; height:64px; color:#00284b; padding:17px 20px 0; background-color:#b5c5d2; text-align:left; font-family:Verdana, Geneva, sans-serif; font-weight:bold;}
+	div#tourPlayerProfileVideoContainer #tourVidDetailBlurb h3{font-size:14px; color:#00284b;}
+	div#tourPlayerProfileVideoContainer #tourVidDetailBlurb #video_description{font-size:10px; line-height:14px; margin-top:3px; height:44px;}
+	div#tourPlayerProfileVideoContainer .tourVideoContainer #tourCVPContainer #tourCVPRelatedLink{display:none;}
+	/*#tourPlayerProfileVideoPlayer{width:638px; border:1px groove #000; height:362px; background-image:url(/players/00/87/93/video.png)}*/
+	#tourPlayerProfileVideoFeaturedText{width:100%: border: 1px 0 1px 0 solid #7a90a2; color:#FFF; background-color:#88a0b4; font-family:Verdana, Geneva, sans-serif; font-weight:bold; border-top: 1px solid #7A90A2; border-bottom: 1px solid #7A90A2; padding: 8px 9px 9px; letter-spacing:4px; font-size:11px; *margin-top:10px;}
+	*:first-child+html #tourPlayerProfileVideoFeaturedText{margin-top: 0px !important;}
+	#tourPlayerProfileVideoFeaturedVideosContainer{border-top: 1px solid #acbdcb; border-bottom: 1px solid #7a90a2; width:100%; height:68px; background-color:#88a0b4; font-weight:bold; color:#00284b;}
+	#tourVideoClickBlocker{width:640px; position:absolute; height:69px;}
+	.tourPlayerProfileVideoFeaturedVideos{width:195px; height:51px; float:left; padding: 9px 10px 9px 7px;}
+	.tourPlayerProfileVideoFeaturedVideos p{line-height:14px;}
+	.tourPlayerProfileVideoFeaturedVideos img{border:1px solid #000; margin-right:5px; float:left;}
+	#tourPlayerProfileVideoFeaturedVideoLeft{border-right: 1px solid #7a90a2}
+	#tourPlayerProfileVideoFeaturedVideoMid{border-left: 1px solid #acbdcb; border-right: 1px solid #7a90a2;}
+	#tourPlayerProfileVideoFeaturedVideoRight{border-left: 1px solid #acbdcb;}
+	#tourPlayerProfileVideoAllVideo{float:right; letter-spacing:normal;}
+	
+	
+	/* Player Profile Right Rail */
+	#tourPlayerProfileRight{width:300px; height:auto; float:right; margin-right:10px; color:#00284b; font-size:11px;}
+	.tourPlayerProfileRightModule{width:300px; margin-top:30px; float:left;}
+	.tourPlayerProfileRightModuleHeaders{height:20px; text-align:left; color:#68859d; letter-spacing:4px; font-weight:bold; font-size:11px;}
+	.tourPlayerProfileRightDivider{border-top: 1px solid #FFF; margin:25px 0 0 0; width:290px;}
+	#tourPlayerProfileRight .tourPlayerImgArrow{margin: 0 4px 0 4px; *margin: 0 4px 3px; *display:inline;}
+	/* Photo Gallery Module */
+	#tourPlayerProfileRightGalleryHeader{height:20px; display:inline-block; width:300px;}
+	#tourPlayerProfileRightGallery88x31{float:right; width:88px; height:31px; position:relative; bottom:33px;}
+	#tourPlayerProfileRightGalleryContent{width:300px; height:205px; position:relative; background:black;}
+	#tourPlayerProfileRightGalleryFooter{height:44px; margin-top:1px; background-color:#87a0b4; line-height:14px; padding: 9px 12px 10px; color:#FFF; font-size:10px; font-family:Verdana, Geneva, sans-serif; font-weight:bold;}
+	#tourPlayerProfileRRGalleryTitle{font-size:12px; margin-bottom:5px;}
+	#tourPlayerProfileRRGalleryText{}
+	#tourPlayerProfileRRGalleryTextLaunch{}
+	#tourPlayerProfileRRGalleryLinkLaunch{padding-left:3px; color:#00284b;}
+	/*CSS 3*/
+	/*Chrome/Safari: -webkit- \ FireFox: -moz- \ Opera: -o- \ IE9: -ms- */
+	#tourPlayerProfileRightGalleryContent img{
+		position:absolute;
+		left:0;
+	}
+	
+/*Three Image Animation*/
+#image0 {
+    -webkit-animation: image0 30s infinite linear;
+	-moz-animation: image0 30s infinite linear;
+	-o-animation: image0 30s infinite linear;
+}
+#image1 {
+    -webkit-animation: image1 30s infinite linear;
+	-moz-animation: image1 30s infinite linear;
+	-o-animation: image1 30s infinite linear;
+}
+#image2 {
+    -webkit-animation: image2 30s infinite linear;
+	-moz-animation: image2 30s infinite linear;
+	-o-animation: image2 30s infinite linear;
+}
+
+/*Two Image Animation*/
+#imageA {
+    -webkit-animation: imageA 20s infinite linear;
+	-moz-animation: imageA 20s infinite linear;
+	-o-animation: imageA 20s infinite linear;
+}
+#imageB {
+    -webkit-animation: imageB 20s infinite linear;
+	-moz-animation: imageB 20s infinite linear;
+	-o-animation: imageB 20s infinite linear;
+}
+
+
+/*Three Image Animation*/
+
+
+@-webkit-keyframes image0 {
+    0%   {opacity: 0;}
+2%   {opacity: 1;}
+32%  {opacity: 1;}
+34%  {opacity: 0;}
+100% {opacity: 0;}
+}
+@-webkit-keyframes image1 {
+    0%   {opacity: 0;}
+33%  {opacity: 0;}
+35%  {opacity: 1;} 
+65%  {opacity: 1;}
+67%  {opacity: 0;}
+100% {opacity: 0;}
+}
+@-webkit-keyframes image2 {
+    0%   {opacity: 0;}
+66%  {opacity: 0;}
+68%  {opacity: 1;}
+98%  {opacity: 1;}
+100% {opacity: 0;}
+}
+
+@-moz-keyframes image0 {
+    0%   {opacity: 0;}
+2%   {opacity: 1;}
+32%  {opacity: 1;}
+34%  {opacity: 0;}
+100% {opacity: 0;}
+}
+@-moz-keyframes image1 {
+    0%   {opacity: 0;}
+33%  {opacity: 0;}
+35%  {opacity: 1;} 
+65%  {opacity: 1;}
+67%  {opacity: 0;}
+100% {opacity: 0;}
+}
+@-moz-keyframes image2 {
+    0%   {opacity: 0;}
+66%  {opacity: 0;}
+68%  {opacity: 1;}
+98%  {opacity: 1;}
+100% {opacity: 0;}
+}
+
+@-o-keyframes image0 {
+    0%   {opacity: 0;}
+2%   {opacity: 1;}
+32%  {opacity: 1;}
+34%  {opacity: 0;}
+100% {opacity: 0;}
+}
+@-o-keyframes image1 {
+    0%   {opacity: 0;}
+33%  {opacity: 0;}
+35%  {opacity: 1;}
+65%  {opacity: 1;}
+67%  {opacity: 0;}
+100% {opacity: 0;}
+}
+@-o-keyframes image2 {
+    0%   {opacity: 0;}
+66%  {opacity: 0;}
+68%  {opacity: 1;}
+98%  {opacity: 1;}
+100% {opacity: 0;}
+}
+
+/*Two Image Animation*/
+
+@-webkit-keyframes imageA {
+    0%   {opacity: 0;}
+2%   {opacity: 1;}
+48%  {opacity: 1;}
+50%  {opacity: 0;}
+100% {opacity: 0;}
+}
+@-webkit-keyframes imageB {
+    0%   {opacity: 0;}
+49%  {opacity: 0;}
+51%  {opacity: 1;} 
+98%  {opacity: 1;}
+100% {opacity: 0;}
+}
+
+@-moz-keyframes imageA {
+    0%   {opacity: 0;}
+2%   {opacity: 1;}
+48%  {opacity: 1;}
+50%  {opacity: 0;}
+100% {opacity: 0;}
+}
+@-moz-keyframes imageB {
+    0%   {opacity: 0;}
+49%  {opacity: 0;}
+51%  {opacity: 1;} 
+98%  {opacity: 1;}
+100% {opacity: 0;}
+}
+
+@-o-keyframes imageA {
+    0%   {opacity: 0;}
+2%   {opacity: 1;}
+48%  {opacity: 1;}
+50%  {opacity: 0;}
+100% {opacity: 0;}
+}
+@-o-keyframes imageB {
+    0%   {opacity: 0;}
+49%  {opacity: 0;}
+51%  {opacity: 1;} 
+98%  {opacity: 1;}
+100% {opacity: 0;}
+}
+
+
+	/* News Module */
+	#tourPlayerProfileRightNews{margin-left:10px; width:290px;}
+	#tourPlayerProfileRightNewsContent{width:300px; height:auto; margin-top:3px;}
+	#tourPlayerProfileRightNewsContent p{padding: 3px 0;}
+	#tourPlayerProfileRightNewsContent p a{color:inherit;}
+	#tourPlayerProfileRightNewsContent p img{padding: 0 5px 0; margin-bottom:2px;}
+	#tourPlayerProfileRightNewsFooter{width:290px; height:19px; font-weight:bold; font-size:10px; margin-top:5px;}
+	#tourPlayerProfileRRNewsRss{float:left;}
+	#tourPlayerProfileRRNewsRss a img{margin: 0 4px 0 4px;}
+	#tourPlayerProfileRRNewsMore{float:right; margin-right:20px; margin-top:7px;}
+	#tourPlayerProfileRRNewsMore img{margin-left:4px;}
+	/* DYK Module */
+	#tourPlayerProfileRightDYK{margin-left:10px; width:290px;}
+	#tourPlayerProfileRightDYKHeader{height:31px; margin-top:-20px;}
+	#tourPlayerProfileRightDYKHeaderText{float:left; margin-top:20px; font-size:11px;}
+	#tourPlayerProfileRightDYK88x31{float:right; width:88px; height:31px;}
+	#tourPlayerProfileRightDYKContent{width:290px; height:115px; margin-top:7px;}
+	#tourPlayerProfileRightDYKContentImage{float:left; margin-top:7px; margin-right:15px;display:none;}
+	#tourPlayerProfileRightDYKContentText{padding-top:3px;}
+	#tourPlayerProfileRightDYKContentText ul{list-style-type:none;}
+	#tourPlayerProfileRightDYKContentText ul li {margin:5px 0;}
+	#tourPlayerProfileRightDYKContentText img{margin-left:4px;}
+	#tourPlayerProfileRightDYKContent p{line-height:19px; margin-top:7px; color:#00284b;}
+	#tourDykDivider{margin-top:11px !important;}
+	/* Charity Module */
+	#tourPlayerProfileRightCharity{margin-left:10px; width:290px;}
+	#tourPlayerProfileRightCharityContent{width:290px; height:130px; margin-top:7px;}
+	#tourPlayerProfileRightCharityContentTextA{width:auto; color:#00284b; font-weight:bold; font-size:12px;}
+	#tourPlayerProfileRightCharityContentTextB{margin-top:5px;}
+	#tourPlayerProfileRightCharityContentImage{width:80px; height:95px; float:left; margin-top:3px; margin-right:17px;}
+	#tourPlayerProfileRightCharityFooter{width:300px; height:20px; text-align:center;}
+	#tourPlayerProfileRightCharityFooterCauses{color:#bc1800; float:right; text-align:center; left:-50%; position:relative;}
+	#tourPlayerProfileRightCharityFooterCauseLeft{height:20px; float:left; left:50%; position:relative;}
+	#tourPlayerProfileRightCharityBtnL{width:8px; height:28px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/btn_left.png)}
+	#tourPlayerProfileRightCharityFooterCauseMid{height:27px; float:left; text-align:center; position:relative; left:50%; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/btn_middle.png); padding:0px 5px;}
+	#tourPlayerProfileRightCharityFooterCauseMid a{font-weight:bold; color:#bc1800; text-decoration:none; position:relative; top:7px;}
+	#tourPlayerProfileRightCharityFooterCauseRight{height:20px; float:left; left:50%; position:relative;}
+	#tourPlayerProfileRightCharityBtnR{width:8px; height:28px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/btn_right.png);}
+	#tourPlayerProfileRightCharityContentTextB p img{padding: 0 5px 0; margin-bottom:2px;}
+	
+	/*PERSONAL INFO*/ /*Move this over to the other two (Height 120px)*/ 
+	
+	#tourPlayerProfilePersonal{width:946px; height:auto; margin-top:30px; margin-left:10px; overflow:hidden;}
+	#tourPlayerProfilePersonalHeader{color:#68859D; margin-bottom:10px; letter-spacing:4px; font-size:11px;}
+	#tourPlayerProfilePersonalText{line-height:16px;}
+	#tourPlayerProfilePersonalText p{margin: 10px 0px;}
+	#tourPlayerToggleText{font-size:11px; font-weight:bold;}
+	
+	/*COMMON*/
+	#tourPlayerCommonContainerContent{min-height:200px;}
+	.tourPlayerImgArrow{width:3px; height:5px; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/arrow.gif); display:inline-block; *zoom:1; *margin: 0 4px 3px; *display:inline;}
+	#tourPlayerCommonHeaderContainer{padding: 0 15px 15px; width: 968px;}
+	#tourPlayerCommonHeaderContainerMask{width:968px; position: absolute; padding: 0px 15px 15px 15px; z-index: 2;}
+	#tourPlayerDropdown{float:left; margin:71px 0px 0px 10px;}
+	#tourPlayerDropdown #select{min-width:204px;}
+	#tourPlayerCommonFullContainer{height:auto; padding: 0px 15px 15px;}
+	#tourPlayerCommonContainer{background-color:#dae7f0; width:968px; border-left: 1px solid #032e50; border-right: 1px solid #032e50; border-bottom: 1px solid #032e50; position:relative; color:#00284b}
+	#tourPlayerCommonBodyContainer{background-color:#dae7f0; width:968px; border-left: 1px solid #032e50; border-right: 1px solid #032e50; border-bottom: 1px solid #032e50; position:relative; color:#00284b}
+	#tourPlayerCommonContentHeader{width:947px; height:40px; padding-top:31px; margin-left:10px; font-weight:normal; font-family:'Times New Roman', Times, serif; color:#00284b;}
+	*:first-child+html #tourPlayerCommonContentHeader{padding-top:31px !important;}
+	#tourPlayerCommonTableHeader{height:29px; color:#67859f; letter-spacing:6px; font-size:11px; font-weight:bold; font-family:Verdana, Geneva, sans-serif;}
+	#tourPlayerCommonTableHeaderText{float:left; width:700px; height:29px; font-size:11px;}
+	#tourPlayerCommonTableHeaderText p{margin-top:10px; letter-spacing:4px;}
+	#tourPlayerCommonTableHeaderSelectContainer{float:right; width:60px; height:29px; margin-right:10px; margin-top:41px;}
+	*:first-child+html #tourPlayerCommonTableHeaderSelectContainer{margin-top:0px !important; position:relative; top:33px;}
+	/*COMMON INDEX*/
+	
+	/* Safari & Chrome Hacks */
+	/*@media screen and (-webkit-min-device-pixel-ratio:0){
+		#tourPlayerIndex{height:299px;}
+	}*/
+	
+	#tourPlayerIndex{width:100%; height:283px; background-color:#dae7f0; border: 1px solid #032e50; position:relative;}
+	#tourPlayerIndexHeader{height:60px; padding-left:15px; padding-right:15px;}
+	#tourPlayerIndexHead{width:auto; float:left; font-family:Verdana, Geneva, sans-serif; font-size:30px; color:#FFF; padding-top:20px; height:40px;}
+	#tourPlayerIndex234x60Ad{float:right; width:234px; height:60px;}
+	#tourPlayerIndexStripe{width:968px; float: left; position:absolute; background-color:#FFF; height:111px; margin-top:30px; left:0px;}
+	#tourPlayerIndexSearchContainer{float:left; width:645px; z-index:1; position:relative; margin-top:30px; margin-left:10px;}
+	#tourPlayerIndexSearchText{float:left; width:580px; margin-top:15px;}
+	#tourPlayerIndexSubmitBtn{background:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/index/search_btn_r.gif) no-repeat 0 0; border:none; width:51px; height:17px;}
+	.tourPlayerIndexTitle{color: #68859D; font-size: 11px; font-weight: bold; height: 20px; letter-spacing: 4px; text-align: left;}
+	#tourPlayerIndexTextSearch{width:407px;}
+    .tourPlayerIndexText{font-weight: bold; color: #00284B;}
+	#tourPlayerIndexSearchTextA{width:245px; height:30px; float:right;}
+	#tourPlayerIndexSearchTextB{width:200px; height:30px; float: left;}
+	#tourPlayerIndexSearchFormContainer{margin-top:5px; position:relative;}
+	#tourPlayerIndexSearchFormContainer select{float:right;margin-right:105px; width:205px;}
+	#tourPlayerIndexSearchFormContainer form{float:left;}
+	#tourPlayerIndexSearchFormContainer form input#tourPlayerIndexTextField{width:185px; /**position:relative; *bottom:4px;*/}
+	@media \0screen {/*IE8 Specific Hack*/
+		#tourPlayerIndexSearchFormContainer form input#tourPlayerIndexTextField{position:relative; bottom:4px;}
+	}	
+	#tourPlayerIndexLeaderContainer{float:left; width:645px; color:#00284B; margin-top:22px;}
+	#tourPlayerIndexLeaderTitle{font-size:16px; margin-bottom:4px; margin-top:8px;}
+	#tourPlayerIndexLeaderTitle p {display:inline;} 
+	#tourPlayerIndexLeaderTitle p a {color:#00284B}
+	#tourIndexFullStats{display:inline; font-size:9px; font-weight:bold; padding-left:5px;}
+	.tourPlayerIndexLeaderPlayers{float:left;}
+	#tourPlayerIndexLeaderPlayer0{}
+	.tourPlayerIndexLeaderPlayerImage{float:left; height:104px; width:80px; position:relative;}
+	.tourPlayerIndexPhoto{margin-left:4px; margin-top:4px; position:absolute;}
+	.tourPlayerIndexBorder{position:absolute; z-index:1;}
+	.tourPlayerIndexTableContainer{float:left; margin-right:17px; margin-left:5px; width:113px;}
+	table.tourPlayerIndexWeekPlayers{margin-top:22px; position:absolute; bottom:0; width:113px;}
+	table.tourPlayerIndexWeekPlayers td{vertical-align:baseline;}
+	table td.tourPlayerIndexWeekPlayersName{font-size:13px; font-weight:bold;}
+	table td.tourPlayerIndexWeekPlayersName a {color:#00284B}
+	table td.tourPlayerIndexWeekPlayersSponsor{width:95px;}
+	table td.tourPlayerIndexWeekPlayersSponsorRank{width:20px;}
+	table td.tourPlayerIndexWeekPlayersStat{width:75px;}
+	.tourPlayerIndexValue{width:15px; text-align:right;}
+	.tourPlayerIndexValueRank{font-size:24px; font-family:Verdana, Geneva, sans-serif; font-weight:normal;}	
+	/*Index Nav*/
+	#tourPlayerIndexNavBar{border-left: 1px solid #032E50; color: #00284B; position: relative; width: 968px; height:26px;}
+	#tourPlayerNavBarR{background-color: #DAE7F0; background-image: url("/.element/img/5.0/sect/players/r/on_tab.gif"); width: 102px; border-top: 1px solid #032e50;}
+	#tourPlayerNavBarR a{color:#00284B;}
+	#tourPlayerNavBarS{background-color: #00284B; width:160px; border-top: 1px solid #032e50; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/off_tab.gif)}
+	#tourPlayerNavBarH{background-color: #00284B; width:170px; border-top: 1px solid #032e50; border-right: 1px solid #032e50; background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/off_tab.gif)}
+	#tourPlayerIndexFBT{float:left; height:25px; padding-left:188px; border-bottom:1px solid #000;}
+	#tourPlayerIndexQL{float:left; padding-top:5px;}
+	#tourIndexSMContainer{float:left; padding-left:12px; *width:100%;}
+	/*Index List*/
+	#tourPlayerIndexActive{margin-left:13px; margin-bottom:15px; padding-top:15px; width:778px; height:12px;}
+	#tourPlayerIndexActiveText{float:left; margin-right:40px;}
+	#tourPlayerIndexActiveQuick{float:left; white-space:nowrap;}
+	#tourPlayerIndexActiveQuick li {display:inline; list-style-type:none;}
+	#tourPlayerIndexActiveQuickAll{margin-right:10px;}
+	#tourPlayerIndexContainer{height:698px; overflow:auto; width:968px;}
+	.tourPlayerIndexLetterBar{width:951px; height:33px; background-color:#FFF; float:left;}
+	.tourPlayerIndexLetterBar p{font-size:30px; margin-left:15px; font-family:"Times New Roman", Times, serif; font-weight:normal;}
+	.tourPlayerIndexPlayersTableContainer{margin: 10px 0px 10px 32px; width:904px; float:left;}
+	.tourPlayerIndexPlayersTable{width:255px; margin-right:46px; float:left;}
+	.tourPlayerIndexCellName{width:145px; color:#00284B; font-weight:bold;}
+	.tourPlayerIndexCellName a{color:inherit}
+	.tourPlayerIndexCellFlag{width:20px; text-align:left;}
+	.tourPlayerIndexCellCountry{width:75px; text-align:left;}
+	
+	
+	
+	
+	/*SCORECARD PAGE */
+	#tourPlayerScorecardContainer{background-color:#dae7f0; width:968px; border-left: 1px solid #032e50; border-right: 1px solid #032e50; border-bottom: 1px solid #032e50; position:relative;}
+	#tourPlayerScorecardHeader{width:947px; padding-top:31px; margin-left:10px;}
+	/**:first-child+html #tourPlayerScorecardHeader{padding-top:0px !important;}*/
+	#tourDateLinks{float:left; width:947px;}
+	#tourPlayerScorecardHeaderText{width:545px; font-size:30px; font-family:'Times New Roman', Times, serif; color:#00284b; font-weight:normal; float:left;}
+	#tourPlayerScorecardHeaderDate{height:18px; float:left; font-size:18px; margin-right:5px; font-family:'Times New Roman', Times, serif; color:#00284b; white-space:nowrap;}
+	.tourPlayerImgSCArrow{background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/r/arrow_sc.gif); width:4px; height:7px;float:left; margin-top:4px; margin-left:2px;}
+	#tourPlayerScorecardHeaderLBLink{width:125px; height:18px; float:left; margin-top:5px; font-size:11px; font-weight:bold;}
+	#tourPlayerScorecardHeaderLBLink a{float:left; color:#0199c8}
+	#tourPlayerScorecardHeaderSTLink{/*width:159px;*/ width:auto; height:18px; float:left; margin-top:5px; margin-left:10px; font-size:11px; font-weight:bold;}
+	#tourPlayerScorecardHeaderSTLink a{float:left; color:#0199c8}
+	#tourPlayerScorecardSelectContainer{/*float:right; height:20px; margin-top:65px;*/margin-top:15px; float:left; margin-right:10px; position:absolute; right: 0;/* *position:relative; *top:87px; *margin-top:0px;*/}
+	*:first-child+html #tourPlayerScorecardSelectContainer{top:56px !important;}
+	#tourScorecardYear{float:left; padding-right:10px;}
+	#tourScorecardYear #tourPlayerSelectBox{margin-top:0px;}
+	#tourScorecardTournaments{float:left;}
+	.tourPlayerScorecardSelect{}
+	#tourPlayerScorecardHeaderSelectContainer{float:right; width:204px; height:20px;}
+	div select.tourPlayerReduxSelect{width:60px; margin-top:3px;}
+	.tourPlayerScorecardRoundContainer{margin-left:10px; width:947px; margin-top:12px; margin-bottom:44px; display:none;}
+	/*#tourPlayerScorecardEmpty{height:161px}*/
+	div.tourPlayerScorecardRoundContainer table{width:947px; background-color:#E8ECED; color:#00284b; font-weight:bold; text-align:center;}
+	table td.tourPlayerScorecardRoundHeader{background-color:#b5c5d2; color:#00284b; padding:7px; font-size:12px; font-weight:bold; text-align:left; border-bottom: 1px solid #FFFFFF;} 
+	table tr.tourPlayerScorecardRoundSubHeader td{background-color: #CBD9E4; color: #00284B; font-weight: bold; text-align: center; width: 39px; border-right:1px solid #fff; border-bottom:1px solid #fff;}
+	table tr.tourPlayerScorecardPar td{border-right:1px solid #fff; border-bottom:1px solid #fff;}
+	table tr.tourPlayerScorecardRound td{border-right:1px solid #fff; border-bottom:1px solid #fff;}
+	table tr.tourPlayerScorecardStatus td{border-right:1px solid #fff; border-bottom:1px solid #fff;}
+	table tr td.tourPlayerScorecardRoundColMeta{height:25px; width:62px; color:#FFF; background-color:#69859d; font-weight:bold; padding-left:8px; text-align:left;}
+	table td.tourPlayerScorecardHoleRow{background-color:#cbd9e4; color:#00284b;text-align:center; width:39px; font-weight:bold;}
+	table td.tourPlayerScorecardHoleOut{background-color:#cbd9e4; color:#00284b;text-align:center; width:59px !important; font-weight:bold;}
+	table td.tourPlayerScorecardHoleTotal{background-color:#cbd9e4; color:#00284b;text-align:center; width:56px !important; font-weight:bold; border-right:none !important;}
+	table td.tourPlayerScorecardOtherRow{text-align: center; background-color:#e8eced; color:#00284b; font-weight:bold;}
+	.tourPlayerScorecardLastCell{border-right:none !important;}
+	.tourPlayerScorecardRoundFooter{background-color:#b5c5d2; color:#00284b; padding:7px; width:933px; height:12px;}
+	#tourPlayerStablefordRoundFooter .tourLegendCell{margin:0px 0px 0px -2px;}
+	.tourPlayersScorecardRoundFooterText{float:left; font-size:12px; font-weight:bold;}
+	.tourPlayerScorecardRoundBorder{width:947px; border-top: 1px solid #708ca2; border-bottom: 1px solid #708ca2; background-color:#69859d; height:4px;}
+	#tourPlayerScorecardStatisticsHeader{height:auto;color:#67859f; letter-spacing:6px; font-size:12px; font-weight:bold; font-family:Arial, Helvetica, sans-serif;}
+	.tourPlayerScorecardStatisticsContainer{width:937px; height:auto; background-color:#FFF; margin-left:10px; padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:5px; float:left;}
+	.tourPlayerScorecardStatisticsContainer table{width:937px;}
+	.tourPlayerScorecardStatisticsContainer table td{border-right:1px solid #fff;}
+	table tr.tourPlayerScorecardStatisticsRowA{background-color:#dae7f0; text-align:center;}
+	table tr.tourPlayerScorecardStatisticsRowB{background-color:#f0f5f9; text-align:center;}
+	table tr#tourPlayerScorecardStatisticsRowEnd td{border-bottom:1px solid #FFF;}
+	table td#tourPlayerScorecardStatisticsColEnd{border-bottom:none !important;}
+	table td.tourPlayerScorecardStatisticsColMeta{background-color:#69859d; text-align:left; padding-left:8px; height:25px; font-weight:bold; color:#fff; border-bottom:1px solid #FFF; border-right:none; text-transform:uppercase;}
+	.statsRowEnd{border-bottom:none !important;}
+	table tr#tourPlayerScorecardStatisticsTableHeaders{text-align:center; background-color:#b5c5d2; color:#00284b; font-weight:bold; vertical-align:bottom;}
+	table tr#tourPlayerScorecardStatisticsTableHeaders td{padding: 7px; border-right:none; border-right:none; border-bottom:1px solid #fff;}
+	td.tourPlayerScorecardStatisticsTableHeader{width:41px; font-size:11px;}
+	td.tourPlayerScorecardStatisticsTableHeader{width /*\**/:125px\9;} /**IE HACK*/
+	#tourPlayerScorecardStatisticsTableHeaderCol{width:78px;}
+	#tourPlayerScorecardStatisticsTableHeaderCol{width /*\**/:185px\9;} /**IE HACK*/
+	#tourPlayerScorecardStatisticsTableHeaderColMeta{width:78px;}
+	#tourPlayerScorecardStatisticsTableHeaderColEagles{width:73px;}
+	#tourPlayerScorecardStatisticsTableHeaderColBirdes{width:74px;}
+	#tourPlayerScorecardStatisticsTableHeaderColPars{width:64px;}
+	#tourPlayerScorecardStatisticsTableHeaderColBogeys{width:72px;}
+	#tourPlayerScorecardStatisticsTableHeaderColDBogeys{width:71px;}
+	#tourPlayerScorecardStatisticsTableHeaderColOther{width:62px;}
+	#tourPlayerScorecardStatisticsTableHeaderColDACC{width:75px;}
+	#tourPlayerScorecardStatisticsTableHeaderColDDist{width:66px;}
+	#tourPlayerScorecardStatisticsTableHeaderColPPR{width:73px;}
+	#tourPlayerScorecardStatisticsTableHeaderColPPG{width:66px;}
+	#tourPlayerScorecardStatisticsTableHeaderColGIR{width:75px;}
+	#tourPlayerScorecardStatisticsTableHeaderColSSaves{width:66px;}
+	#tourPlayerScorecardStatisticsFooter{background-color:#dae7f0; text-align:right; height:32px; padding-right:23px; color:#002a4d; border-top: 1px solid #FFFFFF;}
+	
+	div.tourLegendBox {
+		position:relative;
+		float:left;
+		margin:0px 10px;
+		_margin:0px 6px;
+		width:11px;
+		height:11px;
+		border:1px solid #333;
+		overflow:hidden;
+	}	
+	div.tourLegendCell {
+			position:relative;
+			float:left;
+			margin:0px 5px;
+			_margin:0px;
+	}
+	.tourStrokeAce {
+    background: none repeat scroll 0 0 #003568;
+	color:#fff;
+}
+.tourStrokeEagle {
+    background: none repeat scroll 0 0 #1C6397;
+}
+.tourStrokeBirdie {
+    background: none repeat scroll 0 0 #99D8E7;
+}
+.tourStrokePar {
+    background: none repeat scroll 0 0 #F2F2F0;
+}
+.tourStrokeBogey {
+    background: none repeat scroll 0 0 #F6B54D;
+}
+.tourStrokeDBogey {
+    background: none repeat scroll 0 0 #F55904;
+}
+#exceptionText{color: #00284B; float: left; font-family: 'Times New Roman',Times,serif; font-size: 18px; height: 18px; margin-right: 5px;}	
+	/* SEASON PAGE */
+		
+	#tourPlayerSeasonContainer{}
+	#tourPlayerSeasonHeader{}
+	#tourPlayerSeasonResultsContainer{width:937px; background-color:#FFF; margin-left:10px; padding:5px;}
+	#tourPlayerSeasonResultsHeader{}
+	#tourPlayerSeasonResultsHeaderText{}
+	#tourPlayerSeasonResultsHeaderText p{}
+	#tourPlayerSeasonResultsHeaderSelectContainer{}
+	table#tourPlayerSeasonResultsTable{width:937px;}
+	table tr.tourPlayerSeasonResultsTableHeader td{text-align:center; background-color:#b5c5d2; color:#00284b; border-right:1px solid #fff; font-weight:bold;}
+	table .tourPlayerSeasonResultsTableHeaderBase p{padding-top:17px;}
+	table .tourPlayerSeasonResultsTableHeaderBaseIE p{padding-top:17px; *padding-top:6px !important;}
+	table td#tourPlayerSeasonResultsTableHeadeDate{width:68px; height:41px;}
+	table td#tourPlayerSeasonResultsTableHeaderName{text-align:left; padding-left:22px; width:386px;}
+	table td#tourPlayerSeasonResultsTableHeaderPos{width:59px;}
+	table td#tourPlayerSeasonResultsTableHeaderRound{border-bottom:1px solid #fff; width:122px;}
+	/* Safari & Chrome Hacks */
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		#tourPlayerSeasonResultsTableHeaderRound{padding-bottom: 3px; padding-top:3px;}
+		#tourPlayerIndex{height:283px;}
+	}
+	table td#tourPlayerSeasonResultsTableHeaderMoney{border: none !important; width:116px;}
+	table tr.tourPlayerSeasonResultsRowA{background-color:#f0f5f9; text-align:center; height:22px;}
+	table tr.tourPlayerSeasonResultsRowB{background-color:#dae7f0; text-align:center; height:22px;}
+	table td#tourPlayerSeasonResultsFooter{background-color:#dae7f0; text-align:left; height:32px; padding-left:10px; color:#002a4d;}
+	table td#tourPlayerSeasonResultsFooter p{width:150px; margin-right:25px; float:left;}
+	table td.tourPlayerSeasonResultsColName{text-align:left; padding-left:22px; font-weight:bold; color:#00284b;}
+	table td.tourPlayerSeasonResultsTableHeaderNum{width:24px; padding-bottom:2px;}
+	
+	
+	
+	/* CAREER PAGE */
+	#tourPlayerCareerContainer{}
+	#tourPlayerCareerHeader{}
+	#tourPlayerCareerDetailContainer{width:937px; background-color:#FFF; margin-left:10px; padding:5px;}
+	#tourPlayerCareerDetailHeader{}
+	#tourPlayerCareerDetailHeaderText{}
+	#tourPlayerCareerDetailHeaderSelectContainer{}
+	table tr#tourPlayerSeasonResultsTableHeader td{text-align:center; background-color:#b5c5d2; color:#00284b;}
+	table tr.tourPlayerCareerDetailRowA{background-color:#f0f5f9; text-align:center; height:22px;}
+	table tr.tourPlayerCareerDetailRowB{background-color:#dae7f0; text-align:center; height:22px;}
+	table tr.tourPlayerCareerDetailRowA td{border-right: 1px solid #FFFFFF;}
+	table tr.tourPlayerCareerDetailRowB td{border-right: 1px solid #FFFFFF;}
+	table#tourPlayerCareerDetailTable{width:937px;} 
+	table tr.tourPlayerCareerDetailTableHeader{text-align:center; background-color:#b5c5d2; color:#00284b; font-weight:bold;}
+	table tr.tourPlayerCareerDetailTableHeader td{padding-top:12px;}
+	table td#tourPlayerCareerDetailsTableHeaderDate{width:59px; height:17px; padding-top:24px;} 
+	table td#tourPlayerCareerDetailsTableHeaderName{padding-top:24px; width:174px; padding-left:5px; text-align:left;}
+	table td#tourPlayerCareerDetailsTableHeaderGir{padding-top:24px;}
+	table td#tourPlayerCareerDetailsTableHeaderAAR{padding-top:4px; padding-bottom:4px;}
+	table td#tourPlayerCareerDetailsTableHeaderFrnt{width:34px; padding:0 2px;}
+	table td#tourPlayerCareerDetailsTableHeaderBack{width:34px; padding:0 2px;}
+	table td.tourPlayerCareerDetailsTableColName{text-align:left;padding-left:5px; font-weight:bold;}
+	table td.tourPlayerCareerDetailsTableColPOS{width:46px;}
+	table td.tourPlayerCareerDetailsTableColScore{width:51px;}
+	table td.tourPlayerCareerDetailsTableColMoney{width:66px;}
+	table td.tourPlayerCareerDetailsTableColGir{width:51px;}
+	table td.tourPlayerCareerDetailsTableColDAcc{width:49px;}
+	table td.tourPlayerCareerDetailsTableColLDrv{width:32px;}
+	table td.tourPlayerCareerDetailsTableColDDist{width:40px;}
+	table td.tourPlayerCareerDetailsTableColTDrv{width:36px;}
+	table td.tourPlayerCareerDetailsTableColSand{width:50px;}
+	table td.tourPlayerCareerDetailsTableColAll{width:36px;}
+	table td.tourPlayerCareerDetailsTableColBall{width:39px;}
+	table td.tourPlayerCareerDetailsTableColPutt{width:43px;}
+	table td.tourPlayerCareerDetailsTableColPar3{width:28px;}
+	table td.tourPlayerCareerDetailsTableColPar4{width:27px;}
+	table td.tourPlayerCareerDetailsTableColPar5{width:26px;}
+	table td.tourPlayerCareerDetailsTableColFrnt{width:33px;}
+	table td.tourPlayerCareerDetailsTableColBack{width:35px;}
+	table td#tourPlayerCareerDetailFooter{background-color:#dae7f0; text-align:left; height:6px; color:#002a4d;}
+	
+
+	/* STATS PAGE */
+	#tourPlayerPerformanceContainer{}
+	#tourPlayerPerformanceHeader{}
+	#tourPlayerPerformanceStatsContainer{width:937px; height:auto; background-color:#FFF; margin-left:10px; padding:5px; font-family:Verdana, Geneva, sans-serif;}
+	#tourPlayerPerformanceStatsHeader{}
+	#tourPlayerPerformanceStatsHeaderText{}
+	#tourPlayerPerformanceStatsHeaderSelectContainer{}
+	/*#tourPlayerPerformanceStatsTableHeader{width:930px; height:11px; background-color:#b5c5d2; color:#00284b; font-weight:bold; padding-left:7px; padding-bottom:10px; padding-top:11px;}*/
+	#tourPlayerPerformanceStatsTable a{color:#00284B;}
+	.tourPlayerPerformanceStatsTableHeader{width:930px; height:11px; background-color:#b5c5d2; color:#00284b; font-weight:bold; padding-left:7px; padding-bottom:10px; padding-top:11px;}
+	.tourPlayerPerformanceStatsTableHeader td{padding-bottom:10px;  padding-top:11px;}
+	.tourPlayerPerformanceStatsTableHeaderStandard{padding-left:7px;}
+	.tourPlayerPerformanceStatsTableHeaderRank{text-align:center;}
+	.tourPlayerPerformanceStatsTableHeaderAdditional{padding-left:31px;}
+	table#tourPlayerPerformanceStatsTable{width:937px;}
+	table td.tourPlayerPerformanceStatsColStatsName{width:297px; text-align:left; padding:7px; border-right: 1px solid #FFFFFF;}
+	table td.tourPlayerPerformanceStatsColStatsValue{width:76px; text-align:left; padding-left:20px; border-right: 1px solid #FFFFFF;}
+	table td.tourPlayerPerformanceStatsColRank{width:83px; border-right: 1px solid #FFFFFF;}
+	table td.tourPlayerPerformanceStatsColAdditional{width:208px; text-align:left; padding-left:28px;}
+	table tr.tourPlayerPerformanceStatsRowA{background-color:#f0f5f9; text-align:center;}
+	table tr.tourPlayerPerformanceStatsRowB{background-color:#dae7f0; text-align:center;}
+	#tourPlayerPerformanceStatsTableFooter{width:937px; height:22px; background-color:#f0f5f9; color:#00284b;}
+	
+	
+	
+	/* STREAKS PAGE */
+
+	#tourPlayerStreaksContainer{}
+	#tourPlayerStreaksHeader{}
+	#tourPlayerStreaksSubContainer{width:937px; height:auto; background-color:#FFF; margin-left:10px; padding:5px; font-family:Verdana, Geneva, sans-serif;}
+	#tourPlayerStreaksSubHeader{}
+	#tourPlayerStreaksSubHeaderText{}
+	#tourPlayerStreaksSubHeaderSelectContainer{}
+	table#tourPlayerStreaksTable{width:937px;}	
+	table tr.tourPlayerStreaksRowA{background-color:#f0f5f9; text-align:center; height:22px;}
+	table tr.tourPlayerStreaksRowB{background-color:#dae7f0; text-align:center; height:22px;}
+	table tr.tourPlayerStreaksRowA td{border-right: 1px solid #FFFFFF;}
+	table tr.tourPlayerStreaksRowB td{border-right: 1px solid #FFFFFF;}	
+	table tr.tourPlayerStreaksTableHeader{text-align:center; background-color:#b5c5d2; color:#00284b; font-weight:bold;}
+	table td#tourPlayerStreaksTableHeaderDate{width:59px; height:41px; padding-top:12px;}
+	/* Safari & Chrome Hacks */
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		table td#tourPlayerStreaksTableHeaderDate{height:28px;}
+	} 
+	table td#tourPlayerStreaksTableHeaderName{padding-top:12px; padding-left:7px; width:167px; text-align:left;}
+	table td#tourPlayerStreaksTableHeaderFinish{width:71px;}
+	table td#tourPlayerStreaksTableHeaderPutts1{padding-top:12px; width:73px;}
+	table td#tourPlayerStreaksTableHeaderYTD{width:73px}
+	table td#tourPlayerStreaksTableHeaderCurrent{width:72px; padding:0 9px;}
+	table td#tourPlayerStreaksTableHeaderSand{width:62px;}
+	table td#tourPlayerStreaksTableHeaderFWS{width:48px;}
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		table td#tourPlayerStreaksTableHeaderFWS{padding-top:12px;}
+	}
+	table td#tourPlayerStreaksTableHeaderGir{padding-top:12px; width:46px}
+	table td#tourPlayerStreaksTableHeaderHoles{width:40px; padding:0 10px;}
+	table td#tourPlayerStreaksTableHeaderPar3{width:55px;}
+	table td#tourPlayerStreaksTableHeaderPar4{width:56px;}
+	table td#tourPlayerStreaksTableHeaderPar5{width:52px;}	
+	table td.tourPlayerStreaksColName{text-align:left; padding-left:7px; font-weight:bold;}
+	table td#tourPlayerStreaksFooter{background-color:#dae7f0; text-align:left; height:6px; color:#002a4d;}
+	
+	
+	/* FEDEXCUP PAGE */
+	
+	#tourPlayerFedexContainer{}
+	#tourPlayerFedexHeader{}	
+	.tourPlayerFedexPerformanceContainer{width:937px; height:auto; background-color:#FFF; margin-left:10px; padding:5px; font-family:Verdana, Geneva, sans-serif;}
+	#tourPlayerFedexPerformanceHeader{}
+	#tourPlayerFedexPerformanceHeaderText{}
+	#tourPlayerFedexPerformanceHeaderSelectContainer{}
+	table#tourPlayerFedexPerformanceTable{width:937px;} 
+	table tr.tourPlayerFedexPerformanceTableHeader{text-align:center; background-color:#b5c5d2; color:#00284b; font-weight:bold; text-transform:uppercase;}
+	/*table tr.tourPlayerFedexPerformanceTableHeader td{padding-top:10px;}*/
+	table td#tourPlayerFedexPerformanceTableHeaderDate{width:59px; height:41px; padding-top:10px;} 
+	table td#tourPlayerFedexPerformanceTableHeaderName{padding-top:10px; width:645px; text-align:left}
+	table tr.tourPlayerFedexPerformanceRowA{background-color:#f0f5f9; text-align:center; height:22px;}
+	table tr.tourPlayerFedexPerformanceRowA td{padding-top:5px;}
+	table tr.tourPlayerFedexPerformanceRowB{background-color:#dae7f0; text-align:center; height:22px;}
+	table tr.tourPlayerFedexPerformanceRowB td{padding-top:5px;}
+	table td#tourPlayerFedexPerformanceFooter{background-color:#dae7f0; text-align:left; height:32px; color:#002a4d; padding-left:10px;}
+	table td#tourPlayerFedexPerformanceFooter p{width:150px; margin-right:25px; float:left;}
+	.tourPlayerPerformanceStatsContainer{width:937px; height:auto; background-color:#FFF; margin-left:10px; padding:5px; font-family:Verdana, Geneva, sans-serif;}
+	#tourPlayerFedexBottomTableContainer{margin-top:15px;}
+	table#tourPlayerFedexFooterTable{width:937px; text-transform: uppercase;}
+	table tr.tourPlayerFedexFooterTableHeader{background-color:#b5c5d2; color:#00284b; font-weight:bold;}
+	table tr.tourPlayerFedexFooterTableCells{text-align:center; background-color:#dae7f0;}
+	table#tourPlayerFedexFooterTable td{text-align:center;}
+	table td#tourPlayerFedexFooterTableHeaderEvents{width:113px; vertical-align:bottom; padding-bottom:4px;}
+	table td#tourPlayerFedexFooterTableHeaderFinish{height:20px}
+	table td#tourPlayerFedexFooterTableHeaderFedex{height:20px;}
+	table tr#tourPlayerFedexFooterSubHead{height:20px;}
+	
+	table td#tourPlayerFedexFooterSubHead1st{width:54px;}
+	table td#tourPlayerFedexFooterSubHead2nd{width:57px;}
+	table td#tourPlayerFedexFooterSubHead3rd{width:56px;}
+	table td#tourPlayerFedexFooterSubHead10{width:72px;}
+	table td#tourPlayerFedexFooterSubHead25{width:75px;}
+	table td#tourPlayerFedexFooterSubHeadMade{width:92px;}
+	table td#tourPlayerFedexFooterSubHeadCut{width:58px;}
+	table td#tourPlayerFedexFooterSubHeadWD{width:57px;}
+	table td#tourPlayerFedexFooterSubHeadMoney{width:93px;}
+	table td#tourPlayerFedexFooterSubHeadPoints{width:86px;}
+	table td#tourPlayerFedexFooterSubHeadStanding{width:108px;}
+	table tr#tourPlayerFedexFooterTableCells{height:20px; background-color:#DAE7F0;}
+	/* Common [Fedex]*/ 	
+	table td.tourPlayerCommonTableColName{text-align:left;padding-left:5px; font-weight:bold;}
+	
+	
+	/* MEDIA GUIDE PAGE */
+	
+	#tourPlayerGuideContainer{background-color:#dae7f0; width:968px; border-left: 1px solid #032e50; border-right: 1px solid #032e50; border-bottom: 1px solid #032e50; position:relative;}
+	#tourPlayerGuideHeader{width:947px; height:40px; padding-top:31px; margin-left:10px; font-size:32px; font-family:'Times New Roman', Times, serif; color:#00284b;}
+	.tourPlayerGuideContainer{width:937px; height:auto; background-color:#FFF; margin-left:10px; padding:5px; font-family:Verdana, Geneva, sans-serif;}
+	table#tourPlayerGuideTable{width:937px;}
+	table tr.tourPlayerGuideTableHeaders{background-color:#b5c5d2; color:#00284b; font-weight:bold;}
+	table td.tourPlayerGuideHeaderName{width: auto; float: left; height: 18px; padding: 14px 10px 0px; letter-spacing:4px; text-transform:uppercase;}
+	table td.tourPlayerGuideHeaderCount{float:left; padding: 14px 0 6px;}
+	table td.tourPlayerGuideTableBody{padding: 15px;}
+	.tourPlayerGuideTableBody p {margin:10px 0px;}
+	
+	/* Player Footer Ads */
+	.tourPlayerFooterAdContainer{width:946px; height:115px; margin-top:37px; margin-left:10px; margin-bottom:10px;}
+	.tourPlayerFooter300x115{float:left; width:300px; height:115px;}
+	/*#tourPlayerFooter300x115Ad1{background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/demo/Ad1.png);}*/
+	#tourPlayerFooter300x115Ad2{/*background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/demo/Ad2.png);*/ margin-left:23px; margin-right:23px;}/*
+	#tourPlayerFooter300x115Ad3{background-image:url(http://i.cdn.turner.com/pgatour/.element/img/5.0/sect/players/demo/Ad3.png);}*/
+	
+	/* Sponsored Links*/
+	#tourSponsoredLinksContainer{width:1001px;}
+	#tourSponDiv{display:none;}
+	/*#tourSponsoredLinksSub{margin:0px !important; width:987px; padding-left:15px; background-color:#FFF;}
+	#tourSponsoredLinksBotPad{padding:0px !important;}*/
+
+	/* Player Right Rail Special Promo Ad 300x60*/
+	#tour_300x60AdPayneStewart{
+		width:300px;
+		height:60px;
+	}

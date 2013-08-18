@@ -1,0 +1,126 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.ViewRoundPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+@{
+    ViewBag.Title = "Course Details";
+}
+
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">View Round</td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"><a href="@Url.Action("MyGames", "Game", new { id = @Model.viewRoundVM.RoundViewModel.GameID})">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+<div id="contentLayer">
+
+
+
+
+        <table class="tableQuestionArea">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"<span class="main">The scorecard for your 18 hole round is below.  The round has
+                                already been started.  You are not playing a handicapped game therefore the hole handicaps are not displayed.</td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+      
+    </tbody>
+
+</table>
+
+    <table class="tableRoundSlope" width="100%">
+        <col style="width:15%">
+        <col style="width:10%">
+        <col style="width:75%">
+        <tbody>
+            <tr>
+                <td><label for="Slope"><strong>Course Slope:</strong></label></td>
+                <td><strong>@Model.viewRoundVM.RoundViewModel.Slope</strong></td>
+                <td><span class="main">* Slope is used for handicap calculation. </span></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+        <table class="tableFront9" cellspacing="0">
+        <tbody>
+            <tr class="tourPlayerScorecardRoundSubHeader">
+                <td class="tourPlayerScorecardRoundColMeta">HOLE</td>
+                @for (var i = 0; i <= 8; i++)
+                {                       
+                    <td>@Model.viewRoundVM.HoleViewModels.ElementAt(i).HoleNumber</td>
+                }
+                    <td class="tourPlayerScorecardHoleOut">OUT</td>
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">PAR</td>
+                @for (var i = 0; i <= 8; i++)
+                {
+                    <td class="roundViewScorecardNormal">@Model.viewRoundVM.HoleViewModels.ElementAt(i).Par</td>
+                }
+                <td class="tourPlayerScorecardHoleOut">@Model.viewRoundVM.RoundViewModel.Front9Total</td>
+            </tr>
+                
+             
+        </tbody>
+    </table>
+
+    <table class="tableBack9" cellspacing="0">
+        <tbody>
+            <tr class="tourPlayerScorecardRoundSubHeader">
+                <td class="tourPlayerScorecardRoundColMeta">HOLE</td>
+                @for (var i = 9; i <= 17; i++)
+                {
+                    <td class="roundViewScorecardNormal">@Model.viewRoundVM.HoleViewModels.ElementAt(i).HoleNumber</td>
+                }
+                    <td class="tourPlayerScorecardHoleOut">OUT</td>
+            </tr>
+            <tr>
+                <td class="tourPlayerScorecardRoundColMeta">PAR</td>
+                @for (var i = 9; i <= 17; i++)
+                {
+                    <td class="roundViewScorecardNormal">@Model.viewRoundVM.HoleViewModels.ElementAt(i).Par</td>
+                }
+                <td class="tourPlayerScorecardHoleOut">@Model.viewRoundVM.RoundViewModel.Back9Total</td>
+            </tr>
+             
+        </tbody>
+    </table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><a href="@Url.Action("ViewPlayers", "Game", new { id = @Model.viewRoundVM.RoundViewModel.GameID })" class="linkButton"><span class="textInLinkButton">Players</span></a></div>
+        <div class="ansR"><a href="@Url.Action("ViewHandicaps", "Game", new { id = @Model.viewRoundVM.RoundViewModel.ID})" class="linkButton"><span class="textInLinkButton">Handicaps</span></a></div>
+    </div>
+
+
+
+</div>
+    
+
+                

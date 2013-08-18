@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Unscrambled.Areas.Coordinator.Models.Player>
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+           
+          
+<form class="edit-players-form" action="/Coordinator/Game/EditPlayers" method="post" name="edit_players">
+ 
+
+ <input type="hidden" name="NumberOfPlayersOrTeams" value="@ViewBag.NumberOfPlayers" />
+ <input type="hidden" name="GameID" value="@ViewBag.GameID" />
+
+
+<ul>
+    <li>
+         <h2>Set Players</h2>
+         <span class="form_instructions">Names must be atleast 2 characters. </br>Indexes be in format NN.N</span>
+    </li>
+        @Html.ActionLink("Delete Players", "DeletePlayers", new { id = @ViewBag.GameID })    
+    <li>
+        <label></label>
+        <span class="edit_players_column_heading">Player</span>
+        <span class="edit_players_column_heading">Index</span>
+    </li>
+
+@{
+    int playerNumber = 1;
+    string playerDivStr = "PlayerError1";
+}
+   @foreach (var player in Model) { 
+     <li>
+        <label>@playerNumber</label>
+        @Html.Hidden("PlayerID" + playerNumber, player.ID)
+        @Html.TextBox("PlayerName" + playerNumber.ToString(), player.Name, new { onchange = "CheckPlayerName(this)" })
+        @Html.TextBox("PlayerIndex" + playerNumber.ToString(), player.PlayerIndex, new { onchange = "CheckPlayerIndex(this)" })
+        <span id="@playerDivStr" class="player_hint_hidden" >Enter value between -10.0 to 50.0"</span>
+    </li>
+
+       playerNumber = playerNumber + 1;
+       playerDivStr = "PlayerError" + playerNumber.ToString();
+                  
+}
+   
+
+    <li>
+        <button class="submit" type="submit">Save Players</button>
+        <button class="submit" type="submit">Save & Next</button>
+    </li>
+
+</ul>
+</form>
+    
+

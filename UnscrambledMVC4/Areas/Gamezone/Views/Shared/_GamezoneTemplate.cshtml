@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="@Url.Content("~/Areas/Gamezone/Content/Leaderboard.css")" type="text/css">
+
+</head>
+<body class="lab" id="www-456bereastreet-com">
+<table class="event" id="tabs">
+    <tbody>
+        <tr>
+        <td><span>@Html.ActionLink("Setup", "Setup")</span></td>
+        <td><span>&nbsp;&nbsp;&nbsp; Score &nbsp;&nbsp;&nbsp;</span></td>
+        <td><span>Scorecard</span></td>
+        <td><span>Leaderboard</span></td>
+        </tr>
+    </tbody>
+</table>
+@RenderBody()
+		
+</body>
+</html>

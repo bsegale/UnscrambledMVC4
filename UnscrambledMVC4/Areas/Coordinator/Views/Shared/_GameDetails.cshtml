@@ -1,0 +1,145 @@
+﻿@model Unscrambled.Areas.Coordinator.Models.ViewModels.GameDetailsPageView
+@using Unscrambled.Areas.Coordinator.ViewHelpers
+
+@{
+    string selectedHandicapStr = "";
+    if (Model.createGameVM.game.IsHandicapped != "Y" & Model.createGameVM.game.IsHandicapped != "N")
+    {
+        selectedHandicapStr = "";
+    }
+    else
+    {
+        selectedHandicapStr = Model.createGameVM.game.IsHandicapped;
+    }
+}
+
+
+<div id="app" class="app_bg">
+        <div id="appContainer">
+            <div id="headerRegion">
+                <table class="headerRegionTable">                  
+                    <tbody>
+                        <tr>
+                            <td class="sectionTitle">Create Game</td>
+                            <td class="sectionLinks"></td>
+                            <td class="sectionLinks"><a href="/Coordinator/Game/MyGames/144">Game List</a></td>
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+
+            <div id='dialogRegion'>
+                <div id="partnerLogoLayer"></div>
+                <div id="contentRegion" role="main" style="display: block;">
+<div id="contentLayer">
+        
+<form action="/Coordinator/Game/Create" method="post" name="GameDetails" onsubmit="return ValidateGameDetails()" />
+@Html.Hidden("CoordinatorID", Model.createGameVM.game.CoordinatorID)
+<table class="grid">
+    <tbody>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad">
+                <table cellpadding="0" cellspacing="0" border="0" class="grid">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"><span id="txtblk_00"><span class="main">Enter the parameters for your game.  You will be able to make changes to your game parameters if you need to modify something later. </span></span></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" colspan="1" class="colFirst colNoVerticalPad"></td>
+        </tr>
+       
+    </tbody>
+
+</table>
+
+    <table class="formTable" width="100%">
+        <col style="width:30%">
+        <col style="width:35%">
+        <col style="width:35%">
+        <tbody>
+        <tr>
+                <td>Game Name</td>
+                <td><input type="text" id="Name" name="Name" placeholder="Enter Game Name" value="@Model.createGameVM.game.Name" onchange="CheckGameName(this)" style="width: 180px"; /></td>
+                <td id="gameNameErrorMessage" class="tdError" style="visibility:@isVisible(Model.createGameVM.gameNameHasErrors)" >Characters and numbers only please.</td>
+        </tr>
+        <tr>
+                <td>Number Of Players/Teams:</td>
+                <td><input type="text" id="NumberOfPlayers" name="NumberOfPlayersOrTeams" placeholder="Enter Number" value="@Model.createGameVM.game.NumberOfPlayersOrTeams" onchange="CheckNumberOfPlayers(this)" style="width: 180px" /></td>
+                <td id="numberOfPlayersErrorMessage" class="tdError" style="visibility:@isVisible(Model.createGameVM.numberPlayersHasErrors)" >Number between 1-120.</td>
+        </tr>
+
+            <tr>
+                <td>Game Type:</td>
+                <td><select id="GameTypeID" name="GameTypeID" onchange="CheckIsHandicapped(this)">
+                    @MySelectHelper.CreateOptionsInSelectTag(Model.createGameVM.GameTypeSelectItems, Model.createGameVM.game.GameTypeID.ToString())</select>
+                <td id="gameTypeErrorMessage" class="tdError" style="visibility:@isVisible(Model.createGameVM.gameTypeHasErrors)" >Choose your game type</td>
+        </tr>
+        <tr>
+                <td>Is Handicapped?:</td>
+                <td><select id="IsHandicapped3" name="IsHandicapped" onchange="CheckIsHandicapped(this)">
+                    @MySelectHelper.CreateOptionsInSelectTag(Model.createGameVM.IsHandicappedSelectItems, selectedHandicapStr)</select>
+                </td>
+                <td id="isHandicappedErrorMessage" class="tdError" style="visibility:@isVisible(Model.createGameVM.isHandicappedHasErrors)">Select a handicap option.</td>
+        </tr>
+        <tr>
+                <td>Number of Rounds:</td>
+                <td><select id="NumberOfRounds" name="NumberOfRounds">
+        @MySelectHelper.CreateOptionsInSelectTag(Model.createGameVM.numberOfRoundsSelectItems, Model.createGameVM.game.NumberOfRounds.ToString())</select>
+                </td>
+                <td id="numberOfRoundsErrorMessage" class="tdError" style="visibility:@isVisible(Model.createGameVM.numberOfRoundsHasErrors)" >Select number of rounds.</td>
+        </tr>
+        </tbody>
+</table>
+    <div id="answerLayer" style="visibility: inherit;">
+        <div class="ansL"><button id="GameSubmitButton2" name="FormSubmit" class="submit" type="submit" value="BackMyGames">Cancel</button></div>
+        <div class="ansR"><button id="GameSubmitButton3" name="FormSubmit" class="submit" type="submit" value="Save">Create Game</button></div>
+    </div>
+</div>
+
+
+
+
+</form>
+
+@helper numberOfPlayers(int numberOfPlayers)
+{
+    if (numberOfPlayers == 0)
+    {
+        Html.Raw("");
+    }
+    else
+    {
+        numberOfPlayers.ToString();
+    }
+}
+
+@helper isHandicapOnFirstPass(String isFirstPass, String isHandicapStr )
+{
+    if (isFirstPass == "YES")
+    {
+        @("blah");
+    }
+    else
+    {
+        @("isHandicapStr");
+    }
+}
+
+@helper isVisible(bool hasErrors)
+{
+    if (hasErrors == true)
+    {
+        @("visible");
+    }
+    else
+    {
+        @("hidden");
+    }
+}
